@@ -229,10 +229,14 @@ footer b{color:var(--kai)}
 /* ───── RESPONSIVE ───── */
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media(max-width:680px){
-  header{height:auto;min-height:88vh;padding-top:64px}
-  .hero-inner{padding:0 20px 48px}
-  .hero-img{background-position:62% center}
-  .title{font-size:clamp(3rem,17vw,5rem)}
+  /* hero stacked: 16:9 image on top, text below */
+  header{height:auto;min-height:0;display:block;align-items:stretch;padding-top:50px;border-bottom:1px solid var(--line)}
+  .hero-img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:16/9;background-position:center}
+  .hero-img::after{display:none}
+  .hero-inner{position:static;z-index:auto;max-width:none;padding:24px 20px 40px;
+    background:linear-gradient(180deg,var(--bg2),var(--bg))}
+  .kicker{margin-bottom:12px}
+  .title{font-size:clamp(3rem,15vw,5rem)}
   .lede{font-size:.98rem}
   .hero-meta{gap:16px} .hero-meta strong{font-size:1rem}
   section{padding:60px 18px}
@@ -263,6 +267,23 @@ footer b{color:var(--kai)}
 /* touch: disable heavy hover transforms */
 @media(hover:none){
   .card:hover{transform:none} .gal figure:hover img{transform:none}
+}
+
+/* ───── OVERFLOW SAFETY (grid 1fr → minmax(0,1fr) + min-width:0) ───── */
+html{overflow-x:hidden}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}}
+.clsgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:960px){.clsgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.clsgrid{grid-template-columns:minmax(0,1fr)}}
+.grid>*,.clsgrid>*,.split>*,.gal>*,.meter{min-width:0}
+.tbl-wrap{max-width:100%}
+.title{overflow-wrap:anywhere}
+@media(max-width:680px){
+  .tbl th,.tbl td{white-space:normal}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -371,7 +392,7 @@ footer b{color:var(--kai)}
     <div class="card"><h3 style="font-size:1.2rem">VELO</h3><div class="role">Frontiera</div><p>Ultima luce prima dell'Epicentro. Niente sponsor: legge = reputazione.</p></div>
     <div class="card"><h3 style="font-size:1.2rem">SEPOLCRO</h3><div class="role">Megacittà Morta</div><p>Zona Nera urbana, dungeon verticale. I COLOSSI dormono qui. Loot top, mortalità top.</p></div>
     <div class="card" style="display:grid;place-items:center;text-align:center;border-style:dashed">
-      <div><div class="icon">☄️</div><p style="color:var(--ink-faint)">+ 9 regioni a bioma<br>(Dune, Palude dell'Arca, Foresta di Vetro, Campi Crateri, Creste, Epicentro…)</p></div>
+      <div><div class="icon">☄️</div><p style="color:var(--ink-faint)">+ 9 regioni a bioma<br>(Dune, Palude dell'Arca, Foresta di Vetro, Campi Crateri, Creste, Epicentro…)</p></div></div>
   </div>
 
   <div class="divider" style="margin-top:50px"></div>
@@ -501,10 +522,10 @@ footer b{color:var(--kai)}
   <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">RISONANZA — potenziamento armi</h3>
   <p style="color:var(--ink-dim);margin-bottom:18px;font-size:.95rem">L'arma non sale di numero: entra in risonanza col KAI. 5 stadi, glow crescente. Una <b style="color:var(--kai)">Risvegliata</b> in città si riconosce a vista = status.</p>
   <div class="grid g4 reveal" style="gap:12px">
-    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:var(--ink-dim)">Grezza</h3><div class="role">Stadio 0</div>
-    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem">Temprata</h3><div class="role">Stadio 1 · sicuro</div>
-    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:#7fe3f0">Affinata</h3><div class="role">Stadio 2 · venature</div>
-    <div class="card" style="text-align:center;border-color:var(--kai-dim)"><h3 style="font-size:1.1rem;color:var(--kai)">Risvegliata</h3><div class="role">Stadio 4 · aura piena</div>
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:var(--ink-dim)">Grezza</h3><div class="role">Stadio 0</div></div>
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem">Temprata</h3><div class="role">Stadio 1 · sicuro</div></div>
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:#7fe3f0">Affinata</h3><div class="role">Stadio 2 · venature</div></div>
+    <div class="card" style="text-align:center;border-color:var(--kai-dim)"><h3 style="font-size:1.1rem;color:var(--kai)">Risvegliata</h3><div class="role">Stadio 4 · aura piena</div></div>
   </div>
   <div class="divider" style="margin-top:40px"></div>
   <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">RARITÀ &amp; ANCORE PREZZI</h3>
@@ -553,12 +574,12 @@ footer b{color:var(--kai)}
   <div class="sec-head"><span class="sec-num">08</span><h2>Sponsor del Circuito</h2><span class="jp">陣営</span></div>
   <p class="sec-sub">Ogni sponsor = estetica + format torneo + una faccia della società post-Ritorno. Asse di fondo: <b>capitale novaediano vs orgoglio terrestre</b>.</p>
   <div class="grid g2">
-    <div class="card reveal"><div class="fac"><div class="crest" style="color:#fff;background:linear-gradient(135deg,#fff3,#0000);border-color:#fff6">H</div><div><h3 style="font-size:1.25rem">HALCYON GROUP</h3><div class="role">Il capitale di Nova Eden</div><p>Lo sponsor più ricco. Bianco-oro, perfetto, l'opposto delle rovine. I bracket d'élite. Raccoglie dati biometrici dei duelli…</p></div></div>
-    <div class="card reveal"><div class="fac"><div class="crest" style="color:var(--amber);background:linear-gradient(135deg,rgba(255,157,60,.2),#0000);border-color:var(--amber-dim)">⚒</div><div><h3 style="font-size:1.25rem">FORGIA NERA</h3><div class="role">Orgoglio terrestre</div><p>Armaioli e scavatori attorno a GRIS. Metallo grezzo, rosso ruggine. Rifiutano il denaro novaediano. Premi in equip, mai crediti.</p></div></div>
-    <div class="card reveal"><div class="fac"><div class="crest" style="color:#7b9cff;background:linear-gradient(135deg,rgba(123,156,255,.2),#0000);border-color:#4a5db0">刃</div><div><h3 style="font-size:1.25rem">JIN-RAI</h3><div class="role">La scuola della lama</div><p>Ordine semi-religioso vicino al Monaco. Indaco e carbone. Kenjutsu puro 1v1. Un solo «Portatore» per stagione.</p></div></div>
-    <div class="card reveal"><div class="fac"><div class="crest" style="color:#ff4df0;background:linear-gradient(135deg,rgba(255,77,240,.2),#0000);border-color:#b02a9e">⚡</div><div><h3 style="font-size:1.25rem">VOLT!</h3><div class="role">Lo spettacolo</div><p>Network di broadcast, ologrammi e scommesse. Neon eccesso, l'anima S4 League. Gestisce il <b>feed verso Nova Eden</b>.</p></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#fff;background:linear-gradient(135deg,#fff3,#0000);border-color:#fff6">H</div><div><h3 style="font-size:1.25rem">HALCYON GROUP</h3><div class="role">Il capitale di Nova Eden</div><p>Lo sponsor più ricco. Bianco-oro, perfetto, l'opposto delle rovine. I bracket d'élite. Raccoglie dati biometrici dei duelli…</p></div></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:var(--amber);background:linear-gradient(135deg,rgba(255,157,60,.2),#0000);border-color:var(--amber-dim)">⚒</div><div><h3 style="font-size:1.25rem">FORGIA NERA</h3><div class="role">Orgoglio terrestre</div><p>Armaioli e scavatori attorno a GRIS. Metallo grezzo, rosso ruggine. Rifiutano il denaro novaediano. Premi in equip, mai crediti.</p></div></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#7b9cff;background:linear-gradient(135deg,rgba(123,156,255,.2),#0000);border-color:#4a5db0">刃</div><div><h3 style="font-size:1.25rem">JIN-RAI</h3><div class="role">La scuola della lama</div><p>Ordine semi-religioso vicino al Monaco. Indaco e carbone. Kenjutsu puro 1v1. Un solo «Portatore» per stagione.</p></div></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#ff4df0;background:linear-gradient(135deg,rgba(255,77,240,.2),#0000);border-color:#b02a9e">⚡</div><div><h3 style="font-size:1.25rem">VOLT!</h3><div class="role">Lo spettacolo</div><p>Network di broadcast, ologrammi e scommesse. Neon eccesso, l'anima S4 League. Gestisce il <b>feed verso Nova Eden</b>.</p></div></div></div>
   </div>
-  <div class="card reveal" style="margin-top:18px"><div class="fac"><div class="crest" style="color:#d9c27a;background:linear-gradient(135deg,rgba(217,194,122,.15),#0000);border-color:#8a7a3f">◈</div><div><h3 style="font-size:1.25rem">CONSORZIO DELLE PORTE</h3><div class="role">La frontiera</div><p>Gilde di scavatori, semi-legali. Sponsorizzano gli eventi world-drop e le taglie — il ponte PvE/PvPvE. Sanno per primi dove cade il KAI.</p></div></div>
+  <div class="card reveal" style="margin-top:18px"><div class="fac"><div class="crest" style="color:#d9c27a;background:linear-gradient(135deg,rgba(217,194,122,.15),#0000);border-color:#8a7a3f">◈</div><div><h3 style="font-size:1.25rem">CONSORZIO DELLE PORTE</h3><div class="role">La frontiera</div><p>Gilde di scavatori, semi-legali. Sponsorizzano gli eventi world-drop e le taglie — il ponte PvE/PvPvE. Sanno per primi dove cade il KAI.</p></div></div></div>
 </section>
 
 <!-- PROGRESSION -->
@@ -604,9 +625,12 @@ const links=[...document.querySelectorAll('.navlinks a')];
 const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
   links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>spy.observe(s));
-// parallax hero
+// parallax hero (desktop only — on mobile the image is a static 16:9 block)
 const hi=document.querySelector('.hero-img');
-addEventListener('scroll',()=>{const y=scrollY;if(y<900)hi.style.transform='translateY('+y*.3+'px) scale('+(1+y*.0002)+')';},{passive:true});
+addEventListener('scroll',()=>{
+  if(innerWidth<=680){hi.style.transform='';return;}
+  const y=scrollY;if(y<900)hi.style.transform='translateY('+y*.3+'px) scale('+(1+y*.0002)+')';
+},{passive:true});
 </script>
 </body>
 </html>
