@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Design Bible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070a0e; --bg2:#0b1118; --panel:#0e1620; --panel2:#121c28;
+  --kai:#22e6ff; --kai-dim:#0e8aa0; --kai-deep:#063844;
+  --amber:#ff9d3c; --amber-dim:#b3651f;
+  --ink:#dfe9f0; --ink-dim:#8aa0b0; --ink-faint:#5a6f7e;
+  --line:rgba(34,230,255,.14); --line-soft:rgba(120,160,180,.10);
+  --red:#ff4d6d;
+  --mono:'Chakra Petch',monospace; --disp:'Rajdhani',sans-serif; --jp:'Zen Kaku Gothic New',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--mono);
+  font-weight:400; line-height:1.6; overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 500px at 80% -5%, rgba(34,230,255,.07), transparent 60%),
+    radial-gradient(700px 400px at 5% 30%, rgba(255,157,60,.05), transparent 55%);
+}
+/* grain + scanlines */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);
+  mix-blend-mode:multiply;opacity:.35}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9997;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+::selection{background:var(--kai);color:#04161c}
+a{color:inherit;text-decoration:none}
+
+/* ───── NAV ───── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;gap:28px;padding:14px 30px;
+  background:linear-gradient(180deg,rgba(7,10,14,.95),rgba(7,10,14,.55) 70%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+.brand{font-family:var(--disp);font-weight:700;font-size:1.25rem;letter-spacing:.18em;
+  display:flex;align-items:center;gap:8px;white-space:nowrap}
+.brand b{color:var(--kai);text-shadow:0 0 18px rgba(34,230,255,.6)}
+.brand .jp{font-family:var(--jp);font-weight:900;color:var(--amber);font-size:1.1rem}
+.navlinks{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.navlinks a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);
+  padding:6px 11px;border:1px solid transparent;border-radius:2px;transition:.2s}
+.navlinks a:hover{color:var(--kai);border-color:var(--line);background:rgba(34,230,255,.05)}
+.navlinks a.active{color:var(--kai);border-color:var(--kai-dim);box-shadow:0 0 14px rgba(34,230,255,.15) inset}
+@media(max-width:1100px){
+  nav{gap:14px;padding:11px 16px}
+  .navlinks{margin-left:0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;mask-image:linear-gradient(90deg,transparent,#000 18px,#000 92%,transparent)}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{flex:none;padding:6px 9px;font-size:.66rem}
+  .brand{font-size:1.05rem}
+}
+
+/* ───── HERO ───── */
+header{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;
+  overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-img{position:absolute;inset:0;background:url("assets/kaigan.jpg") center/cover;
+  filter:saturate(1.05) contrast(1.04)}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,10,14,.45) 0%,transparent 30%,rgba(7,10,14,.35) 55%,rgba(7,10,14,.97) 100%),
+  linear-gradient(90deg,rgba(7,10,14,.6),transparent 45%)}
+.hero-inner{position:relative;z-index:2;padding:0 40px 70px;max-width:1100px}
+.kicker{font-size:.78rem;letter-spacing:.42em;text-transform:uppercase;color:var(--kai);
+  margin-bottom:18px;opacity:0;animation:fade .8s .2s forwards}
+.title{font-family:var(--disp);font-weight:700;line-height:.92;letter-spacing:.02em;
+  font-size:clamp(3.5rem,11vw,9rem);margin-bottom:6px;opacity:0;animation:fade .9s .35s forwards}
+.title .slash{color:var(--kai);text-shadow:0 0 40px rgba(34,230,255,.7)}
+.title .kai{position:relative}
+.subt{font-family:var(--jp);font-weight:900;font-size:clamp(1.4rem,4vw,2.6rem);color:var(--amber);
+  letter-spacing:.1em;margin-bottom:22px;opacity:0;animation:fade .9s .5s forwards}
+.lede{max-width:620px;font-size:1.05rem;color:var(--ink);opacity:0;animation:fade .9s .65s forwards}
+.lede b{color:var(--kai)}
+.hero-meta{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;opacity:0;animation:fade .9s .8s forwards}
+.hero-meta div{border-left:2px solid var(--kai-dim);padding-left:12px}
+.hero-meta span{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.hero-meta strong{font-family:var(--disp);font-size:1.15rem;color:var(--ink);font-weight:600}
+@keyframes fade{to{opacity:1;transform:none}}
+.kicker,.title,.subt,.lede,.hero-meta{transform:translateY(18px)}
+
+/* ───── SECTIONS ───── */
+section{padding:90px 40px;max-width:1280px;margin:0 auto;position:relative}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px;flex-wrap:wrap}
+.sec-num{font-family:var(--disp);font-size:.9rem;color:var(--kai);letter-spacing:.3em;font-weight:700}
+.sec-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);
+  letter-spacing:.02em;line-height:1}
+.sec-head .jp{font-family:var(--jp);color:var(--ink-faint);font-size:1rem;font-weight:700}
+.sec-sub{color:var(--ink-dim);max-width:760px;margin-bottom:42px;font-size:1.02rem}
+.divider{height:1px;background:linear-gradient(90deg,var(--kai-dim),transparent);margin:0 0 42px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+/* cards grid */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
+  border-radius:4px;padding:24px;position:relative;transition:.3s;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;width:0;height:2px;background:var(--kai);transition:.4s}
+.card:hover{border-color:var(--line);transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(34,230,255,.25)}
+.card:hover::before{width:100%}
+.card h3{font-family:var(--disp);font-size:1.4rem;font-weight:700;letter-spacing:.03em;margin-bottom:4px}
+.card .role{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.card p{font-size:.92rem;color:var(--ink-dim)}
+.card ul{list-style:none;margin-top:12px;font-size:.88rem;color:var(--ink-dim)}
+.card li{padding:4px 0 4px 18px;position:relative}
+.card li::before{content:"▸";position:absolute;left:0;color:var(--kai-dim)}
+
+/* class cards */
+.cls .stars{color:var(--kai);font-size:.85rem;letter-spacing:2px}
+.cls .stat{display:flex;justify-content:space-between;font-size:.8rem;padding:3px 0;border-bottom:1px dashed var(--line-soft)}
+.cls .stat span:first-child{color:var(--ink-faint);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem}
+.icon{font-size:1.8rem;line-height:1;margin-bottom:10px;filter:drop-shadow(0 0 10px rgba(34,230,255,.4))}
+
+/* timeline */
+.tl{border-left:2px solid var(--kai-deep);margin-left:8px;padding-left:0}
+.tl-item{position:relative;padding:0 0 26px 28px}
+.tl-item::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--kai);box-shadow:0 0 12px rgba(34,230,255,.6)}
+.tl-year{font-family:var(--disp);font-weight:700;color:var(--kai);font-size:1.05rem;letter-spacing:.08em}
+.tl-item p{color:var(--ink-dim);font-size:.95rem}
+
+/* pillars / split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+@media(max-width:780px){.split{grid-template-columns:1fr}}
+.door{padding:32px}
+.door.arena{background:linear-gradient(160deg,rgba(34,230,255,.06),var(--bg2));border-right:1px solid var(--line)}
+.door.world{background:linear-gradient(160deg,rgba(255,157,60,.06),var(--bg2))}
+.door h3{font-family:var(--disp);font-size:1.6rem;letter-spacing:.04em;margin-bottom:4px}
+.door .tag{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.arena h3{color:var(--kai)} .arena .tag{color:var(--kai-dim)}
+.world h3{color:var(--amber)} .world .tag{color:var(--amber-dim)}
+.door ul{list-style:none} .door li{padding:7px 0 7px 20px;position:relative;font-size:.92rem;color:var(--ink-dim)}
+.door li::before{content:"◆";position:absolute;left:0;font-size:.7rem;top:9px}
+.arena li::before{color:var(--kai-dim)} .world li::before{color:var(--amber-dim)}
+
+/* bridge */
+.bridge{text-align:center;padding:22px;margin-top:18px;border:1px dashed var(--line);border-radius:4px;
+  font-family:var(--disp);font-size:1.15rem;letter-spacing:.03em;color:var(--ink)}
+.bridge b{color:var(--kai)}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
+.tbl th{font-family:var(--disp);text-align:left;color:var(--kai);font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;font-size:.72rem;padding:10px 14px;border-bottom:1px solid var(--line)}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line-soft);color:var(--ink-dim);vertical-align:top}
+.tbl tr:hover td{background:rgba(34,230,255,.03);color:var(--ink)}
+.tbl strong{color:var(--ink)}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 9px;border-radius:99px;border:1px solid currentColor}
+.t-yellow{color:#ffd24d} .t-red{color:var(--red)} .t-black{color:#b08fff} .t-cyan{color:var(--kai)}
+
+/* faction crests */
+.fac{display:flex;gap:16px;align-items:flex-start}
+.fac .crest{width:46px;height:46px;flex:none;border-radius:6px;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:700;font-size:1.3rem;border:1px solid var(--line)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+@media(max-width:780px){.gal{grid-template-columns:1fr}}
+.gal figure{position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.gal img{width:100%;display:block;transition:.5s}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px;
+  background:linear-gradient(transparent,rgba(7,10,14,.95));font-size:.8rem}
+.gal figcaption b{font-family:var(--disp);color:var(--kai);font-size:1rem;letter-spacing:.05em;display:block}
+.gal .meta{color:var(--ink-faint);font-size:.7rem;letter-spacing:.1em}
+
+/* mysteries */
+.myst{border:1px solid var(--line-soft);border-left:3px solid var(--amber);padding:16px 20px;border-radius:0 4px 4px 0;background:rgba(255,157,60,.03)}
+.myst h4{font-family:var(--disp);color:var(--amber);font-size:1.05rem;margin-bottom:4px;letter-spacing:.03em}
+.myst p{font-size:.9rem;color:var(--ink-dim)}
+
+/* footer */
+footer{padding:60px 40px;border-top:1px solid var(--line);text-align:center;color:var(--ink-faint);font-size:.82rem;letter-spacing:.1em}
+footer b{color:var(--kai)}
+.tagline{font-family:var(--disp);font-size:1.4rem;color:var(--ink);letter-spacing:.05em;margin-bottom:18px}
+.tagline span{color:var(--kai)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--line);
+  border-radius:99px;color:var(--ink-dim)}
+.note{font-size:.82rem;color:var(--ink-dim);background:rgba(34,230,255,.04);border:1px solid var(--line-soft);
+  padding:10px 16px;border-radius:4px;margin-top:14px}
+.note b{color:var(--kai)}
+
+/* ───── RESPONSIVE ───── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:680px){
+  header{height:auto;min-height:88vh;padding-top:64px}
+  .hero-inner{padding:0 20px 48px}
+  .hero-img{background-position:62% center}
+  .title{font-size:clamp(3rem,17vw,5rem)}
+  .lede{font-size:.98rem}
+  .hero-meta{gap:16px} .hero-meta strong{font-size:1rem}
+  section{padding:62px 18px}
+  .sec-head{gap:10px} .sec-head .jp{display:none}
+  .sec-sub{font-size:.95rem;margin-bottom:30px}
+  .card{padding:18px}
+  .tbl{font-size:.8rem} .tbl th,.tbl td{padding:8px 9px;white-space:nowrap}
+  .door{padding:22px} .door h3{font-size:1.35rem}
+  .bridge{font-size:1rem;padding:18px 14px}
+  .tl-item{padding-bottom:20px}
+  .gal figcaption b{font-size:.9rem}
+  .tagline{font-size:1.1rem}
+  footer{padding:44px 18px}
+}
+@media(max-width:420px){
+  .title{font-size:clamp(2.6rem,18vw,4rem)}
+  .hero-meta{gap:12px} .hero-meta div{padding-left:9px}
+  .hero-meta span{font-size:.6rem} .hero-meta strong{font-size:.9rem}
+}
+/* touch: disable heavy hover transforms */
+@media(hover:none){
+  .card:hover{transform:none} .gal figure:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">BLADE<b>//</b>KAI <span class="jp">改</span></div>
+  <div class="navlinks">
+    <a href="#overview">Overview</a>
+    <a href="#lore">Lore</a>
+    <a href="#world">Mondo</a>
+    <a href="#compete">Competitivo</a>
+    <a href="#classes">Classi</a>
+    <a href="#equip">Equip</a>
+    <a href="#move">Mezzi</a>
+    <a href="#modes">Modalità</a>
+    <a href="#factions">Fazioni</a>
+    <a href="#progress">Progressione</a>
+    <a href="#gallery">Art</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-img"></div>
+  <div class="hero-inner">
+    <div class="kicker">Design Bible · Working Title</div>
+    <h1 class="title">BLADE<span class="slash">//</span><span class="kai">KAI</span></h1>
+    <div class="subt">改 · La Via della Lama</div>
+    <p class="lede">Un <b>arcade shooter</b> con dinamiche da MMORPG. DNA <b>S4 League</b>: wall-run, dash chain, lama fotonica. Vivi nella Kaigan — la prima città del Ritorno sulla Terra avvelenata dal KAI — e combatti nel Circuito per crediti, gloria e status.</p>
+    <div class="hero-meta">
+      <div><span>Engine</span><strong>Unity 6 · C#</strong></div>
+      <div><span>Core</span><strong>PvP · Skill manuale</strong></div>
+      <div><span>Modello</span><strong>PSO / GGO</strong></div>
+      <div><span>Estetica</span><strong>Anime Cyberpunk</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Overview</h2><span class="jp">概要</span></div>
+  <p class="sec-sub">La pagina che da sola definisce il gioco — filtro per ogni feature futura.</p>
+  <div class="grid g3 reveal">
+    <div class="card"><div class="icon">⚡</div><h3>Stylish Movement</h3><div class="role">Pilastro I</div><p>DNA S4 League: wall-run, dash chain, verticalità. Se una feature rallenta il gioco, si taglia.</p></div>
+    <div class="card"><div class="icon">⚔️</div><h3>Gun + Sword Duality</h3><div class="role">Pilastro II</div><p>Ogni loadout è una dichiarazione di playstyle. La lama fotonica è la firma high-skill del gioco.</p></div>
+    <div class="card"><div class="icon">⏱️</div><h3>Fun in 10 Minutes</h3><div class="role">Pilastro III</div><p>Ogni sessione consegna un arco completo: entra → combatti → risultato → rematch. Anche vs bot.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:22px"><b>Target feeling —</b> «Sono un mercenario in una città cyberpunk sulla Terra morta. Stasera ho 30 minuti: faccio due match, vinco abbastanza per la mod che voglio, e qualcuno in Plaza ha visto la mia lama Risvegliata.»</div>
+</section>
+
+<!-- LORE -->
+<section id="lore">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Storia &amp; Lore</h2><span class="jp">物語</span></div>
+  <p class="sec-sub">Il KAI è arrivato dallo <b style="color:var(--kai)">spazio</b> con la Prima Caduta. Ha dato all'umanità energia infinita — e le ha avvelenato la Terra. Il paradosso fondante: <i>il materiale che ha ucciso il pianeta è l'unico motivo per cui siamo sopravvissuti.</i></p>
+  <div class="grid g2">
+    <div class="reveal">
+      <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:20px;font-size:1.1rem">CRONOLOGIA DEL MONDO</h3>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-year">−120 · La Prima Caduta</div><p>Pioggia di meteore anomale. Nei crateri, il KAI. Boom energetico mondiale.</p></div>
+        <div class="tl-item"><div class="tl-year">−90 · Il Grande Collasso</div><p>Guerre per gli ultimi giacimenti. Macchine da guerra autonome scatenate. Città in rovina.</p></div>
+        <div class="tl-item"><div class="tl-year">−80 · L'Esodo</div><p>Con l'energia KAI l'umanità costruisce le navi-arca e parte per Nova Eden. La Terra resta alle macchine.</p></div>
+        <div class="tl-item"><div class="tl-year">−15 · I Ritornanti</div><p>«La perfezione non è casa nostra.» Prima traversata inversa verso la Terra.</p></div>
+        <div class="tl-item"><div class="tl-year">−12 · La Kaigan</div><p>Fondazione della città sulle rovine. Aria purificata dentro il perimetro.</p></div>
+        <div class="tl-item"><div class="tl-year">−5 · I BLADE KAI</div><p>Prima lama fotonica forgiata (KAI + matrice terrestre). Nasce il mito.</p></div>
+        <div class="tl-item"><div class="tl-year">0 · Oggi</div><p>Arrivi alla Memorial Hall.</p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:20px;font-size:1.1rem">PERSONAGGI CHIAVE</h3>
+      <div class="grid" style="gap:12px">
+        <div class="card"><h3 style="font-size:1.15rem">GRIS</h3><div class="role">L'Armaiolo</div><p>Veterano del Collasso, mai partito. Prima armeria della Via. Tutorial armi + quest Risonanza.</p></div>
+        <div class="card"><h3 style="font-size:1.15rem">DAME VERA</h3><div class="role">Il Capitale</div><p>Ex-aristocratica di Nova Eden, finanzia il Circuito. Gatekeeper dei tornei alti. Parla per eufemismi.</p></div>
+        <div class="card"><h3 style="font-size:1.15rem">JUNO</h3><div class="role">Broker</div><p>Nata sulla nave del Ritorno, «né di là né di qua». Vende mappe dungeon, taglie, le posizioni delle pietre cadute.</p></div>
+        <div class="card"><h3 style="font-size:1.15rem">IL MONACO</h3><div class="role">Forgiatore</div><p>Primo forgiatore di lame fotoniche. Nome sconosciuto. Si dice abbia visto cosa c'è in fondo alle rovine.</p></div>
+        <div class="card"><h3 style="font-size:1.15rem">REX-7</h3><div class="role">Buttafuori</div><p>Macchina del Collasso riprogrammata. Comic relief + tutorial movimento. «I miei protocolli dicono di ucciderti. Li ignoro.»</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin-top:50px"></div>
+  <div class="grid g3">
+    <div class="card reveal"><div class="role" style="color:var(--kai)">Lame Leggendarie</div>
+      <ul><li><b>ALBA</b> — la prima lama del Monaco, bianco-oro, sparita da 5 anni</li><li><b>MORSO</b> — rosso-cupo, sepolta col primo campione… forse</li><li><b>FILO DEL COLLASSO</b> — taglia i materiali pre-Collasso. Drop del boss più profondo</li></ul></div>
+    <div class="card reveal"><div class="role" style="color:var(--red)">Bestiario — Macchine</div>
+      <ul><li><b>Cani · Sentinelle</b> (T1) — branchi, torrette</li><li><b>Mietitori · Sciami</b> (T2) — duelli melee PvE, droni kamikaze</li><li><b>COLOSSI</b> (T3) — boss d'assedio multi-fase</li><li><b>Il Custode</b> — protegge l'Epicentro. Mai visto</li></ul></div>
+    <div class="card reveal"><div class="role" style="color:var(--amber)">Nova Eden — il motivo</div>
+      <p>Investono sulla Terra su due binari: <b>il KAI estratto</b> (la Terra è tornata una miniera) e <b>il Circuito come intrattenimento</b> (i duelli trasmessi in diretta lassù — la Terra è anche un'arena).</p></div>
+  </div>
+
+  <div style="margin-top:30px" class="grid g2">
+    <div class="myst reveal"><h4>① Perché il KAI continua a cadere?</h4><p>A intervalli. Casuale? O qualcosa lassù lo manda? Nessuno ha mai tracciato l'origine.</p></div>
+    <div class="myst reveal"><h4>② Lo studio segreto di Halcyon</h4><p>Perché raccolgono dati biometrici dei duelli con lame fotoniche? L'intrattenimento è la copertura di uno studio?</p></div>
+  </div>
+</section>
+
+<!-- WORLD -->
+<section id="world">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Il Mondo · La Cintura</h2><span class="jp">世界</span></div>
+  <p class="sec-sub">Un continente a cluster stile Albion + patchwork di terreni stile GGO. Gradiente sud→nord: più sali, più rischi. <b>Niente teletrasporto tra città — il viaggio è il gioco.</b></p>
+
+  <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin:0 0 16px;font-size:1.1rem">LE 5 CITTÀ</h3>
+  <div class="grid g3 reveal">
+    <div class="card"><h3 style="font-size:1.2rem">KAIGAN ★</h3><div class="role">Capitale</div><p>Prima città del Ritorno, sede del Circuito. Hub v1.</p></div>
+    <div class="card"><h3 style="font-size:1.2rem">ANCORA</h3><div class="role">Porto Orbitale</div><p>L'ascensore orbitale Terra↔Nova Eden. Ricca e non libera, controllo novaediano.</p></div>
+    <div class="card"><h3 style="font-size:1.2rem">FORNACE</h3><div class="role">Città Mineraria</div><p>Company town Halcyon. Aria peggiore della wasteland. Il lato oscuro del boom.</p></div>
+    <div class="card"><h3 style="font-size:1.2rem">VELO</h3><div class="role">Frontiera</div><p>Ultima luce prima dell'Epicentro. Niente sponsor: legge = reputazione.</p></div>
+    <div class="card"><h3 style="font-size:1.2rem">SEPOLCRO</h3><div class="role">Megacittà Morta</div><p>Zona Nera urbana, dungeon verticale. I COLOSSI dormono qui. Loot top, mortalità top.</p></div>
+    <div class="card" style="display:grid;place-items:center;text-align:center;border-style:dashed">
+      <div><div class="icon">☄️</div><p style="color:var(--ink-faint)">+ 9 regioni a bioma<br>(Dune, Palude dell'Arca, Foresta di Vetro, Campi Crateri, Creste, Epicentro…)</p></div>
+  </div>
+
+  <div class="divider" style="margin-top:50px"></div>
+  <div class="grid g2">
+    <div class="reveal">
+      <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">LE ZONE (Albion)</h3>
+      <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Zona</th><th>PvP</th><th>Morte</th></tr>
+        <tr><td><span class="pill t-cyan">Città</span></td><td>Neutra (no armi)</td><td>Logout sicuro</td></tr>
+        <tr><td><span class="pill t-yellow">Gialla</span></td><td>Solo Assassini</td><td>Non perdi nulla</td></tr>
+        <tr><td><span class="pill t-red">Rossa</span></td><td>Aperto</td><td>Loot non depositato</td></tr>
+        <tr><td><span class="pill t-black">Nera</span></td><td>Aperto</td><td>+5% un pezzo equip (salvo Sigillo KAI)</td></tr>
+      </table></div>
+      <p style="font-size:.85rem;color:var(--ink-faint);margin-top:14px">Karma Metin2: Good vs Assassino. Il loot non è tuo finché non lo depositi in città — il viaggio di ritorno è il gioco vero.</p>
+    </div>
+    <div class="reveal">
+      <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">PIETRE KAI → DUNGEON</h3>
+      <p style="color:var(--ink-dim);font-size:.95rem">Una pietra KAI precipita nella wasteland: colonna di luce ciano. L'impatto cristallizza il territorio e apre un <b style="color:var(--kai)">dungeon generato</b> — bioma e tier ereditati dalla regione colpita. Al cuore la Pietra = boss. Distruggerla = loot grosso, il territorio si spegne.</p>
+      <div class="note" style="margin-top:16px"><b>Regola assoluta —</b> i dungeon sono <b>solo PvE</b>. Il rischio PvP vive fuori: il viaggio e soprattutto l'uscita col bottino. Entrate/uscite = hotspot di gank.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE -->
+<section id="compete">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Design Competitivo</h2><span class="jp">競技</span></div>
+  <p class="sec-sub">Un motore di combattimento, <b>due porte, due ladder, due strade alla potenza</b>. Risolve «perché un puro skill-player dovrebbe entrare nell'open world».</p>
+  <div class="split reveal">
+    <div class="door arena">
+      <h3>ARENA</h3><div class="tag">Porta Istantanea</div>
+      <ul>
+        <li>Loggi e sei competitivo subito — skill pura, stat <b>normalizzate</b></li>
+        <li>Zero progressione richiesta, zero grind. Fun immediato</li>
+        <li>La ranked è il <b>rubinetto di potenza</b> dello skill-player</li>
+        <li>Ranked + tornei sponsor, esport-legibile</li>
+      </ul>
+    </div>
+    <div class="door world">
+      <h3>OPEN WORLD</h3><div class="tag">Gioco Profondo · Ladder Principale</div>
+      <ul>
+        <li>Livello, gear, power-up. <b>Il grind conta — di proposito</b> (Metin2)</li>
+        <li>Conquista PvP di zone e dungeon. Sei al farm → 5v5 improvviso</li>
+        <li>Centro di prestigio, ego, estetica, dominio</li>
+        <li>Profondo ma <b>veloce per step</b>: niente muro 200h, orizzonte di mesi</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card reveal"><div class="role" style="color:var(--kai)">Grind Path</div><p>Il giocatore RPG: farma, dungeon, conquista zone, sale di livello → potenza. Molte ore, e va bene così.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--amber)">Skill Path</div><p>Il puro skill-player: domina la ranked d'arena → <b>gli stessi power-up</b>, senza grindare. Le due strade si bilanciano da sole.</p></div>
+  </div>
+  <div class="bridge reveal">La potenza non attraversa mai il ponte. Attraversano solo <b>crediti</b>, <b>accessi</b> ed <b>estetica</b>.</div>
+</section>
+
+<!-- CLASSES -->
+<section id="classes">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le 5 Classi</h2><span class="jp">職業</span></div>
+  <p class="sec-sub">Niente statistiche del personaggio: la classe fissa il corpo, la potenza è arma + mano del player. Counter circle morbido — la skill ribalta tutto. Il 5v5 schiera una di ogni classe.</p>
+  <div class="grid g3">
+    <div class="card cls reveal"><div class="icon">⚔️</div><h3>KENSHI</h3><div class="role">La Lama · melee</div>
+      <p>Il BLADE KAI. Classe-simbolo, la più difficile. Deflessione a timing, dash chain, gestione batteria/overheat.</p>
+      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★★★</span></div></div>
+    <div class="card cls reveal"><div class="icon">🔫</div><h3>STRIKER</h3><div class="role">Il Velocista · run&amp;gun</div>
+      <p>Mercenario agile, controlla il ritmo. Slide &amp; strafe shooting, hit-and-run, lettura Bullet Line.</p>
+      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★</span></div></div>
+    <div class="card cls reveal"><div class="icon">🛡️</div><h3>HEAVY</h3><div class="role">Il Bastione · tank</div>
+      <p>Macchina da guerra. Soppressione (allarga il Circle nemico), spin-up minigun, campo difensivo anti-ottiche.</p>
+      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★</span></div></div>
+    <div class="card cls reveal"><div class="icon">🎯</div><h3>PHANTOM</h3><div class="role">L'Ombra · sniper</div>
+      <p>Vince prima che il fight inizi. Heartbeat sniping, first-shot-unseen, spotting superiore, mantello camo.</p>
+      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★★</span></div></div>
+    <div class="card cls reveal"><div class="icon">🔧</div><h3>WARDEN</h3><div class="role">Il Custode · supporto</div>
+      <p>L'ingegnere del KAI. Drone riparatore, impulso EMP (scarica le lame!), barriera deployabile, marcatura tattica.</p>
+      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★</span></div></div>
+    <div class="card reveal" style="display:grid;place-items:center;text-align:center;border-style:dashed">
+      <div><p style="color:var(--kai);font-family:var(--disp);letter-spacing:.1em;margin-bottom:8px">COUNTER CIRCLE</p>
+      <p style="font-size:.85rem;color:var(--ink-dim)">Kenshi › Heavy › Striker › Phantom › Warden › Kenshi<br><span style="color:var(--ink-faint)">tendenza, non hard-counter</span></p></div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section id="equip">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Equipment</h2><span class="jp">装備</span></div>
+  <p class="sec-sub">Doppio binario armi (lezione GGO). <b>Niente bonus casuali</b>: stat fisse per modello + stadio di Risonanza. In un TPS conta la mira, non il roll.</p>
+  <div class="grid g2 reveal">
+    <div class="card"><div class="role" style="color:var(--kai)">OTTICHE — energia KAI</div><p>Leggere, precise, range lungo. <b>Disperse dai campi difensivi</b> → ruolo PvE. Estetica sci-fi, glow ciano.</p></div>
+    <div class="card"><div class="role" style="color:var(--amber)">BALISTICHE — polvere da sparo</div><p>Pesanti, perforano i campi difensivi, danno alto. Munizioni finite, balistica reale → ruolo PvP. Hardware militare opaco.</p></div>
+  </div>
+  <div class="divider" style="margin-top:40px"></div>
+  <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">RISONANZA — potenziamento armi</h3>
+  <p style="color:var(--ink-dim);margin-bottom:18px;font-size:.95rem">L'arma non sale di numero: entra in risonanza col KAI. 5 stadi, glow crescente. Una <b style="color:var(--kai)">Risvegliata</b> in città si riconosce a vista = status.</p>
+  <div class="grid g4 reveal" style="gap:12px">
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:var(--ink-dim)">Grezza</h3><div class="role">Stadio 0</div>
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem">Temprata</h3><div class="role">Stadio 1 · sicuro</div>
+    <div class="card" style="text-align:center"><h3 style="font-size:1.1rem;color:#7fe3f0">Affinata</h3><div class="role">Stadio 2 · venature</div>
+    <div class="card" style="text-align:center;border-color:var(--kai-dim)"><h3 style="font-size:1.1rem;color:var(--kai)">Risvegliata</h3><div class="role">Stadio 4 · aura piena</div>
+  </div>
+  <div class="divider" style="margin-top:40px"></div>
+  <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin-bottom:14px;font-size:1.1rem">RARITÀ &amp; ANCORE PREZZI</h3>
+  <div class="tbl-wrap"><table class="tbl reveal">
+    <tr><th>Tier</th><th>Fonte</th><th>Prezzo (Cr)</th></tr>
+    <tr><td><span class="pill" style="color:#9aa">Comune</span></td><td>Shop base</td><td>&lt; 1.000</td></tr>
+    <tr><td><span class="pill" style="color:#5bd17a">Militare</span></td><td>Shop, drop campo</td><td>5–20.000</td></tr>
+    <tr><td><span class="pill" style="color:#4da6ff">Raro</span></td><td>Drop dungeon, tornei</td><td>50–150.000</td></tr>
+    <tr><td><span class="pill t-black">Pre-Collasso</span></td><td>Boss, finali</td><td>2–20M</td></tr>
+    <tr><td><span class="pill t-cyan">Leggendario</span></td><td>Boss segreti, 1° BR, eventi</td><td>20–30M</td></tr>
+  </table></div>
+</section>
+
+<!-- MOVEMENT -->
+<section id="move">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Movimento &amp; Mezzi</h2><span class="jp">移動</span></div>
+  <p class="sec-sub">Velocità = stat stile Metin2 (solo da equip, capped). Tier 0 = il corpo (wall-run, dash), unico ammesso in dungeon e arene. Poi la scala dei mezzi.</p>
+  <div class="tbl-wrap"><table class="tbl reveal">
+    <tr><th>T</th><th>Mezzo</th><th>Dove</th><th>Note</th></tr>
+    <tr><td>1</td><td><strong>Monopattino / Skate / Bici</strong></td><td>Città + Gialle</td><td>Primo gusto di velocità, stile urbano</td></tr>
+    <tr><td>2</td><td><strong>Moto</strong></td><td>Gialle→Nere</td><td>Standard wasteland; il passeggero spara</td></tr>
+    <tr><td>3</td><td><strong>Macchine / Buggy</strong></td><td>Gialle→Nere</td><td>Carovane, bagagliaio = cargo extra</td></tr>
+    <tr><td>4</td><td><strong>Navicelle volanti</strong></td><td>Rotte fisse</td><td>Quota bassa (il KAI disturba l'avionica). La più rapida</td></tr>
+    <tr><td>5</td><td><strong>Animali · esoscheletro KAI</strong></td><td>Ovunque</td><td>Lupo-corriere, cervo-scalatore. Passa dove i mezzi non passano</td></tr>
+    <tr><td>6</td><td><strong>Animali · mutazione KAI</strong></td><td>Ovunque</td><td>Cristalli nel corpo, abilità uniche. Lo status symbol del server</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:18px"><b>Regole —</b> dungeon e arene = solo Tier 0 · smonta-per-combattere · gerarchia non lineare (il T6 non è più veloce, è più capace) · mezzi distruttibili in Rossa/Nera (ripari a costo basso).</div>
+</section>
+
+<!-- MODES -->
+<section id="modes">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Modalità di Gioco</h2><span class="jp">対戦</span></div>
+  <p class="sec-sub">Tutte istanziate (hub low-tickrate, match high-tickrate). Bot ovunque: nessuna lobby vuota, mai.</p>
+  <div class="grid g3">
+    <div class="card reveal"><div class="role" style="color:var(--kai)">v1</div><h3>Deathmatch</h3><p>1v1 · 3v3 · 5v5. Prima a 40 kill o timer 10 min. Arene verticali S4-style. L'arco fun-in-10-minutes.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--amber)">v2 · identità S4L</div><h3>Touchdown</h3><p>Porta la Fumbi in meta. Il portatore non spara → bersaglio, la squadra fa muro. Heavy re difesa, Warden tiene il muro.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--amber)">v2 · stile Valorant</div><h3>Detonazione</h3><p>5v5 round-based, no respawn. Carica KAI su sito A/B. La carica esplosa <b>cristallizza il sito</b> per il round dopo.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--kai)">v2 · solo lame</div><h3>Kenjutsu</h3><p>Armi da fuoco off. 1v1 il formato regina, pubblico olografico. Il torneo «La Via della Lama» incorona i veri BLADE KAI.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--red)">v3 · il torneo supremo</div><h3>Battle Royale 50</h3><p>NO cerchio. <b>Satellite Scan</b> (GGO): ogni 15 min rivela chi si muove per 30s. Fermo = invisibile. Montepremi ~3M Cr.</p></div>
+    <div class="card reveal"><div class="role" style="color:var(--ink-dim)">v2+ · fuori le mura</div><h3>PvE &amp; Taglie</h3><p>Dungeon pietra KAI (party 1–4, solo PvE), taglie alle Porte, eventi pietra server-wide: la corsa al cratere.</p></div>
+  </div>
+</section>
+
+<!-- FACTIONS -->
+<section id="factions">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Sponsor del Circuito</h2><span class="jp">陣営</span></div>
+  <p class="sec-sub">Ogni sponsor = estetica + format torneo + una faccia della società post-Ritorno. Asse di fondo: <b>capitale novaediano vs orgoglio terrestre</b>.</p>
+  <div class="grid g2">
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#fff;background:linear-gradient(135deg,#fff3,#0000);border-color:#fff6">H</div><div><h3 style="font-size:1.25rem">HALCYON GROUP</h3><div class="role">Il capitale di Nova Eden</div><p>Lo sponsor più ricco. Bianco-oro, perfetto, l'opposto delle rovine. I bracket d'élite. Raccoglie dati biometrici dei duelli…</p></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:var(--amber);background:linear-gradient(135deg,rgba(255,157,60,.2),#0000);border-color:var(--amber-dim)">⚒</div><div><h3 style="font-size:1.25rem">FORGIA NERA</h3><div class="role">Orgoglio terrestre</div><p>Armaioli e scavatori attorno a GRIS. Metallo grezzo, rosso ruggine. Rifiutano il denaro novaediano. Premi in equip, mai crediti.</p></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#7b9cff;background:linear-gradient(135deg,rgba(123,156,255,.2),#0000);border-color:#4a5db0">刃</div><div><h3 style="font-size:1.25rem">JIN-RAI</h3><div class="role">La scuola della lama</div><p>Ordine semi-religioso vicino al Monaco. Indaco e carbone. Kenjutsu puro 1v1. Un solo «Portatore» per stagione.</p></div></div>
+    <div class="card reveal"><div class="fac"><div class="crest" style="color:#ff4df0;background:linear-gradient(135deg,rgba(255,77,240,.2),#0000);border-color:#b02a9e">⚡</div><div><h3 style="font-size:1.25rem">VOLT!</h3><div class="role">Lo spettacolo</div><p>Network di broadcast, ologrammi e scommesse. Neon eccesso, l'anima S4 League. Gestisce il <b>feed verso Nova Eden</b>.</p></div></div>
+  </div>
+  <div class="card reveal" style="margin-top:18px"><div class="fac"><div class="crest" style="color:#d9c27a;background:linear-gradient(135deg,rgba(217,194,122,.15),#0000);border-color:#8a7a3f">◈</div><div><h3 style="font-size:1.25rem">CONSORZIO DELLE PORTE</h3><div class="role">La frontiera</div><p>Gilde di scavatori, semi-legali. Sponsorizzano gli eventi world-drop e le taglie — il ponte PvE/PvPvE. Sanno per primi dove cade il KAI.</p></div></div>
+</section>
+
+<!-- PROGRESSION -->
+<section id="progress">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Progressione</h2><span class="jp">昇格</span></div>
+  <p class="sec-sub">COD-style: livello 0→100, poi 4 prestigi. Il livello sblocca <b>opzioni e accessi</b>, mai potenza. Le ricompense prestigio sono solo cosmetiche/status.</p>
+  <div class="grid g4">
+    <div class="card reveal" style="border-color:rgba(205,127,50,.3)"><div class="icon">🜚</div><h3 style="font-size:1.2rem;color:#cd7f32">P1 · RITORNANTE</h3><p>Mantello esclusivo + titolo in città. Badge bronzo: la nave del Ritorno.</p></div>
+    <div class="card reveal" style="border-color:rgba(192,192,192,.3)"><div class="icon">⚔</div><h3 style="font-size:1.2rem;color:#c0c0c0">P2 · VETERANO</h3><p>Skin arma animata (glow KAI) + emote. Badge argento: doppia lama incrociata.</p></div>
+    <div class="card reveal" style="border-color:rgba(255,200,60,.3)"><div class="icon">☄</div><h3 style="font-size:1.2rem;color:#ffc83c">P3 · CACCIATORE</h3><p>Maschera leggendaria + aura città. Badge oro: pietra KAI in frantumi.</p></div>
+    <div class="card reveal" style="border-color:var(--kai-dim)"><div class="icon" style="filter:drop-shadow(0 0 14px var(--kai))">◆</div><h3 style="font-size:1.2rem;color:var(--kai)">P4 · BLADE KAI</h3><p>Nome in ciano ovunque + statua/holo in Plaza tra i campioni. Ti chiami come il gioco.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Art &amp; Concept</h2><span class="jp">画</span></div>
+  <p class="sec-sub">Direzione visiva: anime cyberpunk KR/JP, DNA S4 League, glow KAI ciano come accento unificante, silhouette leggibili per classe.</p>
+  <div class="gal">
+    <figure class="reveal"><img src="assets/kaigan.jpg" alt="Kaigan establishing shot" loading="lazy">
+      <figcaption><b>KAIGAN · Establishing</b><span class="meta">La prima città del Ritorno — cupola d'aria, gradiente cromato→neon, ologramma duello in Plaza · 16:9 · 4K</span></figcaption></figure>
+    <figure class="reveal"><img src="assets/kenshi.jpg" alt="Kenshi character concept" loading="lazy">
+      <figcaption><b>KENSHI · Character</b><span class="meta">Classe-simbolo, techwear leggero, katana fotonica ciano · 9:16 · 4K</span></figcaption></figure>
+  </div>
+</section>
+
+<footer>
+  <div class="tagline">Il gioco è il <span>duello</span>. Cambia solo la posta.</div>
+  <div class="chips" style="justify-content:center">
+    <span class="chip">PvP-First</span><span class="chip">MMO depth</span><span class="chip">Skill manuale</span>
+    <span class="chip">S4 League DNA</span><span class="chip">Anime Cyberpunk</span><span class="chip">Unity 6</span>
+  </div>
+  BLADE<b>//</b>KAI 改 · Design Bible · Solo project — Lucio (Lorenzo Mosca)
+</footer>
+
+<script>
+// scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+// nav active state
+const secs=[...document.querySelectorAll('section[id]')];
+const links=[...document.querySelectorAll('.navlinks a')];
+const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>spy.observe(s));
+// parallax hero
+const hi=document.querySelector('.hero-img');
+addEventListener('scroll',()=>{const y=scrollY;if(y<900)hi.style.transform='translateY('+y*.3+'px) scale('+(1+y*.0002)+')';},{passive:true});
+</script>
+</body>
+</html>
