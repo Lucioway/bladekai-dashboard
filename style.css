@@ -173,6 +173,9 @@ p.body i{color:var(--kai)}
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media(max-width:780px){.gal{grid-template-columns:minmax(0,1fr)}}
+.gal3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.gal3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.gal3{grid-template-columns:minmax(0,1fr)}}
 .gal figure{position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
 .gal img{width:100%;display:block;transition:.5s}
 .gal figure:hover img{transform:scale(1.04)}
