@@ -320,17 +320,15 @@ html{overflow-x:hidden}
   <div class="brand">BLADE<b>//</b>KAI <span class="jp">改</span></div>
   <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
   <div class="navlinks">
-    <a href="#overview">Overview</a>
+    <a href="index.html" class="active">Home</a>
     <a href="lore.html">Lore</a>
     <a href="mondo.html">Mondo</a>
-    <a href="#compete">Competitivo</a>
     <a href="classi.html">Classi</a>
     <a href="equipaggiamento.html">Equip</a>
     <a href="mezzi.html">Mezzi</a>
     <a href="modalita.html">Modalità</a>
     <a href="fazioni.html">Fazioni</a>
     <a href="progressione.html">Progressione</a>
-    <a href="#gallery">Art</a>
   </div>
 </nav>
 
@@ -659,14 +657,9 @@ navBtn.addEventListener('click',()=>{const open=navEl.classList.toggle('open');n
 // scroll reveal
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
-// nav active state
-const secs=[...document.querySelectorAll('section[id]')];
-const links=[...document.querySelectorAll('.navlinks a')];
 // close mobile menu on link tap
+const links=[...document.querySelectorAll('.navlinks a')];
 links.forEach(a=>a.addEventListener('click',()=>{navEl.classList.remove('open');navBtn.setAttribute('aria-expanded','false')}));
-const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
-  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-45% 0px -50% 0px'});
-secs.forEach(s=>spy.observe(s));
 // parallax hero (desktop only — on mobile the image is a static 16:9 block)
 const hi=document.querySelector('.hero-img');
 addEventListener('scroll',()=>{
