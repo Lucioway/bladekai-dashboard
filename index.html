@@ -12,7 +12,7 @@
   --bg:#070a0e; --bg2:#0b1118; --panel:#0e1620; --panel2:#121c28;
   --kai:#22e6ff; --kai-dim:#0e8aa0; --kai-deep:#063844;
   --amber:#ff9d3c; --amber-dim:#b3651f;
-  --ink:#dfe9f0; --ink-dim:#8aa0b0; --ink-faint:#5a6f7e;
+  --ink:#eaf2f8; --ink-dim:#b4c6d2; --ink-faint:#8ea2b0;
   --line:rgba(34,230,255,.14); --line-soft:rgba(120,160,180,.10);
   --red:#ff4d6d;
   --mono:'Chakra Petch',monospace; --disp:'Rajdhani',sans-serif; --jp:'Zen Kaku Gothic New',sans-serif;
@@ -28,9 +28,9 @@ body{
 }
 /* grain + scanlines */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
-  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);
-  mix-blend-mode:multiply;opacity:.35}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9997;opacity:.04;
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 1px,transparent 1px 3px);
+  mix-blend-mode:multiply;opacity:.22}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9997;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 ::selection{background:var(--kai);color:#04161c}
@@ -52,13 +52,36 @@ nav{
   padding:6px 11px;border:1px solid transparent;border-radius:2px;transition:.2s}
 .navlinks a:hover{color:var(--kai);border-color:var(--line);background:rgba(34,230,255,.05)}
 .navlinks a.active{color:var(--kai);border-color:var(--kai-dim);box-shadow:0 0 14px rgba(34,230,255,.15) inset}
-@media(max-width:1100px){
-  nav{gap:14px;padding:11px 16px}
-  .navlinks{margin-left:0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;mask-image:linear-gradient(90deg,transparent,#000 18px,#000 92%,transparent)}
-  .navlinks::-webkit-scrollbar{display:none}
-  .navlinks a{flex:none;padding:6px 9px;font-size:.66rem}
+/* hamburger button (hidden on desktop) */
+.navtoggle{display:none;margin-left:auto;width:42px;height:38px;border:1px solid var(--line);
+  background:rgba(34,230,255,.04);border-radius:5px;cursor:pointer;place-items:center;flex:none}
+.navtoggle span,.navtoggle span::before,.navtoggle span::after{content:"";display:block;width:18px;height:2px;
+  background:var(--kai);border-radius:2px;transition:.25s;box-shadow:0 0 6px rgba(34,230,255,.5)}
+.navtoggle span{position:relative}
+.navtoggle span::before{position:absolute;left:0;top:-6px}
+.navtoggle span::after{position:absolute;left:0;top:6px}
+nav.open .navtoggle span{background:transparent;box-shadow:none}
+nav.open .navtoggle span::before{transform:rotate(45deg);top:0}
+nav.open .navtoggle span::after{transform:rotate(-45deg);top:0}
+
+/* tablet: keep inline but tighter */
+@media(max-width:1100px) and (min-width:861px){
+  nav{gap:10px;padding:12px 18px}
+  .navlinks{margin-left:auto;gap:2px}
+  .navlinks a{padding:6px 8px;font-size:.66rem}
+}
+/* mobile: hamburger dropdown */
+@media(max-width:860px){
+  nav{flex-wrap:wrap;gap:0;padding:11px 16px;row-gap:0}
+  nav.open{background:rgba(6,9,13,.98);backdrop-filter:blur(16px)}
   .brand{font-size:1.05rem}
+  .navtoggle{display:grid}
+  .navlinks{order:3;flex-basis:100%;width:100%;margin:0;flex-direction:column;flex-wrap:nowrap;gap:0;
+    max-height:0;overflow:hidden;transition:max-height .32s ease;mask:none}
+  nav.open .navlinks{max-height:78vh;overflow-y:auto;margin-top:11px;padding-top:9px;border-top:1px solid var(--line)}
+  .navlinks a{padding:13px 8px;font-size:.8rem;border:0;border-bottom:1px solid var(--line-soft);border-radius:0;letter-spacing:.16em}
+  .navlinks a:last-child{border-bottom:0}
+  .navlinks a.active{box-shadow:none;border-color:transparent;border-bottom:1px solid var(--line-soft);padding-left:14px;border-left:2px solid var(--kai)}
 }
 
 /* ───── HERO ───── */
@@ -291,6 +314,7 @@ html{overflow-x:hidden}
 
 <nav>
   <div class="brand">BLADE<b>//</b>KAI <span class="jp">改</span></div>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
   <div class="navlinks">
     <a href="#overview">Overview</a>
     <a href="#lore">Lore</a>
@@ -616,12 +640,18 @@ html{overflow-x:hidden}
 </footer>
 
 <script>
+// mobile hamburger menu
+const navEl=document.querySelector('nav');
+const navBtn=document.querySelector('.navtoggle');
+navBtn.addEventListener('click',()=>{const open=navEl.classList.toggle('open');navBtn.setAttribute('aria-expanded',open)});
 // scroll reveal
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
 // nav active state
 const secs=[...document.querySelectorAll('section[id]')];
 const links=[...document.querySelectorAll('.navlinks a')];
+// close mobile menu on link tap
+links.forEach(a=>a.addEventListener('click',()=>{navEl.classList.remove('open');navBtn.setAttribute('aria-expanded','false')}));
 const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
   links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>spy.observe(s));
