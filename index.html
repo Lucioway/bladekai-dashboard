@@ -117,6 +117,10 @@ section{padding:90px 40px;max-width:1280px;margin:0 auto;position:relative}
 .sec-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);
   letter-spacing:.02em;line-height:1}
 .sec-head .jp{font-family:var(--jp);color:var(--ink-faint);font-size:1rem;font-weight:700}
+.sec-head .more{margin-left:auto;font-family:var(--disp);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--kai);padding:7px 14px;border:1px solid var(--kai-dim);border-radius:3px;transition:.2s;white-space:nowrap;align-self:center}
+.sec-head .more:hover{background:rgba(34,230,255,.08);box-shadow:0 0 16px rgba(34,230,255,.2);transform:translateX(3px)}
+@media(max-width:680px){.sec-head .more{margin-left:0;font-size:.66rem;padding:6px 10px;order:4}}
 .sec-sub{color:var(--ink-dim);max-width:760px;margin-bottom:42px;font-size:1.02rem}
 .divider{height:1px;background:linear-gradient(90deg,var(--kai-dim),transparent);margin:0 0 42px}
 
@@ -360,7 +364,7 @@ html{overflow-x:hidden}
 
 <!-- LORE -->
 <section id="lore">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Storia &amp; Lore</h2><span class="jp">物語</span></div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Storia &amp; Lore</h2><span class="jp">物語</span><a class="more" href="lore.html">Dettaglio →</a></div>
   <p class="sec-sub">Il KAI è arrivato dallo <b style="color:var(--kai)">spazio</b> con la Prima Caduta. Ha dato all'umanità energia infinita — e le ha avvelenato la Terra. Il paradosso fondante: <i>il materiale che ha ucciso il pianeta è l'unico motivo per cui siamo sopravvissuti.</i></p>
   <div class="grid g2">
     <div class="reveal">
@@ -405,7 +409,7 @@ html{overflow-x:hidden}
 
 <!-- WORLD -->
 <section id="world">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Il Mondo · La Cintura</h2><span class="jp">世界</span></div>
+  <div class="sec-head"><span class="sec-num">02</span><h2>Il Mondo · La Cintura</h2><span class="jp">世界</span><a class="more" href="mondo.html">Dettaglio →</a></div>
   <p class="sec-sub">Un continente a cluster stile Albion + patchwork di terreni stile GGO. Gradiente sud→nord: più sali, più rischi. <b>Niente teletrasporto tra città — il viaggio è il gioco.</b></p>
 
   <h3 style="font-family:var(--disp);color:var(--kai);letter-spacing:.1em;margin:0 0 16px;font-size:1.1rem">LE 5 CITTÀ</h3>
@@ -473,7 +477,7 @@ html{overflow-x:hidden}
 
 <!-- CLASSES -->
 <section id="classes">
-  <div class="sec-head"><span class="sec-num">04</span><h2>Le 5 Classi</h2><span class="jp">職業</span></div>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le 5 Classi</h2><span class="jp">職業</span><a class="more" href="classi.html">Dettaglio →</a></div>
   <p class="sec-sub">Niente statistiche del personaggio: la classe fissa il corpo, la potenza è arma + mano del player. Counter circle morbido — la skill ribalta tutto. Il 5v5 schiera una di ogni classe.</p>
   <div class="clsgrid">
     <div class="clscard reveal" style="--c:#22e6ff">
@@ -536,7 +540,7 @@ html{overflow-x:hidden}
 
 <!-- EQUIPMENT -->
 <section id="equip">
-  <div class="sec-head"><span class="sec-num">05</span><h2>Equipment</h2><span class="jp">装備</span></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Equipment</h2><span class="jp">装備</span><a class="more" href="equipaggiamento.html">Dettaglio →</a></div>
   <p class="sec-sub">Doppio binario armi (lezione GGO). <b>Niente bonus casuali</b>: stat fisse per modello + stadio di Risonanza. In un TPS conta la mira, non il roll.</p>
   <div class="grid g2 reveal">
     <div class="card"><div class="role" style="color:var(--kai)">OTTICHE — energia KAI</div><p>Leggere, precise, range lungo. <b>Disperse dai campi difensivi</b> → ruolo PvE. Estetica sci-fi, glow ciano.</p></div>
@@ -565,7 +569,7 @@ html{overflow-x:hidden}
 
 <!-- MOVEMENT -->
 <section id="move">
-  <div class="sec-head"><span class="sec-num">06</span><h2>Movimento &amp; Mezzi</h2><span class="jp">移動</span></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Movimento &amp; Mezzi</h2><span class="jp">移動</span><a class="more" href="mezzi.html">Dettaglio →</a></div>
   <p class="sec-sub">Velocità = stat stile Metin2 (solo da equip, capped). Tier 0 = il corpo (wall-run, dash), unico ammesso in dungeon e arene. Poi la scala dei mezzi.</p>
   <div class="tbl-wrap"><table class="tbl reveal">
     <tr><th>T</th><th>Mezzo</th><th>Dove</th><th>Note</th></tr>
@@ -581,7 +585,7 @@ html{overflow-x:hidden}
 
 <!-- MODES -->
 <section id="modes">
-  <div class="sec-head"><span class="sec-num">07</span><h2>Modalità di Gioco</h2><span class="jp">対戦</span></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2>Modalità di Gioco</h2><span class="jp">対戦</span><a class="more" href="modalita.html">Dettaglio →</a></div>
   <p class="sec-sub">Tutte istanziate (hub low-tickrate, match high-tickrate). Bot ovunque: nessuna lobby vuota, mai.</p>
   <div class="grid g3">
     <div class="card reveal"><div class="role" style="color:var(--kai)">v1</div><h3>Deathmatch</h3><p>1v1 · 3v3 · 5v5. Prima a 40 kill o timer 10 min. Arene verticali S4-style. L'arco fun-in-10-minutes.</p></div>
@@ -595,7 +599,7 @@ html{overflow-x:hidden}
 
 <!-- FACTIONS -->
 <section id="factions">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Sponsor del Circuito</h2><span class="jp">陣営</span></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Sponsor del Circuito</h2><span class="jp">陣営</span><a class="more" href="fazioni.html">Dettaglio →</a></div>
   <p class="sec-sub">Ogni sponsor = estetica + format torneo + una faccia della società post-Ritorno. Asse di fondo: <b>capitale novaediano vs orgoglio terrestre</b>.</p>
   <div class="grid g2">
     <div class="card reveal"><div class="fac"><div class="crest" style="color:#fff;background:linear-gradient(135deg,#fff3,#0000);border-color:#fff6">H</div><div><h3 style="font-size:1.25rem">HALCYON GROUP</h3><div class="role">Il capitale di Nova Eden</div><p>Lo sponsor più ricco. Bianco-oro, perfetto, l'opposto delle rovine. I bracket d'élite. Raccoglie dati biometrici dei duelli…</p></div></div></div>
@@ -608,7 +612,7 @@ html{overflow-x:hidden}
 
 <!-- PROGRESSION -->
 <section id="progress">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Progressione</h2><span class="jp">昇格</span></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Progressione</h2><span class="jp">昇格</span><a class="more" href="progressione.html">Dettaglio →</a></div>
   <p class="sec-sub">COD-style: livello 0→100, poi 4 prestigi. Il livello sblocca <b>opzioni e accessi</b>, mai potenza. Le ricompense prestigio sono solo cosmetiche/status.</p>
   <div class="grid g4">
     <div class="card reveal" style="border-color:rgba(205,127,50,.3)"><div class="icon">🜚</div><h3 style="font-size:1.2rem;color:#cd7f32">P1 · RITORNANTE</h3><p>Mantello esclusivo + titolo in città. Badge bronzo: la nave del Ritorno.</p></div>
@@ -623,10 +627,18 @@ html{overflow-x:hidden}
   <div class="sec-head"><span class="sec-num">10</span><h2>Art &amp; Concept</h2><span class="jp">画</span></div>
   <p class="sec-sub">Direzione visiva: anime cyberpunk KR/JP, DNA S4 League, glow KAI ciano come accento unificante, silhouette leggibili per classe.</p>
   <div class="gal">
-    <figure class="reveal"><img src="assets/kaigan.jpg" alt="Kaigan establishing shot" loading="lazy">
-      <figcaption><b>KAIGAN · Establishing</b><span class="meta">La prima città del Ritorno — cupola d'aria, gradiente cromato→neon, ologramma duello in Plaza · 16:9 · 4K</span></figcaption></figure>
+    <figure class="reveal"><img src="assets/keyart-title.jpg" alt="BLADE//KAI key art" loading="lazy">
+      <figcaption><b>BLADE//KAI · Key Art</b><span class="meta">Duellante solitario sulla Kaigan al tramonto, lama KAI levata · 16:9</span></figcaption></figure>
     <figure class="reveal"><img src="assets/kenshi.jpg" alt="Kenshi character concept" loading="lazy">
-      <figcaption><b>KENSHI · Character</b><span class="meta">Classe-simbolo, techwear leggero, katana fotonica ciano · 9:16 · 4K</span></figcaption></figure>
+      <figcaption><b>KENSHI · Character</b><span class="meta">Classe-simbolo, techwear leggero, katana fotonica ciano · 9:16</span></figcaption></figure>
+  </div>
+  <div class="grid g3" style="margin-top:18px">
+    <figure class="reveal" style="position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)"><img src="assets/city-sepolcro.jpg" alt="Sepolcro" loading="lazy" style="width:100%;display:block">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,rgba(7,10,14,.95));font-size:.78rem"><b style="font-family:var(--disp);color:var(--kai);display:block">SEPOLCRO</b><span style="color:var(--ink-faint)">Megacittà morta — dungeon verticale</span></figcaption></figure>
+    <figure class="reveal" style="position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)"><img src="assets/city-fornace.jpg" alt="Fornace" loading="lazy" style="width:100%;display:block">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,rgba(7,10,14,.95));font-size:.78rem"><b style="font-family:var(--disp);color:var(--kai);display:block">FORNACE</b><span style="color:var(--ink-faint)">Città mineraria Halcyon</span></figcaption></figure>
+    <figure class="reveal" style="position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)"><img src="assets/city-velo.jpg" alt="Velo" loading="lazy" style="width:100%;display:block">
+      <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px;background:linear-gradient(transparent,rgba(7,10,14,.95));font-size:.78rem"><b style="font-family:var(--disp);color:var(--kai);display:block">VELO</b><span style="color:var(--ink-faint)">Frontiera prima dell'Epicentro</span></figcaption></figure>
   </div>
 </section>
 
