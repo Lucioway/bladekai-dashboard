@@ -119,10 +119,40 @@ section{padding:90px 40px;max-width:1280px;margin:0 auto;position:relative}
 .card li{padding:4px 0 4px 18px;position:relative}
 .card li::before{content:"▸";position:absolute;left:0;color:var(--kai-dim)}
 
-/* class cards */
-.cls .stars{color:var(--kai);font-size:.85rem;letter-spacing:2px}
-.cls .stat{display:flex;justify-content:space-between;font-size:.8rem;padding:3px 0;border-bottom:1px dashed var(--line-soft)}
-.cls .stat span:first-child{color:var(--ink-faint);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem}
+/* class cards (redesigned) */
+.clsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:960px){.clsgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.clsgrid{grid-template-columns:1fr}}
+.clscard{position:relative;background:linear-gradient(165deg,var(--panel),var(--bg2));
+  border:1px solid var(--line-soft);border-radius:6px;padding:20px 22px;overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+.clscard::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--c);box-shadow:0 0 18px var(--c)}
+.clscard:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--c) 45%,transparent);
+  box-shadow:0 20px 44px -24px var(--c)}
+.clshead{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+.clsbadge{width:46px;height:46px;flex:none;border-radius:9px;display:grid;place-items:center;font-size:1.5rem;
+  background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 42%,transparent);
+  filter:drop-shadow(0 0 8px color-mix(in srgb,var(--c) 50%,transparent))}
+.clshead h3{font-family:var(--disp);font-size:1.38rem;font-weight:700;letter-spacing:.04em;line-height:1.05}
+.clshead .role{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c)}
+.clscard>p{font-size:.89rem;color:var(--ink-dim);line-height:1.55;flex:1}
+.meters{margin:15px 0 13px;display:grid;gap:8px}
+.meter{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:11px}
+.meter>span{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
+.bar{display:flex;gap:3px}
+.bar i{height:6px;flex:1;border-radius:1px;background:rgba(255,255,255,.07);transition:.4s}
+.bar i.on{background:var(--c);box-shadow:0 0 7px color-mix(in srgb,var(--c) 55%,transparent)}
+.clsftr{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line-soft);padding-top:11px;
+  font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.clsftr b{color:var(--c);font-weight:600}
+.clsftr .arr{color:var(--c);opacity:.6}
+.clscircle{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+  background:linear-gradient(165deg,rgba(34,230,255,.04),var(--bg2));border:1px dashed var(--line);
+  border-radius:6px;padding:22px;text-align:center;margin-top:0}
+.clscircle .lbl{font-family:var(--disp);color:var(--kai);letter-spacing:.16em;font-size:.8rem}
+.clscircle .chain{font-family:var(--disp);font-size:1.05rem;color:var(--ink);letter-spacing:.02em}
+.clscircle .chain b{color:var(--kai)} .clscircle .chain .a{color:var(--ink-faint);padding:0 4px}
+.clscircle small{display:block;color:var(--ink-faint);font-size:.72rem;margin-top:4px;letter-spacing:.08em}
 .icon{font-size:1.8rem;line-height:1;margin-bottom:10px;filter:drop-shadow(0 0 10px rgba(34,230,255,.4))}
 
 /* timeline */
@@ -392,25 +422,62 @@ footer b{color:var(--kai)}
 <section id="classes">
   <div class="sec-head"><span class="sec-num">04</span><h2>Le 5 Classi</h2><span class="jp">職業</span></div>
   <p class="sec-sub">Niente statistiche del personaggio: la classe fissa il corpo, la potenza è arma + mano del player. Counter circle morbido — la skill ribalta tutto. Il 5v5 schiera una di ogni classe.</p>
-  <div class="grid g3">
-    <div class="card cls reveal"><div class="icon">⚔️</div><h3>KENSHI</h3><div class="role">La Lama · melee</div>
+  <div class="clsgrid">
+    <div class="clscard reveal" style="--c:#22e6ff">
+      <div class="clshead"><div class="clsbadge">⚔️</div><div><h3>KENSHI</h3><div class="role">La Lama · melee</div></div></div>
       <p>Il BLADE KAI. Classe-simbolo, la più difficile. Deflessione a timing, dash chain, gestione batteria/overheat.</p>
-      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★★★</span></div></div>
-    <div class="card cls reveal"><div class="icon">🔫</div><h3>STRIKER</h3><div class="role">Il Velocista · run&amp;gun</div>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+      </div>
+      <div class="clsftr">Forte vs <span class="arr">▸</span> <b>Heavy</b></div>
+    </div>
+    <div class="clscard reveal" style="--c:#5bd17a">
+      <div class="clshead"><div class="clsbadge">🔫</div><div><h3>STRIKER</h3><div class="role">Il Velocista · run&amp;gun</div></div></div>
       <p>Mercenario agile, controlla il ritmo. Slide &amp; strafe shooting, hit-and-run, lettura Bullet Line.</p>
-      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★</span></div></div>
-    <div class="card cls reveal"><div class="icon">🛡️</div><h3>HEAVY</h3><div class="role">Il Bastione · tank</div>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+      </div>
+      <div class="clsftr">Forte vs <span class="arr">▸</span> <b>Phantom</b></div>
+    </div>
+    <div class="clscard reveal" style="--c:#ff4d6d">
+      <div class="clshead"><div class="clsbadge">🛡️</div><div><h3>HEAVY</h3><div class="role">Il Bastione · tank</div></div></div>
       <p>Macchina da guerra. Soppressione (allarga il Circle nemico), spin-up minigun, campo difensivo anti-ottiche.</p>
-      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★</span></div></div>
-    <div class="card cls reveal"><div class="icon">🎯</div><h3>PHANTOM</h3><div class="role">L'Ombra · sniper</div>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+      </div>
+      <div class="clsftr">Forte vs <span class="arr">▸</span> <b>Striker</b></div>
+    </div>
+    <div class="clscard reveal" style="--c:#b08fff">
+      <div class="clshead"><div class="clsbadge">🎯</div><div><h3>PHANTOM</h3><div class="role">L'Ombra · sniper</div></div></div>
       <p>Vince prima che il fight inizi. Heartbeat sniping, first-shot-unseen, spotting superiore, mantello camo.</p>
-      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★★</span></div></div>
-    <div class="card cls reveal"><div class="icon">🔧</div><h3>WARDEN</h3><div class="role">Il Custode · supporto</div>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+      </div>
+      <div class="clsftr">Forte vs <span class="arr">▸</span> <b>Warden</b></div>
+    </div>
+    <div class="clscard reveal" style="--c:#2fd6c6">
+      <div class="clshead"><div class="clsbadge">🔧</div><div><h3>WARDEN</h3><div class="role">Il Custode · supporto</div></div></div>
       <p>L'ingegnere del KAI. Drone riparatore, impulso EMP (scarica le lame!), barriera deployabile, marcatura tattica.</p>
-      <div style="margin-top:14px"><div class="stat"><span>Mobilità</span><span class="stars">★★★</span></div><div class="stat"><span>Resistenza</span><span class="stars">★★★★</span></div><div class="stat"><span>Difficoltà</span><span class="stars">★★★</span></div></div>
-    <div class="card reveal" style="display:grid;place-items:center;text-align:center;border-style:dashed">
-      <div><p style="color:var(--kai);font-family:var(--disp);letter-spacing:.1em;margin-bottom:8px">COUNTER CIRCLE</p>
-      <p style="font-size:.85rem;color:var(--ink-dim)">Kenshi › Heavy › Striker › Phantom › Warden › Kenshi<br><span style="color:var(--ink-faint)">tendenza, non hard-counter</span></p></div>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+      </div>
+      <div class="clsftr">Forte vs <span class="arr">▸</span> <b>Kenshi</b></div>
+    </div>
+    <div class="clscircle reveal">
+      <span class="lbl">COUNTER CIRCLE</span>
+      <div><div class="chain"><b>Kenshi</b><span class="a">›</span><b>Heavy</b><span class="a">›</span><b>Striker</b><span class="a">›</span><b>Phantom</b><span class="a">›</span><b>Warden</b><span class="a">›</span><b>Kenshi</b></div>
+      <small>tendenza, non hard-counter — la skill ribalta tutto</small></div>
+    </div>
   </div>
 </section>
 
