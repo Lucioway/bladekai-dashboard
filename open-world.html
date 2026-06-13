@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Open World · Extraction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.loop{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:10px 0 4px}
+@media(max-width:760px){.loop{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.loop .step{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
+  border-top:2px solid var(--kai);border-radius:5px;padding:14px 12px;text-align:center}
+.loop .step b{display:block;font-family:var(--disp);color:var(--kai);font-size:.95rem;letter-spacing:.05em;margin-bottom:3px}
+.loop .step span{font-size:.78rem;color:var(--ink-dim)}
+.zone-row td:first-child{font-family:var(--disp);letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="lore.html">Lore</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="open-world.html" class="active">Extraction</a>
+    <a href="classi.html">Classi</a>
+    <a href="armi.html">Armi</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="modalita.html">Modalità</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="progressione.html">Progressione</a>
+  </div>
+</nav>
+
+<div class="phero img">
+  <div class="phero-bg" style="background-image:url('assets/dungeon-kai.jpg')"></div>
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Open World · Extraction</div>
+    <h1>Open World · Extraction <span class="jp">脱出</span></h1>
+    <p class="lede">Un <b>MMORPG open-world ad estrazione</b>. Entri, farmi, lootti — e devi <b>portare a casa il bottino vivo</b>. Il loot non è tuo finché non lo depositi. Modello <b>ARC Raiders / Tarkov</b> tunato sul movimento S4 League.</p>
+  </div>
+</div>
+
+<!-- IL LOOP -->
+<section id="loop">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Il Loop di Estrazione</h2><span class="jp">循環</span></div>
+  <p class="sec-sub">La "partita" è la tua <b>sessione</b>. La "vittoria" è un'estrazione riuscita col bag pieno. Vincere uno scontro non basta: devi <b>sopravvivere all'uscita</b>.</p>
+  <div class="loop reveal">
+    <div class="step"><b>① Entra</b><span>scegli la zona = scegli il rischio</span></div>
+    <div class="step"><b>② Farma</b><span>mob, élite, world-boss</span></div>
+    <div class="step"><b>③ Lootta</b><span>PvE + bag dei player uccisi</span></div>
+    <div class="step"><b>④ Snowball</b><span>più lootti, più sei carico… e cacciato</span></div>
+    <div class="step"><b>⑤ Estrai</b><span>deposita in città = banchi la run</span></div>
+  </div>
+  <div class="note reveal" style="margin-top:20px"><b>Death = molli la run —</b> muori e perdi il bottino della sessione (non la banca depositata). È il rischio che fa sentire <i>guadagnato</i> ogni reward. L'estrazione riuscita è la tua Victory Royale.</div>
+</section>
+
+<!-- PvP A 2 TRIGGER -->
+<section id="pvp">
+  <div class="sec-head"><span class="sec-num">02</span><h2>PvP a 2 Trigger</h2><span class="jp">交戦</span></div>
+  <p class="sec-sub">Niente PK selvaggio ovunque. Nelle zone basse si combatte solo a due condizioni — farmi quasi-safe finché non scegli (o vieni scelto).</p>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Trigger 1</div><h3>Assassino</h3>
+      <p>Un player flaggato <b>karma negativo</b> può attaccarti anche in zona gialla. Ma il PK ha un <b>costo</b>: karma da Assassino → taglia sulla testa, sanzioni in città, bersaglio legittimo ovunque. Sistema Metin2 — il predatore paga.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Trigger 2</div><h3>Battaglia su Richiesta</h3>
+      <p>Duello <b>consensuale</b>: lanci o accetti una sfida. Zero costo karma, entrambi dentro di volontà. Lo skill-player che cerca il fight lo trova, chi vuole solo farmare resta tranquillo.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Nelle zone alte (rossa/nera) salta tutto —</b> PvP aperto a chiunque. Lì l'extraction è hardcore: ci vai sapendo che chiunque può colpirti.</div>
+</section>
+
+<!-- GRADIENTE ZONE -->
+<section id="zone">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le Zone — Rischio vs Ricompensa</h2><span class="jp">区域</span></div>
+  <p class="sec-sub">Il livello di PvP e la <b>penalità di morte</b> sono proprietà del terreno. Sai sempre quanto rischi da dove ti trovi. <b>Scegli tu quanto fondo andare.</b></p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Zona</th><th>PvP</th><th>Alla morte perdi</th><th>Profilo</th></tr>
+    <tr class="zone-row"><td><span class="pill t-cyan">Città</span></td><td>Disabilitato</td><td>Niente</td><td>Hub, deposito, social, tornei</td></tr>
+    <tr class="zone-row"><td><span class="pill t-green">Gialla</span></td><td>Assassini + duelli</td><td><b>Niente</b></td><td>Farm safe, onboarding</td></tr>
+    <tr class="zone-row"><td><span class="pill t-red">Rossa</span></td><td>Aperto</td><td>Il <b>bag</b> (loot run) · equip salvo</td><td>Extraction, rischio medio</td></tr>
+    <tr class="zone-row"><td><span class="pill t-black">Nera</span></td><td>Aperto</td><td>Bag <b>+ 1 item d'equip</b> (scelto dal killer)</td><td>Apex, loot top, mortalità top</td></tr>
+  </table></div>
+  <div class="quote reveal" style="margin-top:18px">Il loot non è tuo finché non lo depositi. <b>Il viaggio di ritorno è il gioco vero.</b></div>
+</section>
+
+<!-- TABELLA PERDITA -->
+<section id="perdita">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Cosa Perdi alla Morte</h2><span class="jp">損失</span></div>
+  <p class="sec-sub">Il cuore dell'extraction: la posta. Tunata <b>accessibile (stile ARC), non brutale (stile Tarkov)</b> — perché la paura del gear porta al ratting, e noi vogliamo che la gente <b>combatta</b>.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Sempre salvo</div><h3>Skin</h3><p>Cosmetico guadagnato/comprato: <b>mai perdibile</b>, in nessuna zona. Intoccabile — è status, non potenza.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Nera — il furto</div><h3>1 item, scelto dal killer</h3><p>Chi ti uccide in zona nera prende <b>1 pezzo del tuo equip a sua scelta</b> — <b>leggendarie incluse</b>. Ogni kill = un payday vero.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Il counterplay</div><h3>Furto = bersaglio</h3><p>L'item rubato finisce nel <b>bag del killer</b> → deve estrarlo a sua volta → diventa il più cacciato. Il derubato gli dà la caccia. <b>Quella è la clip.</b></p></div>
+  </div>
+  <div class="note reveal" style="margin-top:20px"><b>Leggendarie —</b> rubabili (è il brivido), ma <b>rare e ri-ottenibili senza grind estremo</b>: perderne una = setback + storia di vendetta, mai rage-quit permanente. Restano in circolo → l'economia respira.</div>
+  <div class="quote reveal" style="margin-top:18px">Full-loot tunato: solo le skin sono sacre. Tutto il resto è in palio — ed è lì che nascono le storie.</div>
+</section>
+
+<!-- PERCHÉ ENTRARE -->
+<section id="perche">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Arena vs Mondo — Perché Entri</h2><span class="jp">理由</span></div>
+  <p class="sec-sub">L'arena è la palestra equa: normalizzata, respawn, posta zero. Il mondo è dove la <b>skill viene messa alla prova davvero</b>, su dimensioni che l'arena non può avere.</p>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Arena</div><h3>Esecuzione in scatola</h3><p>Stat normalizzate, info perfetta, niente perdita. Pari, simmetrico, "il più bravo tra uguali". Cap fisso. La palestra dove ti alleni e fai ranked pulita.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Open World</div><h3>Skill sotto pressione vera</h3><p>Stakes irreversibili, info imperfetta, terze parti, risorse finite, <b>nessun cap</b>. Out-skillare chi aveva il vantaggio = proof che l'arena pari non concede. L'unico posto dove <b>domini davvero</b>.</p></div>
+  </div>
+  <div class="grid g4" style="margin-top:18px">
+    <div class="card reveal"><h3 style="font-size:1.05rem">Stakes reali</h3><p>Perdita vera > respawn. La skill sotto pressione-di-perdita pesa.</p></div>
+    <div class="card reveal"><h3 style="font-size:1.05rem">Successo = calore</h3><p>Più vinci, più sei carico e cacciato. Difficoltà che sale col successo, senza reset.</p></div>
+    <div class="card reveal"><h3 style="font-size:1.05rem">Proof asimmetrica</h3><p>Vinci da under-geared = "sono migliore", non "avevo l'arma".</p></div>
+    <div class="card reveal"><h3 style="font-size:1.05rem">Avversario migliore</h3><p>I più forti, le poste più alte vivono qui. Lo skill-player insegue chi lo può battere.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:20px"><b>Il ponte resta intatto —</b> dal mondo all'arena passano solo <b>crediti, accessi, estetica</b>. La potenza non attraversa mai: l'arena resta skill pura, il mondo resta il rischio.</div>
+</section>
+
+<!-- MERCATO -->
+<section id="mercato">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Posizionamento</h2><span class="jp">市場</span></div>
+  <p class="sec-sub">La domanda Battle Royale è migrata sull'<b>extraction</b> (ARC Raiders 14-15M). Noi prendiamo quella tasca e ci aggiungiamo ciò che nessuno ha.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Modello</th><th>Cosa dà</th><th>Cosa manca</th></tr>
+    <tr><td><strong>Tarkov</strong></td><td>Profondità extraction, full-loot</td><td>Gear-fear, lento, hardcore, nessuna porta safe</td></tr>
+    <tr><td><strong>ARC Raiders</strong></td><td>Extraction accessibile, veloce</td><td>Niente spada/movimento stiloso, niente anime</td></tr>
+    <tr><td><strong>BLADE//KAI</strong></td><td>Reward-depth Tarkov + accessibilità ARC + <b>movimento S4L</b> + <b>spada</b> + <b>anime</b> + <b>arena come porta safe</b></td><td>— (whitespace)</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:18px"><b>Scope v1 —</b> niente dungeon istanziati per ora: il loot top viene da <b>mob d'élite e world-boss a cielo aperto</b> (es. la <a href="mondo.html" style="color:var(--kai)">pietra KAI</a> come boss contestato nel mondo, non come istanza). Più coerente con l'extraction, meno scope da costruire.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="mondo.html"><span>Precedente</span><b>← Il Mondo</b></a>
+  <a class="cn next" href="classi.html"><span>Prossimo</span><b>Le 5 Classi →</b></a>
+</div>
+
+<footer>
+  <div class="tagline">Il loot non è tuo finché non <span>esci vivo</span>.</div>
+  BLADE<b>//</b>KAI 改 · Design Bible · Open World · Extraction
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
