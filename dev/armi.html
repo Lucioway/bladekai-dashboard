@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Armi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:980px){.wgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.wgrid{grid-template-columns:1fr}}
+.wcard{background:linear-gradient(165deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
+  border-radius:7px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.wcard:hover{border-color:color-mix(in srgb,var(--c) 45%,transparent);transform:translateY(-4px);
+  box-shadow:0 20px 44px -24px var(--c)}
+.wcard .shot{position:relative;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--c) 12%,var(--bg2)),var(--bg));aspect-ratio:1/1;overflow:hidden}
+.wcard .shot::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);box-shadow:0 0 16px var(--c);z-index:2}
+.wcard .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.wcard .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.wcard h3{font-family:var(--disp);font-size:1.25rem;letter-spacing:.03em;margin-bottom:8px;color:var(--ink)}
+.wtags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.wtag{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.wcard p{font-size:.86rem;color:var(--ink-dim);line-height:1.5;flex:1}
+.wstats{display:grid;gap:6px;margin:12px 0 4px}
+.wstat{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:9px}
+.wstat>span{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.wbar{display:flex;gap:2px}.wbar i{height:6px;flex:1;border-radius:1px;background:rgba(255,255,255,.07)}
+.wbar i.on{background:var(--c);box-shadow:0 0 6px color-mix(in srgb,var(--c) 55%,transparent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="movement.html">Movement</a>
+    <a href="combat.html">Combat</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="lore.html">Lore</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="classi.html">Classi</a>
+    <a href="armi.html" class="active">Armi</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="modalita.html">Modalità</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="shop.html">Shop</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Armi</div>
+    <h1>Armi <span class="jp">武器</span></h1>
+    <p class="lede">Il roster completo. Dualità: <b>1 melee + 1 gun</b>, loadout libero, switch istantaneo. Tre famiglie — <b>lame</b> (melee), <b>ottiche</b> (energia KAI, deflettibili) e <b>balistiche</b> (polvere, NON deflettibili). Stat fisse per modello: <b>conta la mira, non il roll</b>. Pagina-vetrina; il modello canonico è in <a href="weapons.html" style="color:var(--kai)">Weapons</a>.</p>
+  </div>
+</div>
+
+<!-- FILOSOFIA -->
+<section id="filosofia">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Come si Leggono le Armi</h2><span class="jp">読み方</span></div>
+  <p class="sec-sub">Ogni arma ha tre barre — <b>Danno</b>, <b>Gittata</b>, <b>Cadenza</b> — e due etichette: la <b>classe</b> a cui si lega e il dominio <b>PvE / PvP</b> dove rende meglio. Le ottiche brillano (ciano) ma si spengono nei campi difensivi; le balistiche bucano i campi ma hanno munizioni finite.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Energia KAI</div><h3>Ottiche</h3><p>Glow ciano, precise, "munizioni infinite". Forti in PvE, deboli contro le schermature dell'Heavy.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Polvere da sparo</div><h3>Balistiche</h3><p>Opache, danno alto, perforano i campi. Munizioni finite, balistica reale. Spina dorsale del PvP.</p></div>
+    <div class="card reveal" style="--c:#22e6ff"><div class="role" style="color:#7fe3f0">Luce solida</div><h3>Lame Fotoniche</h3><p>Melee per tutti (loadout libero). Danno enorme a distanza zero; la <b>Spada</b> porta la deflessione (cono-stato, para i proiettili energia). La firma high-skill.</p></div>
+  </div>
+</section>
+
+<!-- LAME -->
+<section id="lame">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Lame Fotoniche</h2><span class="jp">光刃</span></div>
+  <p class="sec-sub">L'arma-simbolo del gioco. Corpo a corpo: la <b>Spada</b> deflette i proiettili energia (cono-stato in guardia), la <b>Counter Sword</b> contra i fendenti (anti-melee), il <b>Bat</b> sbalza. Switch lampo col gun.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-blade-standard.jpg" alt="Katana fotonica" loading="lazy"></div><div class="body">
+      <h3>Katana Fotonica</h3><div class="wtags"><span class="wtag" style="color:#22e6ff">Kenshi</span><span class="wtag" style="color:#7fe3f0">Melee</span><span class="wtag" style="color:#5bd17a">PvP/PvE</span></div>
+      <p>La lama standard del BLADE KAI. Para i proiettili, chiude la distanza in dash chain, consuma carica e surriscalda. Danno devastante a contatto.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#e8d68a"><div class="shot"><img src="assets/weap-blade-alba.jpg" alt="ALBA lama leggendaria" loading="lazy"></div><div class="body">
+      <h3>ALBA <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— leggendaria</span></h3><div class="wtags"><span class="wtag" style="color:#e8d68a">Leggendaria</span><span class="wtag" style="color:#22e6ff">Kenshi</span><span class="wtag" style="color:#b08fff">Endgame</span></div>
+      <p>La prima lama del Monaco, bianco-oro, sparita da cinque anni. Non è solo l'arma più forte: è il mito che impugni. Chi la ritrova eredita l'inizio della Via.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- OTTICHE -->
+<section id="ottiche">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Ottiche — Energia KAI</h2><span class="jp">光学</span></div>
+  <p class="sec-sub">Leggere e precise, glow ciano. Dominano il PvE e il poke a distanza — ma il campo anti-ottiche dell'Heavy le spegne.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-pulse-carbine.jpg" alt="Pulse Carbine" loading="lazy"></div><div class="body">
+      <h3>Pulse Carbine</h3><div class="wtags"><span class="wtag" style="color:#5bd17a">Striker/Jolly</span><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#22e6ff">PvE</span></div>
+      <p>Carabina a impulsi versatile, raggio medio. L'arma d'ingresso al mondo delle ottiche: affidabile, precisa, perdona poco ma chiede poco.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-beam-rifle.jpg" alt="Beam Rifle" loading="lazy"></div><div class="body">
+      <h3>Beam Rifle</h3><div class="wtags"><span class="wtag" style="color:#b08fff">Phantom</span><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#22e6ff">PvE</span></div>
+      <p>Fucile a raggio di precisione, gittata lunga. Premia il piazzamento e il primo colpo. Il raggio continuo punisce chi sta allo scoperto troppo a lungo.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-arc-smg.jpg" alt="Arc SMG" loading="lazy"></div><div class="body">
+      <h3>Arc SMG</h3><div class="wtags"><span class="wtag" style="color:#5bd17a">Striker</span><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#22e6ff">PvE</span></div>
+      <p>Mitraglietta a energia ravvicinata: cadenza altissima, bobine ciano roventi. Brucia bersagli vicini in un lampo, ma il raggio crolla a distanza.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-kai-sniper.jpg" alt="KAI Sniper" loading="lazy"></div><div class="body">
+      <h3>KAI Sniper</h3><div class="wtags"><span class="wtag" style="color:#b08fff">Phantom</span><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#22e6ff">PvE</span></div>
+      <p>Fucile di precisione a energia, raggio estremo. Il braccio lungo dell'Ombra in PvE: colpo carico, niente caduta del proiettile, pura linea di luce.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- BALISTICHE -->
+<section id="balistiche">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Balistiche — Polvere da Sparo</h2><span class="jp">実弾</span></div>
+  <p class="sec-sub">Pesanti, opache, letali. Perforano i campi difensivi e dominano il PvP — al prezzo di munizioni finite e di una balistica vera da gestire.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-pistol.jpg" alt="Service Pistol" loading="lazy"></div><div class="body">
+      <h3>Service Pistol</h3><div class="wtags"><span class="wtag" style="color:#b4c6d2">Tutte</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">PvP</span></div>
+      <p>La sidearm universale. Ogni classe la porta come riserva: affidabile, sempre carica quando il primario è a secco. La rete di sicurezza.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-smg.jpg" alt="SMG balistico" loading="lazy"></div><div class="body">
+      <h3>SMG Balistico</h3><div class="wtags"><span class="wtag" style="color:#5bd17a">Striker</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">PvP</span></div>
+      <p>Mitraglietta a polvere: cadenza alta e perforazione. L'arma da run-and-gun dello Striker quando serve bucare una schermatura nemica.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-assault.jpg" alt="Assault Rifle" loading="lazy"></div><div class="body">
+      <h3>Assault Rifle</h3><div class="wtags"><span class="wtag" style="color:#b4c6d2">Versatile</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">PvP</span></div>
+      <p>Il cavallo da battaglia: equilibrio tra danno, gittata e cadenza. Buono in ogni mano, eccellente in nessuna — la scelta sicura del PvP.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff4d6d"><div class="shot"><img src="assets/weap-minigun.jpg" alt="Minigun" loading="lazy"></div><div class="body">
+      <h3>Minigun</h3><div class="wtags"><span class="wtag" style="color:#ff4d6d">Heavy</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">PvP</span></div>
+      <p>Cannone rotante a canne multiple. Tempo di spin-up prima del DPS massimo: chi lo coglie a freddo lo punisce, chi lo subisce a regime viene falciato.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-shotgun.jpg" alt="Shotgun" loading="lazy"></div><div class="body">
+      <h3>Combat Shotgun</h3><div class="wtags"><span class="wtag" style="color:#b4c6d2">Ravvicinata</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">PvP</span></div>
+      <p>Fucile a pompa da distanza zero. Un colpo per spezzare un ingaggio negli angoli stretti del Sepolcro — vuoto, sei carne morta finché ricarichi.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#b08fff"><div class="shot"><img src="assets/weap-bolt-sniper.jpg" alt="Bolt Sniper anti-materiale" loading="lazy"></div><div class="body">
+      <h3>Bolt Sniper A-M</h3><div class="wtags"><span class="wtag" style="color:#b08fff">Phantom</span><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ff4d6d">Anti-tank</span></div>
+      <p>Fucile anti-materiale a otturatore. Lento, pesante, perforante: l'unica risposta del Phantom contro un Heavy schermato. Un colpo, una sentenza.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- UTILITY -->
+<section id="utility">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Utility — Warden</h2><span class="jp">支援</span></div>
+  <p class="sec-sub">Non fanno i kill: li abilitano. Strumenti che controllano il terreno e spengono le abilità nemiche.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#2fd6c6"><div class="shot"><img src="assets/weap-emp-gauntlet.jpg" alt="EMP Gauntlet" loading="lazy"></div><div class="body">
+      <h3>EMP Gauntlet</h3><div class="wtags"><span class="wtag" style="color:#2fd6c6">Warden</span><span class="wtag" style="color:#2fd6c6">Utility</span><span class="wtag" style="color:#5bd17a">PvP/PvE</span></div>
+      <p>Guanto a impulso elettromagnetico. <b>Scarica le lame</b> dei Kenshi e annulla le ottiche nel raggio: il grande contro alla classe-simbolo. L'arma che vince le partite senza un kill.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Controllo</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+  </div>
+  <div class="note reveal" style="margin-top:22px"><b>Ricorda —</b> ogni arma sale di potenza solo via <a href="equipaggiamento.html" style="color:var(--kai)">Risonanza</a> (5 stadi, glow crescente), mai con numeri casuali. Due stesse armi allo stesso stadio sono identiche: la differenza sei tu.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="classi.html"><span>Precedente</span><b>← Le Classi</b></a>
+  <a class="cn next" href="equipaggiamento.html"><span>Prossimo</span><b>Equipment →</b></a>
+</div>
+
+<footer>
+  <div class="tagline">Tre famiglie. Una regola: <span>conta la mira</span>.</div>
+  BLADE<b>//</b>KAI 改 · Design Bible · Armi
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

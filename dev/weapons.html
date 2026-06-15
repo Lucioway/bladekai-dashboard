@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Weapon System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="movement.html">Movement</a>
+    <a href="combat.html">Combat</a>
+    <a href="weapons.html" class="active">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="lore.html">Lore</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="classi.html">Classi</a>
+    <a href="armi.html">Armi</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="modalita.html">Modalità</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="shop.html">Shop</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Weapon System</div>
+    <h1>Weapon System <span class="jp">武器</span></h1>
+    <p class="lede">Dualità: <b>1 melee + 1 gun</b>, loadout libero, switch istantaneo. La regola madre del counterplay: <b>ottiche (energia) deflettibili · balistiche no</b>.</p>
+  </div>
+</div>
+
+<section id="counterplay">
+  <div class="sec-head"><span class="sec-num">00</span><h2>La Regola del Counterplay</h2><span class="jp">相性</span></div>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Ottiche → deflettibili</div><h3>La deflect le para</h3><p>I proiettili energia (ciano) si deflettono con la Spada. Chi spara energia contro un duellante rischia il rimbalzo.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Balistiche → NO</div><h3>Le devi schivare</h3><p>I proiettili balistici non si deflettono → puniscono chi spamma la deflect. È l'anti-deflect del gioco.</p></div>
+  </div>
+</section>
+
+<section id="melee">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Melee (3)</h2><span class="jp">近接</span></div>
+  <p class="sec-sub">Tutti ne equipaggiano una. La <b>deflessione</b> (para i proiettili energia) vive sulla Spada.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Arma</th><th>Stile</th><th>Vel. mov</th><th>Danno</th><th>Note</th></tr>
+    <tr><td><strong>Spada</strong> (Photon Sword)</td><td>combo veloci, dash-lunge</td><td><span class="pill t-cyan">+15%</span></td><td>medio-alto</td><td><b>DEFLESSIONE</b> (para i proiettili energia) · mobilità · dash</td></tr>
+    <tr><td><strong>Counter Sword</strong> (pugno)</td><td>counter/parata MELEE</td><td>+10%</td><td>medio</td><td><b>para i fendenti nemici</b> (anti-melee) · NON i proiettili</td></tr>
+    <tr><td><strong>Bat</strong> (mazza)</td><td>colpi pesanti singoli</td><td>+0%</td><td>alto</td><td><b>knockback</b> · disruption</td></tr>
+  </table></div>
+</section>
+
+<section id="ottiche">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Gun — Ottiche</h2><span class="jp">光学</span> <span class="pill t-cyan" style="align-self:center;margin-left:auto">deflettibili</span></div>
+  <p class="sec-sub">Energia KAI: bolt visibili, precise, deflettibili. Munizioni = overheat/ricarica energia.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Arma</th><th>Range</th><th>Danno</th><th>Cadenza</th><th>Vel. mov</th><th>Ruolo</th></tr>
+    <tr><td><strong>Pulse SMG</strong></td><td>corto</td><td>basso</td><td><b>alta</b></td><td>base</td><td>spray ravvicinato</td></tr>
+    <tr><td><strong>Pulse Rifle</strong> (assault)</td><td>medio</td><td>medio</td><td>media</td><td>−5%</td><td><b>workhorse · arma MVP</b></td></tr>
+    <tr><td><strong>Beam Sniper</strong></td><td>lungo</td><td>alto (carica)</td><td>bassa</td><td>−15%</td><td>precisione energia</td></tr>
+  </table></div>
+</section>
+
+<section id="balistiche">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Gun — Balistiche</h2><span class="jp">実弾</span> <span class="pill t-red" style="align-self:center;margin-left:auto">NON deflettibili</span></div>
+  <p class="sec-sub">Polvere da sparo: veloci, perforanti, munizioni finite. La <b>risposta</b> ai duellanti di lama.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Arma</th><th>Range</th><th>Danno</th><th>Cadenza</th><th>Vel. mov</th><th>Ruolo</th></tr>
+    <tr><td><strong>Pistola</strong></td><td>tutti</td><td>medio</td><td>media</td><td>base</td><td>sidearm preciso, anti-deflect</td></tr>
+    <tr><td><strong>Bolt Sniper</strong></td><td>lungo</td><td><b>molto alto</b></td><td>molto bassa</td><td>−15%</td><td>anti-deflect a distanza · headshot</td></tr>
+  </table></div>
+</section>
+
+<section id="mvp">
+  <div class="sec-head"><span class="sec-num">04</span><h2>MVP &amp; Build Order</h2><span class="jp">順序</span></div>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">MVP (Kenshi)</div><h3>Spada + Pulse Rifle</h3><p>2 armi → testa melee+deflect, gun energia, switch, velocità-per-arma. Counter Sword/Bat e balistiche = dopo.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Build order</div><h3>+ varietà → + anti-deflect</h3><p>v1: +Counter Sword/Bat, +SMG, +Beam Sniper. v2: +Balistiche (Pistola, Bolt) → introduce il counter alla deflect.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Layer MMORPG —</b> le armi salgono di <a href="equipaggiamento.html" style="color:var(--kai)">Risonanza</a> (potenza) + gear-mod nell'open world. In <b>arena</b> tutto normalizzato → stat uguali.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="combat.html"><span>Precedente</span><b>← Combat</b></a>
+  <a class="cn next" href="skills.html"><span>Prossimo</span><b>Skills →</b></a>
+</div>
+<footer><div class="tagline">Energia la <span>defletti</span>. Piombo lo schivi.</div>BLADE<b>//</b>KAI 改 · Weapon System</footer>
+<script src="app.js"></script>
+</body>
+</html>

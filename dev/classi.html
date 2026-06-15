@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Le Classi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.cls{display:grid;grid-template-columns:0.85fr 1.15fr;gap:28px;align-items:start}
+@media(max-width:820px){.cls{grid-template-columns:1fr}}
+.cls .portrait{border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;background:var(--panel)}
+.cls .portrait::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);box-shadow:0 0 18px var(--c);z-index:2}
+.cls .portrait img{width:100%;display:block}
+.cls .ptag{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(7,10,14,.96));z-index:1}
+.cls .ptag b{font-family:var(--disp);font-size:1.5rem;letter-spacing:.04em;color:var(--c);display:block}
+.cls .ptag span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.matchup{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.mu{font-size:.78rem;letter-spacing:.06em;padding:6px 12px;border-radius:4px;border:1px solid var(--line-soft)}
+.mu.win{color:var(--green);border-color:color-mix(in srgb,var(--green) 35%,transparent)}
+.mu.lose{color:var(--red);border-color:color-mix(in srgb,var(--red) 35%,transparent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="movement.html">Movement</a>
+    <a href="combat.html">Combat</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="lore.html">Lore</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="classi.html" class="active">Classi</a>
+    <a href="armi.html">Armi</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="modalita.html">Modalità</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="shop.html">Shop</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Le Classi</div>
+    <h1>Le Classi <span class="jp">職業</span></h1>
+    <p class="lede"><b>Stat uguali per tutti</b>: la classe non è il corpo, è il <b>kit di 3 skill</b> (ruolo). Base condivisa: gun + spada + deflessione + switch. Si parte con <b>3 al lancio</b> (Kenshi · Striker · Phantom); Heavy e Warden allargano il roster in v2. Counter morbido — la mano ribalta tutto.</p>
+  </div>
+</div>
+
+<!-- FILOSOFIA -->
+<section id="filosofia">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Filosofia delle Classi</h2><span class="jp">設計思想</span></div>
+  <p class="sec-sub">Archetipi diversi, una regola: <b>stat base uguali</b>, nessuno è oggettivamente forte. La classe definisce il <b>kit di 3 skill</b> e il ruolo — il resto lo decide chi tiene il mouse.</p>
+  <div class="grid g3">
+    <div class="card reveal"><div class="icon">🧬</div><h3>Stat uguali</h3><p>Velocità base, HP/SP, hitbox: <b>identici per tutti</b>. La classe non è il corpo — è il kit. Cambi classe = cambi ruolo, non potenza. (Nell'open-world il gear potenzia; in arena è normalizzato.)</p></div>
+    <div class="card reveal"><div class="icon">🎯</div><h3>Skill sopra tutto</h3><p>Mira, timing, gestione risorse. Il counter è una <i>tendenza</i>, non un hard-counter: un Kenshi bravo batte chi lo conterebbe sulla carta.</p></div>
+    <div class="card reveal"><div class="icon">🪢</div><h3>3 al lancio → 5</h3><p>Si parte con Kenshi · Striker · Phantom (triangolo pulito). Heavy e Warden arrivano in v2 e allargano il cerchio dei counter.</p></div>
+  </div>
+</section>
+
+<!-- KENSHI -->
+<section id="kenshi">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Kenshi</h2><span class="jp">剣士</span></div>
+  <div class="cls" style="--c:#22e6ff">
+    <div class="portrait reveal"><img src="assets/kenshi.jpg" alt="Kenshi" loading="lazy"><div class="ptag"><b>KENSHI</b><span>La Lama · melee · glass cannon</span></div></div>
+    <div class="reveal">
+      <p class="body">Il <b>BLADE KAI</b>: la classe-simbolo e la più difficile del gioco. Duelist melee che vince a distanza zero, dove le armi da fuoco sono scomode. La deflessione (di spada, comune a tutti) + la catena di dash + il suo kit aggressivo — sbagli il ritmo e muori in un colpo.</p>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+      </div>
+      <div class="abil">
+        <div class="ab"><span class="key">Kit · 1</span><h4>Blink</h4><p>Teleport corto verso la mira (~2 cariche). Chiude il gap o scarta il fuoco. Il suo entry-tool.</p></div>
+        <div class="ab"><span class="key">Kit · 2</span><h4>Bind</h4><p>Root breve sul bersaglio → lo inchioda per il follow-up di lama. Setup da kill.</p></div>
+        <div class="ab"><span class="key">Kit · 3</span><h4>Affondo</h4><p>Dash-attacco che attraversa il bersaglio. Apre o chiude lo scambio. (Deflessione + dash sono base condivisa, non skill di classe.)</p></div>
+      </div>
+      <div class="matchup"><span class="mu win">Forte vs ▸ Phantom</span><span class="mu lose">Debole vs ▸ Striker</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIKER -->
+<section id="striker">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Striker</h2><span class="jp">遊撃</span></div>
+  <div class="cls" style="--c:#5bd17a">
+    <div class="portrait reveal"><img src="assets/class-striker.jpg" alt="Striker" loading="lazy"><div class="ptag"><b>STRIKER</b><span>Il Velocista · run &amp; gun</span></div></div>
+    <div class="reveal">
+      <p class="body">Mercenario agile che <b>controlla il ritmo</b> dello scontro. Non vince di potenza, vince di tempo: entra, punisce, esce prima che tu possa rispondere. La classe più "S4 League" nel feeling — movimento e sparo fusi in un gesto solo.</p>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+      </div>
+      <div class="abil">
+        <div class="ab"><span class="key">Kit · 1</span><h4>Scatto</h4><p>Dash rapido evasivo. Apre la finestra di hit-and-run e lo tira fuori dal pericolo.</p></div>
+        <div class="ab"><span class="key">Kit · 2</span><h4>Detect</h4><p>Rivela i nemici vicini → kita con informazione, non al buio. Anti-ambush.</p></div>
+        <div class="ab"><span class="key">Kit · 3</span><h4>Shield</h4><p>Bolla che assorbe danno per un trade pulito o un disingaggio sicuro.</p></div>
+      </div>
+      <div class="matchup"><span class="mu win">Forte vs ▸ Kenshi</span><span class="mu lose">Debole vs ▸ Phantom</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HEAVY -->
+<section id="heavy">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Heavy <span class="pill t-yellow">v2</span></h2><span class="jp">重装</span></div>
+  <div class="cls" style="--c:#ff4d6d">
+    <div class="portrait reveal"><img src="assets/class-heavy.jpg" alt="Heavy" loading="lazy"><div class="ptag"><b>HEAVY</b><span>Il Bastione · tank · controllo</span></div></div>
+    <div class="reveal">
+      <p class="body">Macchina da guerra. Lento ma immovibile: <b>nega spazio</b> e detta dove gli altri possono stare. Non insegue — costringe il nemico a venire da lui, in svantaggio. Il punto d'ancoraggio di ogni formazione 5v5.</p>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+      </div>
+      <div class="abil">
+        <div class="ab"><span class="key">Firma</span><h4>Soppressione</h4><p>Allarga il "Circle" di mira del nemico: sotto il suo fuoco, gli altri sparano peggio. Controllo, non solo danno.</p></div>
+        <div class="ab"><span class="key">Arma</span><h4>Spin-up minigun</h4><p>Tempo di carica prima del DPS massimo: chi lo sorprende a freddo lo punisce, chi lo ignora a regime viene falciato.</p></div>
+        <div class="ab"><span class="key">Difesa</span><h4>Campo anti-ottiche</h4><p>Disperde le armi a energia KAI (le ottiche): le rende inutili nel suo raggio. Costringe i nemici a passare al balistico.</p></div>
+      </div>
+      <div class="matchup"><span class="mu win">Forte vs ▸ Striker</span><span class="mu lose">Debole vs ▸ Kenshi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHANTOM -->
+<section id="phantom">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Phantom</h2><span class="jp">幻影</span></div>
+  <div class="cls" style="--c:#b08fff">
+    <div class="portrait reveal"><img src="assets/class-phantom.jpg" alt="Phantom" loading="lazy"><div class="ptag"><b>PHANTOM</b><span>L'Ombra · sniper · info</span></div></div>
+    <div class="reveal">
+      <p class="body">Vince <b>prima che il fight inizi</b>. Non duella: elimina dall'ombra il bersaglio che non l'ha mai visto. Domina l'informazione — sa dove sei prima che tu sappia dov'è lui. Fragile in mischia, letale a distanza.</p>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+      </div>
+      <div class="abil">
+        <div class="ab"><span class="key">Kit · 1</span><h4>Mantello</h4><p>Cloak breve per riposizionarsi dopo lo sparo. Fermo = invisibile; muoversi = esposto. Gioco di nervi.</p></div>
+        <div class="ab"><span class="key">Kit · 2</span><h4>Scan</h4><p>Rivela i nemici per il team → first-shot-unseen su informazione. Il suo valore non è solo il kill: è la mappa che regala.</p></div>
+        <div class="ab"><span class="key">Kit · 3</span><h4>Trappola</h4><p>Mina di prossimità: nega un angolo, punisce chi lo flanca. Controllo dello spazio a distanza.</p></div>
+      </div>
+      <div class="matchup"><span class="mu win">Forte vs ▸ Striker</span><span class="mu lose">Debole vs ▸ Kenshi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WARDEN -->
+<section id="warden">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Warden <span class="pill t-yellow">v2</span></h2><span class="jp">守護</span></div>
+  <div class="cls" style="--c:#2fd6c6">
+    <div class="portrait reveal"><img src="assets/class-warden.jpg" alt="Warden" loading="lazy"><div class="ptag"><b>WARDEN</b><span>Il Custode · supporto · utility</span></div></div>
+    <div class="reveal">
+      <p class="body">L'ingegnere del KAI. Non fa i kill: <b>li abilita</b>. Tiene in piedi la squadra, nega le abilità nemiche e controlla il terreno con i suoi dispositivi. La classe che vince le partite senza apparire nella killfeed — e l'unica che spegne una lama Kenshi.</p>
+      <div class="meters">
+        <div class="meter"><span>Mobilità</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+        <div class="meter"><span>Resistenza</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
+        <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
+      </div>
+      <div class="abil">
+        <div class="ab"><span class="key">Firma</span><h4>Impulso EMP</h4><p><b>Scarica le lame</b> dei Kenshi e le ottiche nemiche nel raggio. È il grande contro alla classe-simbolo: per questo il counter circle lo mette sopra il Kenshi.</p></div>
+        <div class="ab"><span class="key">Sostegno</span><h4>Drone riparatore</h4><p>Cura e ripara i compagni a distanza. Trasforma uno scambio pari in un vantaggio di attrito.</p></div>
+        <div class="ab"><span class="key">Controllo</span><h4>Barriera + marcatura</h4><p>Barriera deployabile per bloccare linee di tiro, marcatura tattica per coordinare i focus. Architetto del campo.</p></div>
+      </div>
+      <div class="matchup"><span class="mu win">Forte vs ▸ Kenshi</span><span class="mu lose">Debole vs ▸ Phantom</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER CIRCLE -->
+<section id="circle">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Il Counter Circle</h2><span class="jp">相性</span></div>
+  <p class="sec-sub">Vantaggi <b>morbidi</b>: tendenze di matchup per composizione e draft, non garanzie. La mano ribalta ogni freccia. <b>Al lancio</b> il triangolo è pulito (3 classi); in v2 il cerchio si allarga a 5.</p>
+  <div class="card reveal" style="text-align:center;border-style:dashed;padding:30px">
+    <div style="font-family:var(--disp);font-size:clamp(1.1rem,3.6vw,1.6rem);letter-spacing:.02em;line-height:2">
+      <b style="color:var(--kai)">KENSHI</b> <span style="color:var(--ink-faint)">›</span>
+      <b style="color:var(--violet)">PHANTOM</b> <span style="color:var(--ink-faint)">›</span>
+      <b style="color:var(--green)">STRIKER</b> <span style="color:var(--ink-faint)">›</span>
+      <b style="color:var(--kai)">KENSHI</b>
+    </div>
+    <small style="display:block;color:var(--ink-faint);font-size:.78rem;margin-top:8px;letter-spacing:.08em">triangolo di lancio — Kenshi batte Phantom · Phantom batte Striker · Striker batte Kenshi</small>
+    <div style="font-family:var(--disp);font-size:clamp(.85rem,2.4vw,1.05rem);letter-spacing:.02em;line-height:1.9;margin-top:18px;opacity:.6">
+      <span style="color:var(--amber);font-size:.7rem;letter-spacing:.16em">v2 ›</span>
+      <b style="color:var(--kai)">KENSHI</b> <span class="ink-faint">›</span>
+      <b style="color:var(--red)">HEAVY</b> <span>›</span>
+      <b style="color:var(--green)">STRIKER</b> <span>›</span>
+      <b style="color:var(--violet)">PHANTOM</b> <span>›</span>
+      <b style="color:var(--teal)">WARDEN</b> <span>›</span>
+      <b style="color:var(--kai)">KENSHI</b>
+    </div>
+    <small style="display:block;color:var(--ink-faint);font-size:.8rem;margin-top:10px;letter-spacing:.08em">tendenza, non hard-counter — un giocatore migliore vince comunque</small>
+  </div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="open-world.html"><span>Precedente</span><b>← Open World · Extraction</b></a>
+  <a class="cn next" href="armi.html"><span>Prossimo</span><b>Armi →</b></a>
+</div>
+
+<footer>
+  <div class="tagline">Stat uguali. Il <span>kit</span> è la differenza.</div>
+  BLADE<b>//</b>KAI 改 · Design Bible · Le Classi
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
