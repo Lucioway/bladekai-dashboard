@@ -3,34 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLADE//KAI</title>
+<title>BLADE//KAI — Anime Arena Shooter</title>
+<meta name="description" content="Anime arena shooter. Gun + spada, switch istantaneo. L'energia la defletti, il piombo lo schivi. Arena competitiva + open-world a estrazione.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.holding{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.holding-bg{position:absolute;inset:0;background:url('assets/home-duo.jpg') center/cover;filter:saturate(1.05)}
-.holding-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,14,.6),rgba(7,10,14,.92))}
-.holding-in{position:relative;z-index:1;padding:30px}
-.holding h1{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,11vw,8rem);letter-spacing:.02em;line-height:.9}
-.holding h1 .slash{color:var(--kai);text-shadow:0 0 40px rgba(34,230,255,.7)}
-.holding .jp{font-family:var(--jp);color:var(--amber);font-size:.4em;display:block;margin-top:10px}
-.holding p{color:var(--ink-dim);margin:22px 0 30px;font-size:1.1rem;letter-spacing:.04em}
-.holding .go{display:inline-flex;gap:10px;font-family:var(--disp);font-size:1rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--kai);padding:14px 28px;border:1px solid var(--kai-dim);border-radius:4px;transition:.25s}
-.holding .go:hover{background:rgba(34,230,255,.08);box-shadow:0 0 26px rgba(34,230,255,.25);transform:translateY(-2px)}
+/* ============================================================
+   LANDING — front door. Builds on the shared cine theme.
+   ============================================================ */
+
+/* ---- HERO ---- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('assets/home-duo.jpg') center/cover;
+  filter:saturate(1.08) contrast(1.04);transform:scale(1.08);animation:heroZoom 18s ease-out forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,10,14,.5),transparent 24%,rgba(7,10,14,.5) 58%,rgba(7,10,14,.98)),
+  linear-gradient(75deg,rgba(7,10,14,.82),rgba(7,10,14,.25) 52%,transparent 70%)}
+/* oversized ghost kanji */
+.hero-kanji{position:absolute;z-index:0;right:-2vw;top:50%;transform:translateY(-50%);
+  font-family:var(--jp);font-weight:900;font-size:54vh;line-height:.8;color:rgba(34,230,255,.05);
+  pointer-events:none;user-select:none;text-shadow:0 0 80px rgba(34,230,255,.06)}
+@media(max-width:760px){.hero-kanji{font-size:40vh;right:-8vw;opacity:.7}}
+.hero-in{position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;padding:0 44px 11vh}
+@media(max-width:680px){.hero-in{padding:0 22px 9vh}}
+
+.kicker{display:inline-flex;align-items:center;gap:12px;font-family:var(--disp);font-size:.8rem;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--kai);margin-bottom:22px;
+  opacity:0;animation:rise .8s .15s ease forwards}
+.kicker::before{content:"";width:34px;height:1px;background:var(--kai-dim);box-shadow:0 0 8px var(--kai)}
+.kicker .jp{font-family:var(--jp);color:var(--amber);font-weight:900;letter-spacing:0}
+
+.title{font-family:var(--disp);font-weight:700;line-height:.84;letter-spacing:.005em;
+  font-size:clamp(3.4rem,13vw,10rem);margin-bottom:8px;
+  opacity:0;animation:rise .9s .28s ease forwards;text-shadow:0 4px 60px rgba(0,0,0,.6)}
+.title .sl{color:var(--kai);text-shadow:0 0 44px rgba(34,230,255,.8)}
+.title .jp{font-family:var(--jp);color:var(--amber);font-size:.26em;font-weight:900;
+  vertical-align:.55em;margin-left:.18em;text-shadow:0 0 30px rgba(255,157,60,.5)}
+
+.tagline-hero{font-family:var(--disp);font-weight:500;font-size:clamp(1.15rem,2.6vw,1.9rem);
+  letter-spacing:.02em;line-height:1.25;color:var(--ink);max-width:24ch;margin-bottom:14px;
+  opacity:0;animation:rise .9s .42s ease forwards}
+.tagline-hero b{color:var(--kai);font-weight:700}
+.tagline-hero .r{color:var(--red)}
+
+.sub-hero{color:var(--ink-dim);font-size:1.05rem;max-width:54ch;line-height:1.6;margin-bottom:32px;
+  opacity:0;animation:rise .9s .54s ease forwards}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:rise .9s .66s ease forwards}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:.98rem;
+  letter-spacing:.16em;text-transform:uppercase;padding:15px 30px;border-radius:4px;transition:.25s;font-weight:600}
+.btn.prim{color:#04161c;background:var(--kai);border:1px solid var(--kai);
+  box-shadow:0 0 0 rgba(34,230,255,0)}
+.btn.prim:hover{box-shadow:0 0 34px rgba(34,230,255,.5);transform:translateY(-2px)}
+.btn.ghost{color:var(--kai);border:1px solid var(--kai-dim);background:rgba(34,230,255,.04)}
+.btn.ghost:hover{background:rgba(34,230,255,.1);box-shadow:0 0 24px rgba(34,230,255,.2);transform:translateY(-2px)}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* scroll cue */
+.scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);
+  display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:rise 1s 1s ease forwards}
+.scroll-cue i{width:1px;height:34px;background:linear-gradient(var(--kai),transparent);animation:cue 1.8s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.1%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---- PITCH BAND ---- */
+.pitch{text-align:center;padding:70px 30px;border-bottom:1px solid var(--line);
+  background:radial-gradient(900px 300px at 50% 0%,rgba(34,230,255,.06),transparent 70%)}
+.pitch p{font-family:var(--disp);font-weight:500;font-size:clamp(1.3rem,3.4vw,2.3rem);
+  letter-spacing:.01em;line-height:1.3;max-width:20ch;margin:0 auto;color:var(--ink)}
+.pitch b{color:var(--kai)} .pitch .r{color:var(--red)}
+.pitch small{display:block;margin-top:18px;font-family:var(--mono);font-size:.82rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* ---- 3 PILLARS ---- */
+.pill3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:760px){.pill3{grid-template-columns:1fr}}
+.pill3 .p{background:var(--bg);padding:44px 32px;text-align:center;transition:.3s}
+.pill3 .p:hover{background:var(--bg2)}
+.pill3 .p .ic{font-size:2.1rem;margin-bottom:14px;filter:drop-shadow(0 0 12px rgba(34,230,255,.45))}
+.pill3 .p h3{font-family:var(--disp);font-size:1.55rem;letter-spacing:.04em;margin-bottom:8px}
+.pill3 .p p{color:var(--ink-dim);font-size:.96rem;max-width:32ch;margin:0 auto;line-height:1.55}
+
+/* ---- TWO WORLDS ---- */
+.worlds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:840px){.worlds{grid-template-columns:1fr}}
+.world{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--bg)}
+.world-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  filter:saturate(1.05);transform:scale(1.06);transition:transform 1s ease,filter 1s ease}
+.world:hover .world-bg{transform:scale(1.12);filter:saturate(1.15)}
+.world-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,10,14,.55),transparent 32%,rgba(7,10,14,.7) 60%,rgba(7,10,14,.98))}
+.world-in{position:relative;z-index:1;padding:0 38px 48px;width:100%}
+.world .tag{font-family:var(--disp);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--wc);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.world .tag::before{content:"";width:26px;height:1px;background:var(--wc)}
+.world h3{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:.02em;
+  line-height:.96;margin-bottom:12px}
+.world h3 em{font-style:normal;color:var(--wc);text-shadow:0 0 30px color-mix(in srgb,var(--wc) 55%,transparent)}
+.world p{color:var(--ink-dim);font-size:.98rem;max-width:42ch;line-height:1.6;margin-bottom:18px}
+.world p b{color:var(--ink)}
+.world .go{display:inline-flex;gap:9px;font-family:var(--disp);font-size:.86rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--wc);border-bottom:1px solid color-mix(in srgb,var(--wc) 40%,transparent);
+  padding-bottom:3px;transition:.25s}
+.world .go:hover{gap:16px;border-color:var(--wc)}
+
+/* ---- ROSTER ---- */
+.roster{position:relative;overflow:hidden}
+.roster .imgband{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:0}
+.roster .imgband img{width:100%;display:block;filter:saturate(1.05)}
+.roster .imgband::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 60%,rgba(7,10,14,.6)),linear-gradient(0deg,rgba(7,10,14,.7),transparent 40%)}
+.tri{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px;
+  font-family:var(--disp);font-size:clamp(1rem,2.6vw,1.5rem);letter-spacing:.03em}
+.tri b{color:var(--ink)} .tri .a{color:var(--ink-faint)}
+.tri .k{color:var(--kai)} .tri .s{color:var(--green)} .tri .p{color:var(--violet)}
+
+/* ---- DEFLECT MOMENT ---- */
+.signature{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.signature .sig-bg{position:absolute;inset:0;z-index:0;background:url('assets/hype-deflect.jpg') center/cover;
+  filter:saturate(1.08) contrast(1.05);transform:scale(1.06);transition:transform 1.2s}
+.signature:hover .sig-bg{transform:scale(1.11)}
+.signature .sig-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(7,10,14,.95),rgba(7,10,14,.4) 60%,rgba(7,10,14,.7)),linear-gradient(0deg,rgba(7,10,14,.6),transparent 50%)}
+.signature .sig-in{position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;padding:0 44px}
+.signature .eyebrow{font-family:var(--disp);font-size:.8rem;letter-spacing:.4em;text-transform:uppercase;color:var(--kai);margin-bottom:16px}
+.signature h2{font-family:var(--disp);font-weight:700;line-height:.94;font-size:clamp(2.4rem,6.4vw,5rem);margin-bottom:18px}
+.signature h2 em{font-style:normal;color:var(--kai);text-shadow:0 0 38px rgba(34,230,255,.6)}
+.signature .say{max-width:560px;font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink);line-height:1.6}
+.signature .say b{color:var(--kai)} .signature .say .r{color:var(--red)}
+@media(max-width:680px){.signature .sig-in{padding:0 22px}}
+
+/* ---- FINAL CTA ---- */
+.cta{text-align:center;padding:100px 30px}
+.cta h2{font-family:var(--disp);font-size:clamp(2.1rem,5.4vw,3.6rem);letter-spacing:.02em;margin-bottom:14px;line-height:1.02}
+.cta h2 span{color:var(--kai)}
+.cta p{color:var(--ink-dim);max-width:54ch;margin:0 auto 30px;font-size:1.05rem;line-height:1.6}
 </style>
 </head>
 <body>
-<div class="holding">
-  <div class="holding-bg"></div>
-  <div class="holding-in">
-    <h1>BLADE<span class="slash">//</span>KAI<span class="jp">改 · Lama e Proiettile</span></h1>
-    <p>Anime arena shooter · 5 classi, gun &amp; spada · estrazione open-world</p>
-    <a class="go" href="gameplay.html">Scopri il gameplay →</a>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="gameplay.html">Gameplay</a>
+    <a href="extraction.html">Open World</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-kanji">改</div>
+  <div class="hero-in">
+    <div class="kicker">Anime Arena Shooter <span class="jp">改</span></div>
+    <h1 class="title">BLADE<span class="sl">//</span>KAI<span class="jp">改</span></h1>
+    <p class="tagline-hero">Spara col fucile. Tagli con la lama. <b>Defletti</b> l'energia, <span class="r">schivi</span> il piombo.</p>
+    <p class="sub-hero">Gun + spada su ogni personaggio, switch istantaneo. La velocità è il gioco, la skill è tutta tua — zero RNG, zero roll. Un'arena dove conti solo tu, e un mondo aperto dove rischi tutto.</p>
+    <div class="cta-row">
+      <a class="btn prim" href="gameplay.html">Il Gameplay →</a>
+      <a class="btn ghost" href="extraction.html">Il Mondo →</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scorri<i></i></div>
+</header>
+
+<!-- PITCH -->
+<section class="pitch">
+  <p>Non un gioco che <b>guardi</b>.<br>Uno che <b>esegui</b>.</p>
+  <small>TTK medio-alto · skill manuale · la lama è viable · il movimento è counterplay</small>
+</section>
+
+<!-- 3 PILLARS -->
+<div class="pill3">
+  <div class="p reveal"><div class="ic">⚡</div><h3>Stylish Movement</h3><p>Salto, wall-jump, dash di lama, dodge, sprint. Niente i-frame: schivi muovendoti davvero. La velocità è il gioco.</p></div>
+  <div class="p reveal"><div class="ic">⚔️</div><h3>Gun + Sword + Deflect</h3><p>Switch istantaneo tra fucile e lama. L'energia la defletti, il piombo lo schivi. La firma high-skill che finisce in clip.</p></div>
+  <div class="p reveal"><div class="ic">⏱️</div><h3>Fun in 10 Minuti</h3><p>Entra → combatti → risultato → rivinci. Floor basso, ceiling altissimo. Divertente già contro i bot.</p></div>
+</div>
+
+<!-- TWO WORLDS -->
+<section style="padding:64px 40px 26px;text-align:center;max-width:1100px">
+  <div style="font-family:var(--disp);font-size:.8rem;letter-spacing:.4em;text-transform:uppercase;color:var(--kai);margin-bottom:14px">Due Mondi · Un Combattimento</div>
+  <h2 style="font-family:var(--disp);font-size:clamp(1.9rem,4.8vw,3rem);letter-spacing:.02em;line-height:1.05">Lo stesso core. <span style="color:var(--kai)">Due poste in gioco.</span></h2>
+  <p style="color:var(--ink-dim);max-width:60ch;margin:14px auto 0;font-size:1.05rem;line-height:1.6">L'arena dove sei pari a tutti e vince solo la mano. Il mondo aperto dove il gear è potenza e il bottino è reale. Stesso gun+spada+deflect, due modi di rischiarlo.</p>
+</section>
+<div class="worlds">
+  <article class="world" style="--wc:var(--kai)">
+    <div class="world-bg" style="background-image:url('assets/hype-duel.jpg')"></div>
+    <div class="world-in">
+      <div class="tag">Dove competi</div>
+      <h3>Arena <em>normalizzata</em></h3>
+      <p>Stat azzerate, kit puro: <b>entri e sei pari a tutti</b>. Ranked, tornei, duelli 1v1. La palestra dove la skill è l'unica valuta.</p>
+      <a class="go" href="gameplay.html">Com'è giocarci →</a>
+    </div>
+  </article>
+  <article class="world" style="--wc:var(--red)">
+    <div class="world-bg" style="background-image:url('assets/extr-run.jpg')"></div>
+    <div class="world-in">
+      <div class="tag">Dove rischi</div>
+      <h3>Open World <em>a estrazione</em></h3>
+      <p>Farmi, lootti, uccidi gli altri — e torni vivo col bottino. <b>Gear = potenza</b>, la posta è reale. Perdi il loot, mai la tua lama.</p>
+      <a class="go" href="extraction.html">Entra nel mondo →</a>
+    </div>
+  </article>
+</div>
+
+<!-- ROSTER -->
+<section class="roster">
+  <div class="sec-head"><span class="sec-num">改</span><h2>Il Roster</h2><span class="jp">職業</span></div>
+  <p class="sec-sub"><b>Stat uguali per tutti</b> — la classe non è il corpo, è il <b>kit di 3 skill</b>. Si parte con tre identità nette; il roster cresce nel tempo.</p>
+  <div class="imgband reveal"><img src="assets/roster-hero.jpg" alt="Il roster di BLADE//KAI" loading="lazy"></div>
+  <div class="tri reveal">
+    <b class="k">KENSHI</b><span class="a">›</span><b class="p">PHANTOM</b><span class="a">›</span><b class="s">STRIKER</b><span class="a">›</span><b class="k">KENSHI</b>
+  </div>
+  <p style="text-align:center;color:var(--ink-faint);font-size:.82rem;letter-spacing:.06em;margin-top:10px">triangolo di lancio (close · long · mid) — Heavy e Warden allargano il cerchio in v2</p>
+</section>
+
+<!-- DEFLECT SIGNATURE -->
+<section class="signature">
+  <div class="sig-bg"></div>
+  <div class="sig-in">
+    <div class="eyebrow">La Firma</div>
+    <h2>Para il colpo.<br>Poi <em>tocca a te</em>.</h2>
+    <p class="say">Alza la guardia di spada e i proiettili di <b>energia</b> rimbalzano al mittente. È la giocata che fa esplodere la chat. Ma i <span class="r">balistici non si deflettono</span>: quelli li devi schivare. Leggi cosa ti arriva — o muori in un colpo.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta">
+  <h2>Spara. Tagli.<br><span>Sparisci.</span></h2>
+  <p>Sai cos'è. Adesso guardalo da vicino: come ci si muove, si spada e si defletta — poi il mondo dove si rischia tutto.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn prim" href="gameplay.html">Il Gameplay →</a>
+    <a class="btn ghost" href="extraction.html">Il Mondo →</a>
   </div>
 </div>
-<!-- HOME VETRINA: placeholder. La home/overview definitiva si costruisce per ultima. -->
+
+<footer>
+  <div class="tagline">Energia la <span>defletti</span>. Piombo lo schivi.</div>
+  BLADE<b>//</b>KAI 改 · Anime Arena Shooter
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
