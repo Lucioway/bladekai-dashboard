@@ -200,6 +200,57 @@ footer b{color:var(--kai)}
 .tagline{font-family:var(--disp);font-size:1.3rem;color:var(--ink);letter-spacing:.05em;margin-bottom:16px}
 .tagline span{color:var(--kai)}
 
+/* ───── CINE (cinematic full-bleed moment panels) ───── */
+.cine{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.cine-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  filter:saturate(1.08) contrast(1.05);transform:scale(1.05);transition:transform 1.2s ease}
+.cine:hover .cine-bg{transform:scale(1.1)}
+.cine-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,10,14,.35),transparent 30%,rgba(7,10,14,.55) 62%,rgba(7,10,14,.97)),
+  linear-gradient(90deg,rgba(7,10,14,.78),transparent 58%)}
+.cine-in{position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;padding:0 44px 9vh}
+.cine .eyebrow{font-family:var(--disp);font-size:.82rem;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--kai);margin-bottom:16px;opacity:0;transform:translateY(16px);transition:.8s}
+.cine h2{font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:.01em;
+  font-size:clamp(2.6rem,7vw,6rem);margin-bottom:18px;opacity:0;transform:translateY(22px);transition:.9s .1s}
+.cine h2 em{font-style:normal;color:var(--kai);text-shadow:0 0 38px rgba(34,230,255,.6)}
+.cine h2 em.red{color:var(--red);text-shadow:0 0 38px rgba(255,77,109,.55)}
+.cine .say{max-width:660px;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ink);line-height:1.6;
+  opacity:0;transform:translateY(22px);transition:.9s .2s}
+.cine .say b{color:var(--kai)} .cine .say .r{color:var(--red)}
+.cine.in .eyebrow,.cine.in h2,.cine.in .say{opacity:1;transform:none}
+.cine .jp{font-family:var(--jp);color:var(--amber);font-weight:900}
+.cine.hero{min-height:100vh;align-items:center}.cine.hero .cine-in{padding-bottom:0}
+@media(max-width:680px){.cine{min-height:78vh}.cine-in{padding:0 20px 8vh}}
+
+/* strip of equal cells under a cine (pillars / facts) */
+.cstrip{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:760px){.cstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.cstrip{grid-template-columns:1fr}}
+.cstrip .c{background:var(--bg);padding:34px 26px;text-align:center;position:relative;transition:.3s}
+.cstrip .c:hover{background:var(--bg2)}
+.cstrip .c::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--cc,var(--kai))}
+.cstrip .c .ic{font-size:1.9rem;margin-bottom:10px;filter:drop-shadow(0 0 12px rgba(34,230,255,.4))}
+.cstrip .c h3{font-family:var(--disp);font-size:1.3rem;letter-spacing:.04em;margin-bottom:6px;color:var(--cc,var(--ink))}
+.cstrip .c p{color:var(--ink-dim);font-size:.9rem;line-height:1.5;max-width:30ch;margin:0 auto}
+
+/* centered editorial statement block */
+.statement{max-width:1040px;margin:0 auto;padding:84px 30px;text-align:center}
+.statement .eyebrow{font-family:var(--disp);font-size:.82rem;letter-spacing:.42em;text-transform:uppercase;color:var(--kai);margin-bottom:16px}
+.statement h2{font-family:var(--disp);font-size:clamp(1.9rem,4.8vw,3.2rem);letter-spacing:.02em;margin-bottom:18px;line-height:1.05}
+.statement h2 span{color:var(--kai)}
+.statement p{color:var(--ink-dim);max-width:62ch;margin:0 auto;font-size:1.06rem;line-height:1.7}
+.statement p b{color:var(--ink)}
+
+/* closing CTA */
+.cta{text-align:center;padding:96px 30px}
+.cta h2{font-family:var(--disp);font-size:clamp(2rem,5.4vw,3.5rem);letter-spacing:.02em;margin-bottom:14px;line-height:1.03}
+.cta h2 span{color:var(--kai)}
+.cta p{color:var(--ink-dim);max-width:56ch;margin:0 auto 30px;font-size:1.05rem;line-height:1.6}
+.cta .go{display:inline-flex;gap:10px;font-family:var(--disp);font-size:1rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--kai);padding:14px 28px;border:1px solid var(--kai-dim);border-radius:4px;transition:.25s}
+.cta .go:hover{background:rgba(34,230,255,.08);box-shadow:0 0 26px rgba(34,230,255,.25);transform:translateY(-2px)}
+
 /* responsive */
 @media(max-width:680px){
   .phero{padding:96px 18px 36px} .phero.img{min-height:46vh}
