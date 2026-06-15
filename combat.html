@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Combat System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="movement.html">Movement</a>
+    <a href="combat.html" class="active">Combat</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="shop.html">Shop</a>
+    <a href="https://bladekai-dashboard.onrender.com/vetrina/index.html" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Combat System</div>
+    <h1>Combat System <span class="jp">戦闘</span></h1>
+    <p class="lede">Gun + spada + deflessione, switch istantaneo. <b>TTK medio-alto, skill manuale, zero RNG.</b> La spada è viable, il movimento è counterplay.</p>
+  </div>
+</div>
+
+<section id="filosofia">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Filosofia</h2><span class="jp">思想</span></div>
+  <div class="grid g4">
+    <div class="card reveal"><div class="icon">⏱️</div><h3 style="font-size:1.1rem">TTK ~1,5-3s</h3><p>Medio-alto → spada viable, movimento come counterplay, audience larga.</p></div>
+    <div class="card reveal"><div class="icon">🎯</div><h3 style="font-size:1.1rem">Skill manuale</h3><p>Zero RNG, niente spread casuale, niente roll. Mira + timing + movimento.</p></div>
+    <div class="card reveal"><div class="icon">📈</div><h3 style="font-size:1.1rem">Floor basso / ceiling alto</h3><p>Facile entrare (spara/muoviti), tetto altissimo (deflect, dash-chain, lettura).</p></div>
+    <div class="card reveal"><div class="icon">⚡</div><h3 style="font-size:1.1rem">Switch istantaneo</h3><p>Gun↔spada lampo, cancella animazioni = combo. Il cuore del ritmo.</p></div>
+  </div>
+</section>
+
+<section id="salute">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Salute — HP + Shield SP</h2><span class="jp">体力</span></div>
+  <p class="sec-sub">Scudo S4-style sopra l'HP → dà ritmo al fight (entra → esci → rigenera → rientra).</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Scudo</div><h3>SP ~50</h3><p>Assorbe il danno <b>per primo</b>. <b>Rigenera dopo ~3s</b> senza danni. Premia il disingaggio.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Vita</div><h3>HP ~100</h3><p><b>Non rigenera</b> (heal solo da pickup/Warden). Ogni colpo all'HP è permanente finché non ti curi.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">TTK</div><h3>~1,5-3s</h3><p>Gun: ~1,5-2,5s di fuoco. Spada: ~2-3 colpi a contatto (più rischio = più reward).</p></div>
+  </div>
+</section>
+
+<section id="deflect">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Deflessione</h2><span class="jp">弾き</span></div>
+  <p class="sec-sub">La firma high-skill. <b>Proprietà della Counter Sword (il pugno)</b>, non un'abilità di classe. Rimanda il proiettile al mittente.</p>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Cosa para</div><h3>Solo ENERGIA (ottiche)</h3><p>Cono-stato mentre in guardia di lama → nega/riflette i proiettili energia. La giocata-clip, "esplode la chat".</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Cosa NON para</div><h3>Balistici → SCHIVALI</h3><p>I proiettili balistici non si deflettono → vanno schivati. È ciò che impedisce alla deflect di rompere il gioco.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>v1 —</b> versione cono-stato (facile, Genji-like) mentre tieni la spada. Il <b>micro-parry per-proiettile</b> (finestra stretta) = ceiling, v2+.</div>
+</section>
+
+<section id="fight">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Il Fight (come si sente)</h2><span class="jp">流れ</span></div>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>#</th><th>Fase</th></tr>
+    <tr><td>1</td><td>Avvisti → sprint/jump/wall-jump per posizione + Bullet Line per leggere</td></tr>
+    <tr><td>2</td><td>Poke col gun (ottica a distanza / balistica se schermato) — grounded, niente dash</td></tr>
+    <tr><td>3</td><td>Lui spara → <b>dodge</b> (ti sposti, no invuln) o, in guardia di spada, <b>deflessione</b> (rimanda l'energia)</td></tr>
+    <tr><td>4</td><td><b>SWITCHI alla spada</b> → sblocchi il <b>dash</b> → chiudi → fendenti (danno alto, rischio alto)</td></tr>
+    <tr><td>5</td><td>Kill, o SP a zero → disingaggi, rigeneri shield, ricominci</td></tr>
+  </table></div>
+  <div class="quote reveal" style="margin-top:18px">Verticalità sempre: wall-jump per gli angoli, kill in volo.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="movement.html"><span>Precedente</span><b>← Movement</b></a>
+  <a class="cn next" href="weapons.html"><span>Prossimo</span><b>Weapons →</b></a>
+</div>
+<footer><div class="tagline">Mira e <span>nervo</span>. Niente roll.</div>BLADE<b>//</b>KAI 改 · Combat System</footer>
+<script src="app.js"></script>
+</body>
+</html>

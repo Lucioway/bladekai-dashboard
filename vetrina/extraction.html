@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Extraction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.cine{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+.cine-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:saturate(1.08) contrast(1.05);transform:scale(1.05);transition:transform 1.2s ease}
+.cine:hover .cine-bg{transform:scale(1.1)}
+.cine-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,14,.35),transparent 30%,rgba(7,10,14,.55) 62%,rgba(7,10,14,.97)),linear-gradient(90deg,rgba(7,10,14,.75),transparent 55%)}
+.cine-in{position:relative;z-index:1;max-width:1280px;width:100%;margin:0 auto;padding:0 44px 9vh}
+.cine .eyebrow{font-family:var(--disp);font-size:.82rem;letter-spacing:.42em;text-transform:uppercase;color:var(--kai);margin-bottom:16px;opacity:0;transform:translateY(16px);transition:.8s}
+.cine h2{font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:.01em;font-size:clamp(2.6rem,7vw,6rem);margin-bottom:18px;opacity:0;transform:translateY(22px);transition:.9s .1s}
+.cine h2 em{font-style:normal;color:var(--kai);text-shadow:0 0 38px rgba(34,230,255,.6)}
+.cine h2 em.red{color:var(--red);text-shadow:0 0 38px rgba(255,77,109,.55)}
+.cine .say{max-width:660px;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ink);line-height:1.6;opacity:0;transform:translateY(22px);transition:.9s .2s}
+.cine .say b{color:var(--kai)}
+.cine.in .eyebrow,.cine.in h2,.cine.in .say{opacity:1;transform:none}
+.cine .jp{font-family:var(--jp);color:var(--amber);font-weight:900}
+.cine.hero{min-height:100vh;align-items:center}.cine.hero .cine-in{padding-bottom:0}
+@media(max-width:680px){.cine{min-height:78vh}.cine-in{padding:0 20px 8vh}}
+/* zone strip */
+.zstrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:760px){.zstrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.zstrip .z{background:var(--bg);padding:30px 24px;text-align:center;position:relative}
+.zstrip .z::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--zc)}
+.zstrip .z h3{font-family:var(--disp);font-size:1.3rem;letter-spacing:.05em;color:var(--zc);margin-bottom:6px}
+.zstrip .z p{color:var(--ink-dim);font-size:.86rem;line-height:1.45}
+.cta{text-align:center;padding:90px 30px}
+.cta h2{font-family:var(--disp);font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.02em;margin-bottom:14px}
+.cta h2 span{color:var(--kai)}
+.cta p{color:var(--ink-dim);max-width:56ch;margin:0 auto 30px;font-size:1.05rem}
+.cta .go{display:inline-flex;gap:10px;font-family:var(--disp);font-size:1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--kai);padding:14px 28px;border:1px solid var(--kai-dim);border-radius:4px;transition:.25s}
+.cta .go:hover{background:rgba(34,230,255,.08);box-shadow:0 0 26px rgba(34,230,255,.25);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="gameplay.html">Gameplay</a>
+    <a href="extraction.html" class="active">Open World</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cine hero reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/extr-run.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">Open World · Dove si Compete <span class="jp">世界</span></div>
+    <h2>Metti alla prova<br>le tue <em>skill</em>.</h2>
+    <p class="say">Sali di livello. Potenzia equip e abilità. Esplora il mondo, abbatti gli altri giocatori, accumula il bottino — e portalo a casa <b>vivo</b>. Qui la skill incontra il grind: il posto dove diventi il più forte del server, non solo il più bravo in un match.</p>
+  </div>
+</section>
+
+<!-- COSA FAI -->
+<div class="zstrip" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+  <div class="z" style="--zc:#22e6ff"><h3>Sali di livello</h3><p>Sblocchi accessi, opzioni, aree più profonde. Il mondo si apre col tuo grado.</p></div>
+  <div class="z" style="--zc:#ff9d3c"><h3>Potenzia equip &amp; la tua skill</h3><p>Forgi le armi (Risonanza) e potenzi la skill firma della tua classe coi materiali che strappi al mondo.</p></div>
+  <div class="z" style="--zc:#ff4d6d"><h3>Esplora &amp; uccidi</h3><p>Mob, world-boss, altri giocatori. Tutto cade nel tuo bag — se sopravvivi all'uscita.</p></div>
+</div>
+
+<!-- LA RUN -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/extr-greed.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">① La Run</div>
+    <h2>Più prendi,<br>più hai da <em>perdere</em>.</h2>
+    <p class="say">Ogni mob, ogni cassa, ogni player che abbatti: il tuo bag cresce. È la dolce trappola dell'avidità — "ancora uno e poi esco". Ma il bottino della run <b>non è al sicuro</b> finché non lo banchi in città.</p>
+  </div>
+</section>
+
+<!-- CACCIATO -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/extr-hunted.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">② Sei la Preda</div>
+    <h2>Carico di loot<br>= <em class="red">bersaglio</em>.</h2>
+    <p class="say">Più sei ricco, più sei cacciato. Le taglie ti puntano, gli altri sentono l'odore del tuo bag, il bottino che porti pesa come un bersaglio. <b>Il successo alza la difficoltà in tempo reale</b> — e non puoi resettare. L'uscita col bottino è la vera prova di skill.</p>
+  </div>
+</section>
+
+<!-- LAWLESS -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/extr-lawless.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">③ La Zona Nera</div>
+    <h2>Nessuna regola.<br>Solo <em class="red">il migliore</em>.</h2>
+    <p class="say">Più scendi nel mondo, più cade il guinzaglio. Nella <b>Zona Nera</b> non c'è karma, non c'è legge: chiunque può ucciderti, e lì cadono le armi leggendarie e i world-boss. Il loot top vive dove la mortalità è massima. Vai fondo, o resta povero.</p>
+  </div>
+</section>
+
+<!-- ZONE STRIP -->
+<div class="zstrip">
+  <div class="z" style="--zc:#22e6ff"><h3>Città</h3><p>Zero PvP. Deposita, respira, fai flex della tua lama.</p></div>
+  <div class="z" style="--zc:#5bd17a"><h3>Gialla</h3><p>Farm sicuro. Solo assassini e duelli — nessuna perdita.</p></div>
+  <div class="z" style="--zc:#ff4d6d"><h3>Rossa</h3><p>Guerra aperta. Muori = perdi il bag. Reward che salgono.</p></div>
+  <div class="z" style="--zc:#b08fff"><h3>Nera</h3><p>Lawless totale. World-boss, leggendarie, mortalità top.</p></div>
+</div>
+
+<!-- GEAR-SAFE -->
+<section style="max-width:1000px;margin:0 auto;padding:84px 30px;text-align:center">
+  <div style="font-family:var(--disp);font-size:.82rem;letter-spacing:.42em;text-transform:uppercase;color:var(--kai);margin-bottom:16px">La Regola che Cambia Tutto</div>
+  <h2 style="font-family:var(--disp);font-size:clamp(1.9rem,4.8vw,3.2rem);letter-spacing:.02em;margin-bottom:18px;line-height:1.05">Perdi il bottino.<br>Mai la tua <span style="color:var(--kai)">lama</span>.</h2>
+  <p class="reveal" style="color:var(--ink-dim);max-width:60ch;margin:0 auto;font-size:1.08rem;line-height:1.7">L'equipaggiamento che <b style="color:var(--ink)">indossi</b> non si perde mai — niente paura di rischiare, niente nascondersi. In palio c'è solo il <b style="color:var(--ink)">loot della run</b>. Così entri e <b style="color:var(--ink)">combatti</b>, invece di rattare negli angoli. Tutta la tensione del rischio, zero il terrore di perdere ciò che ti sei guadagnato per ore.</p>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Quanto sei disposto<br>a <span>rischiare</span>?</h2>
+  <p>Resta in superficie e gioca sicuro. O scendi nel nero, dove cadono le leggende — e quasi nessuno torna col bottino.</p>
+  <a class="go" href="gameplay.html">← Com'è giocarci</a>
+</div>
+
+<footer>
+  <div class="tagline">Il loot non è tuo finché non <span>esci vivo.</span></div>
+  BLADE<b>//</b>KAI 改 · Extraction
+</footer>
+
+<script src="app.js"></script>
+<script>
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.3});document.querySelectorAll('.reveal-cine').forEach(function(el){io.observe(el);});})();
+</script>
+</body>
+</html>

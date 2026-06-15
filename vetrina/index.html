@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.holding{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.holding-bg{position:absolute;inset:0;background:url('assets/home-duo.jpg') center/cover;filter:saturate(1.05)}
+.holding-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,14,.6),rgba(7,10,14,.92))}
+.holding-in{position:relative;z-index:1;padding:30px}
+.holding h1{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,11vw,8rem);letter-spacing:.02em;line-height:.9}
+.holding h1 .slash{color:var(--kai);text-shadow:0 0 40px rgba(34,230,255,.7)}
+.holding .jp{font-family:var(--jp);color:var(--amber);font-size:.4em;display:block;margin-top:10px}
+.holding p{color:var(--ink-dim);margin:22px 0 30px;font-size:1.1rem;letter-spacing:.04em}
+.holding .go{display:inline-flex;gap:10px;font-family:var(--disp);font-size:1rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--kai);padding:14px 28px;border:1px solid var(--kai-dim);border-radius:4px;transition:.25s}
+.holding .go:hover{background:rgba(34,230,255,.08);box-shadow:0 0 26px rgba(34,230,255,.25);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+<div class="holding">
+  <div class="holding-bg"></div>
+  <div class="holding-in">
+    <h1>BLADE<span class="slash">//</span>KAI<span class="jp">改 · Lama e Proiettile</span></h1>
+    <p>Anime arena shooter · 5 classi, gun &amp; spada · estrazione open-world</p>
+    <a class="go" href="gameplay.html">Scopri il gameplay →</a>
+  </div>
+</div>
+<!-- HOME VETRINA: placeholder. La home/overview definitiva si costruisce per ultima. -->
+</body>
+</html>
