@@ -16,6 +16,11 @@
   document.querySelectorAll('.reveal').forEach(function(el,i){
     el.style.transitionDelay=((i%4)*60)+'ms'; io.observe(el);
   });
+  // cinematic panels reveal (threshold a bit higher so copy lands in view)
+  var ioCine=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');ioCine.unobserve(e.target);} });
+  },{threshold:.28});
+  document.querySelectorAll('.reveal-cine').forEach(function(el){ ioCine.observe(el); });
   // in-page nav active state + close menu on tap
   var links=[].slice.call(document.querySelectorAll('.navlinks a'));
   links.forEach(function(a){

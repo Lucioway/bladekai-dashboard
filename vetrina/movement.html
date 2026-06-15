@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Movement</title>
+<meta name="description" content="Il movimento È il gioco. Wall-jump, dash di lama, dodge senza i-frame. La velocità cambia con l'arma in mano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="gameplay.html">Gameplay</a>
+    <a href="movement.html" class="active">Movement</a>
+    <a href="combat.html">Combat</a>
+    <a href="skills.html">Skills</a>
+    <a href="classi.html">Classi</a>
+    <a href="extraction.html">Open World</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cine hero reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/move-vertical.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">Movement · Il Cuore del Feel <span class="jp">移動</span></div>
+    <h2>L'aria è il tuo<br><em>terreno</em>.</h2>
+    <p class="say">A piedi è dove si decide il combattimento. <b>Niente double jump</b>: il wall-jump è l'unica via per guadagnare aria — lo concateni finché il pavimento diventa un suggerimento. Il principio è uno: se una feature rallenta il gioco, muore.</p>
+  </div>
+</section>
+
+<!-- KIT FACTS -->
+<div class="cstrip" style="--n:4">
+  <div class="c" style="--cc:var(--kai)"><div class="ic">🦘</div><h3>Wall-jump</h3><p>Spinta diagonale dal muro che mantiene il momentum. L'unica via per l'aria, chainabile.</p></div>
+  <div class="c" style="--cc:var(--green)"><div class="ic">🏃</div><h3>Sprint</h3><p>Corsa sostenuta, mira penalizzata. Copre terreno tra un ingaggio e l'altro.</p></div>
+  <div class="c" style="--cc:var(--red)"><div class="ic">🌀</div><h3>Dodge · zero i-frame</h3><p>Scatto che riposiziona la hitbox. Nessuna invincibilità: schivi muovendoti davvero.</p></div>
+  <div class="c" style="--cc:var(--amber)"><div class="ic">🗡️</div><h3>Dash di lama</h3><p>Gap-closer 8 vie, anche in aria. Ma solo in stance spada.</p></div>
+</div>
+
+<!-- DASH = REWARD DELLA SPADA -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/hype-flow.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">① Il Dash è la Ricompensa della Lama</div>
+    <h2>Col gun sei<br><em>a terra</em>.</h2>
+    <p class="say">Impugni il fucile e sei grounded: pianti, miri, piazzi danno. <b>Switchi alla spada</b> e sblocchi il dash — chiudi, scarti, entri. Il ritmo è tutto qui: <b>poke col gun ↔ switch-spada-dash-engage</b>. La mobilità non è gratis: è una decisione.</p>
+  </div>
+</section>
+
+<!-- STAMINA -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/home-swordsman.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">② Stamina · La Mobilità è una Risorsa</div>
+    <h2>Dòsala,<br>o resti <em class="red">a secco</em>.</h2>
+    <p class="say">Sprint, dodge e wall-jump attingono a una barra. Salto base e camminata sono <b>gratis</b>, sempre. Ma chi spamma la mobilità si ritrova fermo nel momento sbagliato. La barra risale quando non la usi — gestirla è skill.</p>
+  </div>
+</section>
+
+<!-- VELOCITÀ PER ARMA -->
+<section class="cine reveal-cine">
+  <div class="cine-bg" style="background-image:url('assets/hype-duel.jpg')"></div>
+  <div class="cine-in">
+    <div class="eyebrow">③ Velocità per Arma</div>
+    <h2>L'arma in mano<br>cambia il tuo <em>passo</em>.</h2>
+    <p class="say">La velocità base cambia con ciò che impugni: <b>spada +15%</b> (la più rapida, ha il dash), <b>ottica</b> al base, <b>balistica −15%</b> (pesante, più danno). Lo switch istantaneo diventa una decisione tattica continua: spada per muoverti e chiudere, balistica per piazzare danno da fermo.</p>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<div class="statement">
+  <div class="eyebrow">La Regola che non si Tradisce</div>
+  <h2>Schivi muovendoti.<br>Non con <span>l'invincibilità</span>.</h2>
+  <p class="reveal"><b>Zero i-frame ovunque.</b> Nessuna schivata ti rende intoccabile per magia: ti sposti, leggi, anticipi. È ciò che tiene alto il ceiling e onesto il combattimento — la verticalità è sempre lì, il wall-jump per gli angoli, le kill in volo.</p>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Sai come ci si<br><span>muove</span>. Ora come si combatte.</h2>
+  <p>Il movimento è il telaio. Sopra ci vivono gun, spada e deflessione — il cuore del fight.</p>
+  <a class="go" href="combat.html">Il Combat System →</a>
+</div>
+
+<footer>
+  <div class="tagline">Il movimento <span>è</span> il gioco.</div>
+  BLADE<b>//</b>KAI 改 · Movement
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
