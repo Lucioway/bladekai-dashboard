@@ -37,13 +37,12 @@
   <div class="phero-in">
     <div class="crumbs"><a href="index.html">Home</a> › Movement System</div>
     <h1>Movement System <span class="jp">移動</span></h1>
-    <p class="lede">Il cuore del feel. Tutto il movimento base è <b>gratis e sempre disponibile</b>; il dash è legato alla spada. Stamina gestisce la mobilità avanzata, la velocità cambia con l'arma.</p>
   </div>
 </div>
 
-<section id="kit">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Il Kit Base (Tier 0)</h2><span class="jp">体</span></div>
-  <p class="sec-sub">A piedi è dove conta il combattimento. <b>No double jump</b> — il wall-jump è l'unico modo di guadagnare aria.</p>
+<section id="base">
+  <div class="sec-head"><span class="sec-num">0.1</span><h2>Base Movement</h2><span class="jp">基本</span></div>
+  <p class="sec-sub">Il movimento comune a <b>tutte le armi, in tutte le situazioni</b> — sempre disponibile, weapon-agnostic. <b>No double jump</b> (il wall-jump è l'unica via per l'aria) · <b>zero i-frame</b> (schivi muovendoti, non con l'invincibilità).</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Mecca</th><th>Comportamento</th><th>Valore ~</th><th>Stamina</th></tr>
     <tr><td><strong>Walk</strong></td><td>base</td><td>~6 m/s</td><td>—</td></tr>
@@ -51,13 +50,22 @@
     <tr><td><strong>Jump</strong></td><td>salto singolo (no double jump)</td><td>~3 m</td><td>gratis</td></tr>
     <tr><td><strong>Wall-jump</strong></td><td>spinta diagonale dal muro, mantiene momentum — l'unica via per l'aria</td><td>chainabile</td><td><span class="pill t-red">consuma</span></td></tr>
     <tr><td><strong>Dodge</strong></td><td>scatto laterale, riposiziona la hitbox — <b>ZERO i-frame</b></td><td>CD ~3-4s</td><td><span class="pill t-red">consuma</span></td></tr>
-    <tr><td><strong>Dash</strong> 🗡️</td><td><b>SOLO in stance spada</b> — gap-closer 8 vie, anche in aria</td><td>~2 cariche, ric. ~3s</td><td>cariche proprie</td></tr>
   </table></div>
-  <div class="note reveal" style="margin-top:18px"><b>Dash = ricompensa della spada —</b> col gun sei grounded. Switchi alla lama → sblocchi il dash. Ritmo: <code>gun-poke ↔ switch-spada-dash-engage</code>. <b>Zero i-frame ovunque</b>: schivi muovendoti davvero, non con l'invincibilità.</div>
+</section>
+
+<section id="weapon-move">
+  <div class="sec-head"><span class="sec-num">0.2</span><h2>Movement delle Armi · Melee</h2><span class="jp">武器移動</span></div>
+  <p class="sec-sub">Oltre al base, ogni arma può dare una <b>skill di movimento</b>. Col <b>gun sei grounded</b> (nessuna skill di movimento) → il movimento attivo viene dalle <b>melee</b>. Qui le armi melee e la loro skill.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:#22e6ff"><div class="role" style="color:#22e6ff">Spada · +15% velocità</div><h3>Dash</h3><p>Gap-closer <b>8 vie, anche in aria</b> (~2 cariche, ric. ~3s). La <b>ricompensa della lama</b>: switchi alla spada → sblocchi il dash. Ritmo: <code>gun-poke ↔ switch-spada-dash-engage</code>.</p></div>
+    <div class="card reveal" style="--c:#7fe3f0"><div class="role" style="color:#7fe3f0">Counter Sword · +10%</div><h3>Counter-Step <span style="font-size:.62rem;color:var(--ink-faint);letter-spacing:.12em">— PROPOSTA</span></h3><p>Passo evasivo breve legato alla parata: reposiziona mentre conti il fendente. Difensivo/reattivo, <b>non un gap-closer</b>.</p></div>
+    <div class="card reveal" style="--c:#ff9d3c"><div class="role" style="color:#ff9d3c">Bat · +0%</div><h3>Affondo Pesante <span style="font-size:.62rem;color:var(--ink-faint);letter-spacing:.12em">— PROPOSTA</span></h3><p>Caricata lenta in avanti che chiude col colpo pesante + knockback. Committed, alto rischio/reward. La più lenta.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px;border-left-color:var(--amber)"><b>Da confermare —</b> il <b>Dash</b> è locked sulla Spada. Counter Sword e Bat hanno una skill di movimento propria (le proposte sopra) o tengono <b>solo il bonus velocità</b>? Dimmi e fisso.</div>
 </section>
 
 <section id="stamina">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Stamina (stile S4)</h2><span class="jp">気力</span></div>
+  <div class="sec-head"><span class="sec-num">0.3</span><h2>Stamina (stile S4)</h2><span class="jp">気力</span></div>
   <p class="sec-sub">Barra ~100 che gestisce la mobilità avanzata. La mobilità è <b>una risorsa da dosare</b>, non infinita — chi spamma resta a secco al momento sbagliato.</p>
   <div class="grid g3">
     <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Consuma</div><h3>Sprint · Dodge · Wall-jump</h3><p>I tre attingono alla barra. Costi ~: dodge ~25, wall-jump ~20, sprint drena continuo (da tunare).</p></div>
@@ -67,7 +75,7 @@
 </section>
 
 <section id="velocita">
-  <div class="sec-head"><span class="sec-num">03</span><h2>Velocità per Arma</h2><span class="jp">速度</span></div>
+  <div class="sec-head"><span class="sec-num">0.4</span><h2>Velocità per Arma</h2><span class="jp">速度</span></div>
   <p class="sec-sub">La velocità base <b>cambia con l'arma in mano</b> → lo switch istantaneo è una decisione tattica continua.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Arma</th><th>Velocità ~</th><th>Note</th></tr>
@@ -79,7 +87,7 @@
 </section>
 
 <section id="camera">
-  <div class="sec-head"><span class="sec-num">04</span><h2>Camera — TPS</h2><span class="jp">視点</span></div>
+  <div class="sec-head"><span class="sec-num">0.5</span><h2>Camera — TPS</h2><span class="jp">視点</span></div>
   <div class="grid g2">
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Base</div><h3>Terza persona (modello Fortnite)</h3><p>TPS per movimento, spada, flex cosmetico e clip. Vedi il corpo → la spada e il movimento sono leggibili, le skin si vedono.</p></div>
     <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Contestuale</div><h3>FPS su ADS</h3><p>Mira di precisione (sniper/rifle) → passi in FPS, poi torni in TPS. In arena/ranked camera normalizzata vs TPS-peek.</p></div>
