@@ -222,6 +222,23 @@
     <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Build order</div><h3>+ varietà → + anti-deflect</h3><p>v1: +Counter Sword, +Pulse SMG, +Beam Sniper. v2: +Balistiche (Pistola, SMG, Assault, Shotgun, Bolt, Arco) + Minigun → il counter alla deflect.</p></div>
   </div>
   <div class="note reveal" style="margin-top:18px"><b>Layer MMORPG —</b> ogni arma sale di <a href="equipaggiamento.html" style="color:var(--kai)">Risonanza</a> (potenza) + gear-mod nell'open world — mai con numeri casuali. In <b>arena</b> soft-cap COD: le armi si <b>sbloccano</b> livellando (stat pari per tutti). Due stesse armi allo stesso stadio sono identiche: la differenza sei tu.</p></div>
+
+  <h3 class="kh" style="margin-top:28px">Definizione MVP — le prime 2 armi</h3>
+  <p class="sec-sub">Numeri di partenza (tutti <code>~</code>, da playtest), ancorati a <b>SP 50 + HP 100 = 150 eff</b> · TTK <b>1,5-3s</b> · dati calibrati su 9 giochi (vedi <code>research/weapons-db/_CALIBRATION.md</code>).</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Parametro</th><th>Spada (melee)</th><th>Pulse Rifle (ottica)</th></tr>
+    <tr><td><strong>Ruolo</strong></td><td>duel close + deflect</td><td>workhorse medio</td></tr>
+    <tr><td><strong>Danno</strong></td><td>~70 / colpo (2-3 a 150)</td><td>~8 corpo / ~16 testa</td></tr>
+    <tr><td><strong>Cadenza</strong></td><td>combo veloci (fendenti)</td><td>~600 RPM (10/s)</td></tr>
+    <tr><td><strong>TTK ~</strong></td><td>~2-3 colpi a contatto</td><td>~1,9s corpo · ~1,2s con HS</td></tr>
+    <tr><td><strong>Headshot</strong></td><td>—</td><td><b>2×</b></td></tr>
+    <tr><td><strong>Proiettile</strong></td><td>contatto</td><td>bolt <b>~400 m/s</b> → <span class="pill t-cyan">deflettibile</span></td></tr>
+    <tr><td><strong>Munizioni</strong></td><td>carica KAI (swing+deflect)</td><td><b>overheat</b> ~30 colpi → cooldown ~2s</td></tr>
+    <tr><td><strong>Range</strong></td><td>0 (contatto)</td><td>medio (falloff oltre ~30m)</td></tr>
+    <tr><td><strong>Mobilità</strong></td><td><span class="pill t-cyan">+15%</span> · ha il <b>dash</b> (8 vie, ~2 cariche, ric ~3s)</td><td>−10%</td></tr>
+    <tr><td><strong>Firma</strong></td><td><b>deflessione</b> cono-stato (para energia, rimanda)</td><td>il gun energia deflettibile · grounded</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:14px"><b>Perché bastano per il test —</b> Spada (movimento+deflect) + Pulse Rifle (energia deflettibile) chiudono il loop <code>poke ↔ switch-spada-dash-engage</code> e validano deflect+switch+velocità-per-arma. La <b>Pistola</b> (balistica, anti-deflect) entra appena vuoi testare il counter alla deflect.</div>
 </section>
 
 <div class="crossnav">
