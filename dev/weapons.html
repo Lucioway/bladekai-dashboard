@@ -8,6 +8,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:980px){.wgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.wgrid{grid-template-columns:1fr}}
+.wcard{background:linear-gradient(165deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
+  border-radius:7px;overflow:hidden;transition:.3s;display:flex;flex-direction:column;position:relative}
+.wcard:hover{border-color:color-mix(in srgb,var(--c) 45%,transparent);transform:translateY(-4px);
+  box-shadow:0 20px 44px -24px var(--c)}
+.wcard .shot{position:relative;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--c) 14%,var(--bg2)),var(--bg));aspect-ratio:1/1;overflow:hidden}
+.wcard .shot::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);box-shadow:0 0 16px var(--c);z-index:2}
+.wcard .shot img{width:100%;height:100%;object-fit:cover;display:block}
+.wcard .v2{position:absolute;top:10px;right:10px;z-index:3;font-family:var(--disp);font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid #ffd24d;color:#ffd24d;background:rgba(7,10,14,.7)}
+.wcard .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.wcard h3{font-family:var(--disp);font-size:1.25rem;letter-spacing:.03em;margin-bottom:8px;color:var(--ink)}
+.wtags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.wtag{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.wcard p{font-size:.86rem;color:var(--ink-dim);line-height:1.5;flex:1}
+.wstats{display:grid;gap:6px;margin:12px 0 4px}
+.wstat{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:9px}
+.wstat>span{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.wbar{display:flex;gap:2px}.wbar i{height:6px;flex:1;border-radius:1px;background:rgba(255,255,255,.07)}
+.wbar i.on{background:var(--c);box-shadow:0 0 6px color-mix(in srgb,var(--c) 55%,transparent)}
+</style>
 </head>
 <body>
 <nav>
@@ -18,7 +42,6 @@
     <a href="movement.html">Movement</a>
     <a href="combat.html">Combat</a>
     <a href="weapons.html" class="active">Weapons</a>
-    <a href="armi.html">Armi</a>
     <a href="skills.html">Skills</a>
     <a href="classi.html">Classi</a>
     <a href="arena.html">Arena</a>
@@ -38,57 +61,140 @@
   <div class="phero-in">
     <div class="crumbs"><a href="index.html">Home</a> › Weapon System</div>
     <h1>Weapon System <span class="jp">武器</span></h1>
-    <p class="lede">Dualità: <b>1 melee + 1 gun</b>, loadout libero, switch istantaneo. La regola madre del counterplay: <b>ottiche (energia) deflettibili · balistiche no</b>.</p>
+    <p class="lede">Dualità: <b>1 melee + 1 gun</b>, <b>loadout libero</b> (nessuna arma è bloccata a una classe), switch istantaneo. La regola madre del counterplay: <b>ottiche (energia) deflettibili · balistiche no</b>. Le «lean» sono consigli di sinergia, non lock.</p>
   </div>
 </div>
 
+<!-- COUNTERPLAY -->
 <section id="counterplay">
   <div class="sec-head"><span class="sec-num">00</span><h2>La Regola del Counterplay</h2><span class="jp">相性</span></div>
   <div class="grid g2">
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Ottiche → deflettibili</div><h3>La deflect le para</h3><p>I proiettili energia (ciano) si deflettono con la Spada. Chi spara energia contro un duellante rischia il rimbalzo.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Ottiche → deflettibili</div><h3>La deflect le para</h3><p>I proiettili energia (ciano) si deflettono con la <b>Spada</b>. Chi spara energia contro un duellante rischia il rimbalzo.</p></div>
     <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Balistiche → NO</div><h3>Le devi schivare</h3><p>I proiettili balistici non si deflettono → puniscono chi spamma la deflect. È l'anti-deflect del gioco.</p></div>
   </div>
 </section>
 
+<!-- MELEE -->
 <section id="melee">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Melee (3)</h2><span class="jp">近接</span></div>
-  <p class="sec-sub">Tutti ne equipaggiano una. La <b>deflessione</b> (para i proiettili energia) vive sulla Spada.</p>
-  <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Arma</th><th>Stile</th><th>Vel. mov</th><th>Danno</th><th>Note</th></tr>
-    <tr><td><strong>Spada</strong> (Photon Sword)</td><td>combo veloci, dash-lunge</td><td><span class="pill t-cyan">+15%</span></td><td>medio-alto</td><td><b>DEFLESSIONE</b> (para i proiettili energia) · mobilità · dash</td></tr>
-    <tr><td><strong>Counter Sword</strong> (pugno)</td><td>counter/parata MELEE</td><td>+10%</td><td>medio</td><td><b>para i fendenti nemici</b> (anti-melee) · NON i proiettili</td></tr>
-    <tr><td><strong>Bat</strong> (mazza)</td><td>colpi pesanti singoli</td><td>+0%</td><td>alto</td><td><b>knockback</b> · disruption</td></tr>
-  </table></div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Melee — la Lama</h2><span class="jp">近接</span></div>
+  <p class="sec-sub">Tutti ne equipaggiano una. La <b>deflessione</b> (para i proiettili energia) vive sulla <b>Spada</b>; la Counter Sword contra i fendenti, il Bat sbalza.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-blade-standard.jpg" alt="Spada · Photon Sword" loading="lazy"></div><div class="body">
+      <h3>Spada <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— Photon Sword</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#22e6ff">Melee</span><span class="wtag" style="color:#22e6ff">Deflect</span><span class="wtag" style="color:#5bd17a">Mobilità +15%</span></div>
+      <p>L'arma-simbolo. <b>Deflette i proiettili energia</b> (cono-stato in guardia), chiude in dash-chain, ha il dash. Danno medio-alto a contatto, consuma carica e surriscalda.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Mobilità</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#7fe3f0"><div class="shot"></div><div class="body">
+      <h3>Counter Sword <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— il pugno</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#7fe3f0">Melee</span><span class="wtag" style="color:#7fe3f0">Anti-melee</span><span class="wtag" style="color:#5bd17a">+10%</span></div>
+      <p>Counter/parata corpo a corpo: <b>para i fendenti nemici</b> e contrattacca. Anti-spada, NON anti-proiettile. Difensiva, premia la lettura del melee avversario.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Difesa</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"></div><div class="body">
+      <h3>Bat <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— mazza</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#ff9d3c">Melee</span><span class="wtag" style="color:#ff4d6d">Knockback</span><span class="wtag" style="color:#b4c6d2">+0%</span></div>
+      <p>Colpi pesanti singoli con <b>knockback</b>: disruption e controllo. La più lenta, ma sbalza i nemici dagli angoli e spezza gli ingaggi. Niente deflect.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>CC</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#e8d68a"><div class="shot"><span class="v2">Endgame</span><img src="assets/weap-blade-alba.jpg" alt="ALBA — lama leggendaria" loading="lazy"></div><div class="body">
+      <h3>ALBA <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— leggendaria</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#e8d68a">Leggendaria</span><span class="wtag" style="color:#22e6ff">Variante Spada</span><span class="wtag" style="color:#b08fff">Endgame</span></div>
+      <p>La prima lama del Monaco, bianco-oro, sparita da cinque anni. Variante endgame della Spada: stesso ruolo (deflect+dash), ma il <b>mito che impugni</b>. Drop raro dell'open-world.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Mobilità</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+  </div>
 </section>
 
+<!-- OTTICHE -->
 <section id="ottiche">
   <div class="sec-head"><span class="sec-num">02</span><h2>Gun — Ottiche</h2><span class="jp">光学</span> <span class="pill t-cyan" style="align-self:center;margin-left:auto">deflettibili</span></div>
-  <p class="sec-sub">Energia KAI: bolt visibili, precise, deflettibili. Munizioni = overheat/ricarica energia.</p>
-  <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Arma</th><th>Range</th><th>Danno</th><th>Cadenza</th><th>Vel. mov</th><th>Ruolo</th></tr>
-    <tr><td><strong>Pulse SMG</strong></td><td>corto</td><td>basso</td><td><b>alta</b></td><td>base</td><td>spray ravvicinato</td></tr>
-    <tr><td><strong>Pulse Rifle</strong> (assault)</td><td>medio</td><td>medio</td><td>media</td><td>−5%</td><td><b>workhorse · arma MVP</b></td></tr>
-    <tr><td><strong>Beam Sniper</strong></td><td>lungo</td><td>alto (carica)</td><td>bassa</td><td>−15%</td><td>precisione energia</td></tr>
-  </table></div>
+  <p class="sec-sub">Energia KAI: bolt ciano visibili, precise, <b>deflettibili</b>. Munizioni = overheat/ricarica energia. Lean: Striker (poke) e Phantom (precisione).</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-arc-smg.jpg" alt="Pulse SMG" loading="lazy"></div><div class="body">
+      <h3>Pulse SMG</h3><div class="wtags"><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#b4c6d2">Corto</span><span class="wtag" style="color:#5bd17a">lean: Striker</span></div>
+      <p>Mitraglietta a energia: cadenza altissima, bobine roventi. Brucia bersagli vicini in un lampo — il raggio crolla a distanza. Spray ravvicinato.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-pulse-carbine.jpg" alt="Pulse Rifle" loading="lazy"></div><div class="body">
+      <h3>Pulse Rifle <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— assault</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#b4c6d2">Medio</span><span class="wtag" style="color:#5bd17a">arma MVP</span></div>
+      <p>La carabina a impulsi versatile: affidabile, precisa, raggio medio. Il <b>workhorse</b> del gioco e l'arma dell'MVP — perdona poco, ma chiede poco.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-beam-rifle.jpg" alt="Beam Sniper" loading="lazy"></div><div class="body">
+      <h3>Beam Sniper</h3><div class="wtags"><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#b4c6d2">Lungo</span><span class="wtag" style="color:#b08fff">lean: Phantom</span></div>
+      <p>Fucile a raggio di precisione: colpo carico, danno alto, niente caduta del proiettile. Premia piazzamento e first-shot — ma è <b>deflettibile</b>.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#22e6ff"><div class="shot"><img src="assets/weap-kai-sniper.jpg" alt="KAI Sniper" loading="lazy"></div><div class="body">
+      <h3>KAI Sniper</h3><div class="wtags"><span class="wtag" style="color:#22e6ff">Ottica</span><span class="wtag" style="color:#b4c6d2">Estremo</span><span class="wtag" style="color:#b08fff">lean: Phantom</span></div>
+      <p>Precisione a energia a raggio estremo: pura linea di luce, niente caduta. Il braccio lungo dell'Ombra in PvE; cadenza bassa, ogni colpo conta.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+  </div>
 </section>
 
+<!-- BALISTICHE -->
 <section id="balistiche">
   <div class="sec-head"><span class="sec-num">03</span><h2>Gun — Balistiche</h2><span class="jp">実弾</span> <span class="pill t-red" style="align-self:center;margin-left:auto">NON deflettibili</span></div>
-  <p class="sec-sub">Polvere da sparo: veloci, perforanti, munizioni finite. La <b>risposta</b> ai duellanti di lama.</p>
-  <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Arma</th><th>Range</th><th>Danno</th><th>Cadenza</th><th>Vel. mov</th><th>Ruolo</th></tr>
-    <tr><td><strong>Pistola</strong></td><td>tutti</td><td>medio</td><td>media</td><td>base</td><td>sidearm preciso, anti-deflect</td></tr>
-    <tr><td><strong>Bolt Sniper</strong></td><td>lungo</td><td><b>molto alto</b></td><td>molto bassa</td><td>−15%</td><td>anti-deflect a distanza · headshot</td></tr>
-  </table></div>
+  <p class="sec-sub">Polvere da sparo: veloci, perforanti, munizioni finite. La <b>risposta</b> ai duellanti di lama — non puoi deflettere, devi schivare.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-pistol.jpg" alt="Pistola" loading="lazy"></div><div class="body">
+      <h3>Pistola <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.16em">— sidearm</span></h3>
+      <div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#b4c6d2">Tutti</span><span class="wtag" style="color:#ff4d6d">anti-deflect</span></div>
+      <p>La sidearm universale, precisa: anti-deflect sempre carico quando il primario è a secco. La rete di sicurezza contro chi spamma la lama.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-smg.jpg" alt="SMG Balistico" loading="lazy"></div><div class="body">
+      <h3>SMG Balistico</h3><div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#b4c6d2">Corto-medio</span><span class="wtag" style="color:#5bd17a">lean: Striker</span></div>
+      <p>Mitraglietta a polvere: cadenza alta e perforazione. Il run-and-gun quando serve bucare una schermatura — e non vuoi rischiare il rimbalzo dell'energia.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-assault.jpg" alt="Assault Rifle" loading="lazy"></div><div class="body">
+      <h3>Assault Rifle</h3><div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#b4c6d2">Medio</span><span class="wtag" style="color:#ff4d6d">workhorse PvP</span></div>
+      <p>Il cavallo da battaglia balistico: equilibrio tra danno, gittata e cadenza. Buono in ogni mano — la scelta sicura quando vuoi danno non-deflettibile.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff9d3c"><div class="shot"><img src="assets/weap-shotgun.jpg" alt="Combat Shotgun" loading="lazy"></div><div class="body">
+      <h3>Combat Shotgun</h3><div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#b4c6d2">Distanza zero</span><span class="wtag" style="color:#ff4d6d">burst</span></div>
+      <p>Fucile a pompa da distanza zero. Un colpo per spezzare un ingaggio negli angoli stretti — vuoto, sei carne morta finché ricarichi. Alto rischio, alto reward.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#b08fff"><div class="shot"><img src="assets/weap-bolt-sniper.jpg" alt="Bolt Sniper" loading="lazy"></div><div class="body">
+      <h3>Bolt Sniper</h3><div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#b4c6d2">Lungo</span><span class="wtag" style="color:#ff4d6d">headshot</span></div>
+      <p>Anti-materiale a otturatore: lento, pesante, perforante. <b>Molto alto danno</b>, anti-deflect a distanza. Un colpo, una sentenza — premia il primo tiro.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div></div>
+    </div></div>
+    <div class="wcard reveal" style="--c:#ff4d6d"><div class="shot"><span class="v2">v2</span><img src="assets/weap-minigun.jpg" alt="Minigun" loading="lazy"></div><div class="body">
+      <h3>Minigun</h3><div class="wtags"><span class="wtag" style="color:#ff9d3c">Balistica</span><span class="wtag" style="color:#ffd24d">v2</span><span class="wtag" style="color:#ff4d6d">lean: Heavy</span></div>
+      <p>Cannone rotante a canne multiple. <b>Spin-up</b> prima del DPS massimo: chi lo coglie a freddo lo punisce, chi lo subisce a regime viene falciato. Arriva in v2 con l'Heavy.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div><div class="wstat"><span>Cadenza</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
+  </div>
 </section>
 
-<section id="mvp">
-  <div class="sec-head"><span class="sec-num">04</span><h2>MVP &amp; Build Order</h2><span class="jp">順序</span></div>
-  <div class="grid g2">
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">MVP (Kenshi)</div><h3>Spada + Pulse Rifle</h3><p>2 armi → testa melee+deflect, gun energia, switch, velocità-per-arma. Counter Sword/Bat e balistiche = dopo.</p></div>
-    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Build order</div><h3>+ varietà → + anti-deflect</h3><p>v1: +Counter Sword/Bat, +SMG, +Beam Sniper. v2: +Balistiche (Pistola, Bolt) → introduce il counter alla deflect.</p></div>
+<!-- UTILITY v2 -->
+<section id="utility">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Utility</h2><span class="jp">支援</span> <span class="pill t-yellow" style="align-self:center;margin-left:auto">v2</span></div>
+  <p class="sec-sub">Strumenti che non fanno kill ma li abilitano. Arrivano in v2 con le classi di supporto.</p>
+  <div class="wgrid">
+    <div class="wcard reveal" style="--c:#2fd6c6"><div class="shot"><span class="v2">v2</span><img src="assets/weap-emp-gauntlet.jpg" alt="EMP Gauntlet" loading="lazy"></div><div class="body">
+      <h3>EMP Gauntlet</h3><div class="wtags"><span class="wtag" style="color:#2fd6c6">Utility</span><span class="wtag" style="color:#ffd24d">v2</span><span class="wtag" style="color:#2fd6c6">lean: Warden</span></div>
+      <p>Guanto a impulso elettromagnetico: <b>scarica le ottiche</b> e disturba nel raggio. Controllo, non danno — l'arma che vince senza un kill. v2 con il Warden.</p>
+      <div class="wstats"><div class="wstat"><span>Danno</span><div class="wbar"><i class=on></i><i></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Gittata</span><div class="wbar"><i class=on></i><i class=on></i><i></i><i></i><i></i></div></div><div class="wstat"><span>Controllo</span><div class="wbar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div></div>
+    </div></div>
   </div>
-  <div class="note reveal" style="margin-top:18px"><b>Layer MMORPG —</b> le armi salgono di <a href="equipaggiamento.html" style="color:var(--kai)">Risonanza</a> (potenza) + gear-mod nell'open world. In <b>arena</b> soft-cap COD: le armi si <b>sbloccano</b> livellando (stat pari per tutti).</div>
+</section>
+
+<!-- MVP & BUILD ORDER -->
+<section id="mvp">
+  <div class="sec-head"><span class="sec-num">05</span><h2>MVP &amp; Build Order</h2><span class="jp">順序</span></div>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">MVP (Kenshi)</div><h3>Spada + Pulse Rifle</h3><p>2 armi → testa melee+deflect, gun energia, switch, velocità-per-arma. Counter Sword/Bat, altre ottiche e balistiche = dopo.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Build order</div><h3>+ varietà → + anti-deflect</h3><p>v1: +Counter Sword/Bat, +Pulse SMG, +Beam Sniper. v2: +Balistiche (Pistola, SMG, Assault, Shotgun, Bolt) + Minigun/EMP → il counter alla deflect.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Layer MMORPG —</b> ogni arma sale di <a href="equipaggiamento.html" style="color:var(--kai)">Risonanza</a> (potenza) + gear-mod nell'open world — mai con numeri casuali. In <b>arena</b> soft-cap COD: le armi si <b>sbloccano</b> livellando (stat pari per tutti). Due stesse armi allo stesso stadio sono identiche: la differenza sei tu.</p></div>
 </section>
 
 <div class="crossnav">
