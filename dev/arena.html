@@ -28,7 +28,6 @@
     <a href="equipaggiamento.html">Equip</a>
     <a href="mezzi.html">Mezzi</a>
     <a href="arena.html" class="active">Arena</a>
-    <a href="modalita.html">Modalità</a>
     <a href="fazioni.html">Fazioni</a>
     <a href="progressione.html">Progressione</a>
     <a href="shop.html">Shop</a>
@@ -40,7 +39,7 @@
   <div class="phero-in">
     <div class="crumbs"><a href="index.html">Home</a> › Arena &amp; Modalità</div>
     <h1>Arena &amp; Modalità <span class="jp">闘技場</span></h1>
-    <p class="lede">L'<b>Arena</b> è il layer competitivo a <b>stat normalizzate</b>: azzera gear e bonus dell'open world → kit puro, vince la mano. Cinque modalità che mettono alla prova lo stesso core (gun + spada + deflessione + movimento), da frag-race istantaneo al Battle Royale.</p>
+    <p class="lede">L'<b>Arena</b> è il layer competitivo a <b>stat normalizzate</b>: azzera gear e bonus dell'open world → kit puro, vince la mano. Sei modalità che mettono alla prova lo stesso core (gun + spada + deflessione + movimento), da frag-race istantaneo al Battle Royale.</p>
   </div>
 </div>
 
@@ -57,12 +56,13 @@
 
 <!-- LE 5 MODALITÀ -->
 <section id="modi">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Le 5 Modalità</h2><span class="jp">対戦</span></div>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le 6 Modalità</h2><span class="jp">対戦</span></div>
   <p class="sec-sub">Spread da casual-frag a tattico round-based fino al BR. Ognuna stressa una dimensione diversa del core.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Modo</th><th>Tipo</th><th>Squadre</th><th>Obiettivo</th><th>Respawn</th><th>Build</th></tr>
-    <tr><td><strong>Deathmatch</strong></td><td>Frag race</td><td>FFA / Team</td><td>Kill al cap (o più kill allo scadere)</td><td><span class="pill t-green">sì, rapidi</span></td><td><span class="pill t-cyan">MVP</span></td></tr>
-    <tr><td><strong>Cattura la Bandiera</strong></td><td>Obiettivo</td><td>Team vs Team</td><td>Ruba la bandiera, riportala alla base</td><td><span class="pill t-green">sì</span></td><td>v1</td></tr>
+    <tr><td><strong>Deathmatch</strong></td><td>Frag race</td><td>A squadre (TDM)</td><td>Kill al cap (o più kill allo scadere)</td><td><span class="pill t-green">sì, rapidi</span></td><td><span class="pill t-cyan">MVP</span></td></tr>
+    <tr><td><strong>Tutti con tutti</strong></td><td>Frag race</td><td>FFA — ognuno per sé</td><td>Più kill di tutti allo scadere</td><td><span class="pill t-green">sì, rapidi</span></td><td><span class="pill t-cyan">MVP</span></td></tr>
+    <tr><td><strong>Touchdown</strong></td><td>Obiettivo</td><td>Team vs Team</td><td>Porta la Fumbi nella meta avversaria</td><td><span class="pill t-green">sì</span></td><td>v1</td></tr>
     <tr><td><strong>Disinnesco Bomba</strong></td><td>Round tattico</td><td>Attacco / Difesa</td><td>Piazza/disinnesca (o previeni)</td><td><span class="pill t-red">no nel round</span></td><td>v1</td></tr>
     <tr><td><strong>Payload</strong></td><td>Scorta</td><td>Attacco / Difesa</td><td>Spingi il carico al traguardo / fermalo</td><td><span class="pill t-green">sì</span></td><td>v2</td></tr>
     <tr><td><strong>Battle Royale</strong></td><td>Survival</td><td>1 vs tutti (o squad)</td><td>Ultimo vivo · zona che stringe</td><td><span class="pill t-red">no</span></td><td><span class="pill t-yellow">endgame</span></td></tr>
@@ -74,18 +74,21 @@
   <div class="sec-head"><span class="sec-num">02</span><h2>Dettaglio per Modo</h2><span class="jp">詳細</span></div>
   <div class="grid g2">
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">① Deathmatch · MVP</div><h3>Il core a nudo</h3>
-      <p>FFA o a squadre, respawn rapidi, mappa singola, zero obiettivi. È il <b>primo modo da costruire</b>: valida movimento + gun + spada + deflect con 2–8 player (anche bot) → niente death-spiral.</p>
+      <p>A squadre, respawn rapidi, mappa singola, zero obiettivi. È il <b>primo modo da costruire</b>: valida movimento + gun + spada + deflect con 2–8 player (anche bot) → niente death-spiral.</p>
       <ul><li>Vittoria = primo al cap di kill o più kill allo scadere</li><li>Gate MVP: «gli amici chiedono di rigiocare?»</li></ul></div>
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">② Cattura la Bandiera</div><h3>La corsa</h3>
-      <p>Due squadre, ruba la bandiera nemica e riportala. Il <b>portatore rinuncia al fuoco</b> (solo spada + movimento) → wall-jump e dash sono tutto; la difesa intercetta, deflette, taglia.</p>
-      <ul><li>Eredità <b>Touchdown S4 League</b> (carrier non spara)</li><li>Premia scorta + lettura delle lane</li></ul></div>
-    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">③ Disinnesco Bomba</div><h3>Il round</h3>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">② Tutti con tutti · FFA</div><h3>Ognuno per sé</h3>
+      <p>Free-for-all: niente squadre, classifica individuale. Caos puro, lettura a 360° → premia awareness e movimento costante. Variante MVP del Deathmatch, perfetta per warm-up e party.</p>
+      <ul><li>Vittoria = più kill di tutti allo scadere (o primo al cap)</li><li>Nessun amico, nessuna copertura: solo tu</li></ul></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">③ Touchdown</div><h3>La meta</h3>
+      <p>Una sola palla, la <b>Fumbi</b>, appare a centrocampo: afferrala e portala nella <b>meta avversaria</b> per segnare. Il <b>portatore non spara</b> (solo spada + movimento) → wall-jump e dash sono tutto; la difesa intercetta, deflette, taglia.</p>
+      <ul><li>Modalità-icona <b>S4 League</b> (carrier non spara)</li><li>Premia scorta + lettura delle lane</li></ul></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">④ Disinnesco Bomba</div><h3>Il round</h3>
       <p>Attacco piazza l'ordigno, difesa disinnesca o previene. <b>Round senza respawn</b> → ogni vita pesa, tensione massima, lettura e posizionamento. Il modo più cerebrale.</p>
       <ul><li>Stile <b>Valorant / CS</b> (search &amp; destroy)</li><li>Best-of-N round, side-swap a metà</li></ul></div>
-    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">④ Payload</div><h3>La spinta</h3>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">⑤ Payload</div><h3>La spinta</h3>
       <p>L'attacco scorta un carico lungo un percorso, la difesa lo ferma. <b>Obiettivo mobile</b> a ondate: il fronte si sposta di continuo, spinta e respinta.</p>
       <ul><li>Stile <b>Overwatch</b> (escort)</li><li>Checkpoint + tempo extra a ogni tappa</li></ul></div>
-    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">⑤ Battle Royale</div><h3>L'ultimo</h3>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">⑥ Battle Royale</div><h3>L'ultimo</h3>
       <p>Mappa enorme, zona che stringe, loot a terra, tutti contro tutti (solo/squad). <b>Lo scope grande</b> — anche il nome del progetto. La prova finale di movimento e nervo.</p>
       <ul><li>Loot sul campo → gear temporaneo per la partita</li><li>Massimo scope: ultimo a salire, dopo netcode solido</li></ul></div>
   </div>
@@ -96,8 +99,8 @@
   <div class="sec-head"><span class="sec-num">03</span><h2>Ordine di Costruzione</h2><span class="jp">順序</span></div>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Fase</th><th>Modo</th><th>Perché</th></tr>
-    <tr><td><span class="pill t-cyan">MVP</span></td><td><strong>Deathmatch</strong></td><td>Valida il core feel col minimo contenuto. 2–8 player / bot.</td></tr>
-    <tr><td><strong>v1</strong></td><td>Cattura la Bandiera · Disinnesco Bomba</td><td>Primi obiettivi: introducono squadra, ruolo, round.</td></tr>
+    <tr><td><span class="pill t-cyan">MVP</span></td><td><strong>Deathmatch · Tutti con tutti</strong></td><td>Valida il core feel col minimo contenuto. 2–8 player / bot.</td></tr>
+    <tr><td><strong>v1</strong></td><td>Touchdown · Disinnesco Bomba</td><td>Primi obiettivi: introducono squadra, ruolo, round.</td></tr>
     <tr><td><strong>v2</strong></td><td>Payload</td><td>Obiettivo mobile, mappe più grandi, ondate.</td></tr>
     <tr><td><span class="pill t-yellow">Endgame</span></td><td>Battle Royale</td><td>Massimo scope + netcode pesante. Ultimo a salire.</td></tr>
   </table></div>
@@ -106,7 +109,7 @@
 
 <div class="crossnav">
   <a class="cn" href="open-world.html"><span>Precedente</span><b>← Extraction</b></a>
-  <a class="cn next" href="modalita.html"><span>Prossimo</span><b>Modalità (legacy) →</b></a>
+  <a class="cn next" href="fazioni.html"><span>Prossimo</span><b>Fazioni →</b></a>
 </div>
 
 <footer>
