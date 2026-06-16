@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — Arena &amp; Modalità</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="movement.html">Movement</a>
+    <a href="combat.html">Combat</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="lore.html">Lore</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="classi.html">Classi</a>
+    <a href="armi.html">Armi</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="arena.html" class="active">Arena</a>
+    <a href="modalita.html">Modalità</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="shop.html">Shop</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Home</a> › Arena &amp; Modalità</div>
+    <h1>Arena &amp; Modalità <span class="jp">闘技場</span></h1>
+    <p class="lede">L'<b>Arena</b> è il layer competitivo a <b>stat normalizzate</b>: azzera gear e bonus dell'open world → kit puro, vince la mano. Cinque modalità che mettono alla prova lo stesso core (gun + spada + deflessione + movimento), da frag-race istantaneo al Battle Royale.</p>
+  </div>
+</div>
+
+<!-- NORMALIZZAZIONE -->
+<section id="norm">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Cos'è l'Arena</h2><span class="jp">設計</span></div>
+  <p class="sec-sub">Il contraltare dell'open-world. Là il gear è potenza; qui tutto è azzerato → la skill è l'unica valuta. Ranked, tornei, duelli.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Regola</div><h3>Stat normalizzate</h3><p>Niente gear, niente Risonanza, niente bonus. Entri pari a tutti: kit + mano.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Camera</div><h3>Normalizzata</h3><p>In ranked/arena la camera è regolata per evitare l'abuso del TPS-peek (vedi Movement).</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Scopo</div><h3>Misura la mano</h3><p>È la palestra competitiva: leaderboard, MMR, tornei «La Via della Lama».</p></div>
+  </div>
+</section>
+
+<!-- LE 5 MODALITÀ -->
+<section id="modi">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le 5 Modalità</h2><span class="jp">対戦</span></div>
+  <p class="sec-sub">Spread da casual-frag a tattico round-based fino al BR. Ognuna stressa una dimensione diversa del core.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Modo</th><th>Tipo</th><th>Squadre</th><th>Obiettivo</th><th>Respawn</th><th>Build</th></tr>
+    <tr><td><strong>Deathmatch</strong></td><td>Frag race</td><td>FFA / Team</td><td>Kill al cap (o più kill allo scadere)</td><td><span class="pill t-green">sì, rapidi</span></td><td><span class="pill t-cyan">MVP</span></td></tr>
+    <tr><td><strong>Cattura la Bandiera</strong></td><td>Obiettivo</td><td>Team vs Team</td><td>Ruba la bandiera, riportala alla base</td><td><span class="pill t-green">sì</span></td><td>v1</td></tr>
+    <tr><td><strong>Disinnesco Bomba</strong></td><td>Round tattico</td><td>Attacco / Difesa</td><td>Piazza/disinnesca (o previeni)</td><td><span class="pill t-red">no nel round</span></td><td>v1</td></tr>
+    <tr><td><strong>Payload</strong></td><td>Scorta</td><td>Attacco / Difesa</td><td>Spingi il carico al traguardo / fermalo</td><td><span class="pill t-green">sì</span></td><td>v2</td></tr>
+    <tr><td><strong>Battle Royale</strong></td><td>Survival</td><td>1 vs tutti (o squad)</td><td>Ultimo vivo · zona che stringe</td><td><span class="pill t-red">no</span></td><td><span class="pill t-yellow">endgame</span></td></tr>
+  </table></div>
+</section>
+
+<!-- DETTAGLIO -->
+<section id="dettaglio">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Dettaglio per Modo</h2><span class="jp">詳細</span></div>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">① Deathmatch · MVP</div><h3>Il core a nudo</h3>
+      <p>FFA o a squadre, respawn rapidi, mappa singola, zero obiettivi. È il <b>primo modo da costruire</b>: valida movimento + gun + spada + deflect con 2–8 player (anche bot) → niente death-spiral.</p>
+      <ul><li>Vittoria = primo al cap di kill o più kill allo scadere</li><li>Gate MVP: «gli amici chiedono di rigiocare?»</li></ul></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">② Cattura la Bandiera</div><h3>La corsa</h3>
+      <p>Due squadre, ruba la bandiera nemica e riportala. Il <b>portatore rinuncia al fuoco</b> (solo spada + movimento) → wall-jump e dash sono tutto; la difesa intercetta, deflette, taglia.</p>
+      <ul><li>Eredità <b>Touchdown S4 League</b> (carrier non spara)</li><li>Premia scorta + lettura delle lane</li></ul></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">③ Disinnesco Bomba</div><h3>Il round</h3>
+      <p>Attacco piazza l'ordigno, difesa disinnesca o previene. <b>Round senza respawn</b> → ogni vita pesa, tensione massima, lettura e posizionamento. Il modo più cerebrale.</p>
+      <ul><li>Stile <b>Valorant / CS</b> (search &amp; destroy)</li><li>Best-of-N round, side-swap a metà</li></ul></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">④ Payload</div><h3>La spinta</h3>
+      <p>L'attacco scorta un carico lungo un percorso, la difesa lo ferma. <b>Obiettivo mobile</b> a ondate: il fronte si sposta di continuo, spinta e respinta.</p>
+      <ul><li>Stile <b>Overwatch</b> (escort)</li><li>Checkpoint + tempo extra a ogni tappa</li></ul></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">⑤ Battle Royale</div><h3>L'ultimo</h3>
+      <p>Mappa enorme, zona che stringe, loot a terra, tutti contro tutti (solo/squad). <b>Lo scope grande</b> — anche il nome del progetto. La prova finale di movimento e nervo.</p>
+      <ul><li>Loot sul campo → gear temporaneo per la partita</li><li>Massimo scope: ultimo a salire, dopo netcode solido</li></ul></div>
+  </div>
+</section>
+
+<!-- BUILD ORDER -->
+<section id="ordine">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Ordine di Costruzione</h2><span class="jp">順序</span></div>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Fase</th><th>Modo</th><th>Perché</th></tr>
+    <tr><td><span class="pill t-cyan">MVP</span></td><td><strong>Deathmatch</strong></td><td>Valida il core feel col minimo contenuto. 2–8 player / bot.</td></tr>
+    <tr><td><strong>v1</strong></td><td>Cattura la Bandiera · Disinnesco Bomba</td><td>Primi obiettivi: introducono squadra, ruolo, round.</td></tr>
+    <tr><td><strong>v2</strong></td><td>Payload</td><td>Obiettivo mobile, mappe più grandi, ondate.</td></tr>
+    <tr><td><span class="pill t-yellow">Endgame</span></td><td>Battle Royale</td><td>Massimo scope + netcode pesante. Ultimo a salire.</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:18px"><b>Regola —</b> nessun modo nuovo finché il <b>core feel</b> (Deathmatch) non regge da solo. Il contenuto si aggiunge sopra un cuore già divertente, mai per riempire un vuoto.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="open-world.html"><span>Precedente</span><b>← Extraction</b></a>
+  <a class="cn next" href="modalita.html"><span>Prossimo</span><b>Modalità (legacy) →</b></a>
+</div>
+
+<footer>
+  <div class="tagline">Stat azzerate. Vince <span>la mano</span>.</div>
+  BLADE<b>//</b>KAI 改 · Design Bible · Arena &amp; Modalità
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
