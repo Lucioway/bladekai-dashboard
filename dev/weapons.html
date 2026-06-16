@@ -239,6 +239,24 @@
     <tr><td><strong>Firma</strong></td><td><b>deflessione</b> cono-stato (para energia, rimanda)</td><td>il gun energia deflettibile · grounded</td></tr>
   </table></div>
   <div class="note reveal" style="margin-top:14px"><b>Perché bastano per il test —</b> Spada (movimento+deflect) + Pulse Rifle (energia deflettibile) chiudono il loop <code>poke ↔ switch-spada-dash-engage</code> e validano deflect+switch+velocità-per-arma. La <b>Pistola</b> (balistica, anti-deflect) entra appena vuoi testare il counter alla deflect.</div>
+
+  <h3 class="kh" style="margin-top:28px">Definizione — 1 arma per categoria</h3>
+  <p class="sec-sub">La prima/rappresentante di ogni categoria, definita. Numeri <code>~</code> da playtest, calibrati su 9 giochi (velocità proiettile = PUBG ladder · HS/danno = Valorant/CS · mobilità = S4).</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Arma</th><th>Categoria</th><th>Danno</th><th>TTK ~</th><th>HS</th><th>Proiettile → deflect</th><th>Munizioni</th><th>Mob</th><th>Fase</th></tr>
+    <tr><td><strong>Spada</strong></td><td>melee · duel</td><td>~70/colpo</td><td>2-3 colpi</td><td>—</td><td>contatto (<i>dà</i> deflect)</td><td>carica KAI</td><td>+15% ·dash</td><td><span class="pill t-cyan">MVP</span></td></tr>
+    <tr><td><strong>Counter Sword</strong></td><td>melee · counter</td><td>~55/colpo</td><td>3 colpi / punish</td><td>—</td><td>contatto (counter melee)</td><td>carica</td><td>+10% ·step</td><td>v1</td></tr>
+    <tr><td><strong>Pulse SMG</strong></td><td>ottica · corto</td><td>~6/colpo</td><td>~1,7s vicino</td><td>2×</td><td>~350 m/s <span class="pill t-cyan">deflett.</span></td><td>overheat</td><td>−5%</td><td>v1</td></tr>
+    <tr><td><strong>Pulse Rifle</strong></td><td>ottica · medio</td><td>~8 / ~16</td><td>~1,9s · 1,2s HS</td><td>2×</td><td>~400 m/s <span class="pill t-cyan">deflett.</span></td><td>overheat</td><td>−10%</td><td><span class="pill t-cyan">MVP</span></td></tr>
+    <tr><td><strong>Beam Sniper</strong></td><td>ottica · lungo</td><td>~80 (carica)</td><td>2 colpi / 1 HS</td><td>2,5×</td><td>~450 m/s carica <span class="pill t-cyan">deflett.</span></td><td>overheat</td><td>−15%</td><td>v1</td></tr>
+    <tr><td><strong>Pistola</strong></td><td>balistica · sidearm</td><td>~22 / ~44</td><td>~2s · 1,2s HS</td><td>2×</td><td>~700 m/s <span class="pill t-red">schivi</span></td><td>caricatore 12</td><td>base</td><td>v1</td></tr>
+    <tr><td><strong>Assault Rifle</strong></td><td>balistica · medio</td><td>~10 / ~20</td><td>~1,6s</td><td>2×</td><td>~800 m/s <span class="pill t-red">schivi</span></td><td>caricatore 30</td><td>−10%</td><td>v1</td></tr>
+    <tr><td><strong>Combat Shotgun</strong></td><td>balistica · burst</td><td>~8×11 pellet</td><td>1-2 colpi @0m</td><td>1,5×</td><td>pellet ~700 m/s <span class="pill t-red">schivi</span></td><td>caricatore 6</td><td>base</td><td>v2</td></tr>
+    <tr><td><strong>Bolt Sniper</strong></td><td>balistica · anti-deflect</td><td>~150 · OS testa</td><td>1 colpo</td><td><b>OS</b></td><td>~930 m/s <span class="pill t-red">schivi</span></td><td>otturatore 5</td><td>−25%</td><td>v1</td></tr>
+    <tr><td><strong>Arco</strong></td><td>balistica · skill-ceiling</td><td>~110 · OS testa</td><td>1-2 frecce</td><td><b>OS</b></td><td><b>~330 m/s + arco</b> <span class="pill t-red">leadi/schivi</span></td><td>faretra 8</td><td>base</td><td>v2</td></tr>
+    <tr><td><strong>Minigun</strong></td><td>balistica · heavy</td><td>~9/colpo</td><td>~1,4s a regime</td><td>1,5×</td><td>~800 m/s <span class="pill t-red">schivi</span> · spin-up</td><td>nastro 150</td><td>−25%</td><td>v2</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:14px"><b>Lettura —</b> il <b>danno</b> regge il TTK 1,5-3s su 150 eff (SP50+HP100); la <b>velocità proiettile</b> decide la finestra (ottiche ~300-450 deflettibili · balistiche ~700-950 da schivare · <b>Arco ~330+arco</b> da leadare); <b>OS</b> = one-shot in testa (Bolt/Arco). Headshot 2× base, snipers 2,5-3×, shotgun/heavy 1,5×.</div>
 </section>
 
 <div class="crossnav">
