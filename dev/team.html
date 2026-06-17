@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>BLADE//KAI — Team Bible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.idx{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.idx a{display:block;padding:12px 14px;border:1px solid var(--line-soft);border-radius:6px;
+  background:linear-gradient(165deg,var(--panel),var(--bg2));transition:.2s;font-size:.82rem}
+.idx a:hover{border-color:var(--kai-dim);transform:translateY(-2px);color:var(--kai)}
+.idx a b{display:block;font-family:var(--disp);font-size:.95rem;letter-spacing:.03em;color:var(--ink);margin-bottom:2px}
+.idx a:hover b{color:var(--kai)}
+.idx a span{font-size:.7rem;color:var(--ink-faint)}
+.conf{display:inline-block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:3px 10px;border-radius:99px;border:1px solid var(--red);color:var(--red);background:rgba(255,77,109,.06)}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Roadmap</a>
+    <a href="movement.html">Movement</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="combat.html">Combat</a>
+    <a href="mappa.html">Mappa</a>
+    <a href="classi.html">Classi</a>
+    <a href="arena.html">Arena</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="shop.html">Shop</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="lore.html">Lore</a>
+    <a href="team.html" class="active">Team</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Roadmap</a> › Team Bible</div>
+    <h1>Team Bible <span class="jp">団</span></h1>
+    <p class="lede"><span class="conf">Confidenziale</span> &nbsp; Il punto di partenza per chi entra nel progetto: <b>cos'è BLADE//KAI</b>, le <b>regole</b> (legali e di lavoro), come si contribuisce, e l'<b>indice di tutto</b>. Leggi questa pagina <b>prima</b> di toccare qualsiasi cosa.</p>
+  </div>
+</div>
+
+<section id="cos">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Cos'è BLADE//KAI</h2><span class="jp">概要</span></div>
+  <p class="sec-sub">Un <b>arena shooter</b> anime-cyberpunk col DNA di <b>S4 League</b>: dualità gun + spada + deflessione, movimento verticale (wall-jump), TTK medio-alto, skill manuale. Da prototipo (feel) a live, un milestone giocabile alla volta — vedi <a href="index.html" style="color:var(--kai)">Roadmap</a>.</p>
+  <div class="grid g4">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Genere</div><h3>Arena TPS</h3><p>Terza persona (modello Fortnite), FPS contestuale in ADS. Gun ↔ spada, deflect, movimento S4.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Stato</div><h3>Working title</h3><p><b>BLADE//KAI</b> è il nome di lavoro. Design Bible chiuso; prototipo Unity in corso (v0 feel).</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Tech</div><h3>Unity 6 + C#</h3><p>Unity 6000.4 · FishNet (netcode) · TPS controller. Solo project, in crescita verso il team.</p></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Owner</div><h3>BLADEKAI LLC</h3><p>Proprietà esclusiva del Titolare. Il progetto è <b>proprietario e confidenziale</b>, non open source.</p></div>
+  </div>
+</section>
+
+<section id="regole">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Le Regole — Legale &amp; IP</h2><span class="jp">規約</span></div>
+  <p class="sec-sub"><b>Non negoziabili.</b> Esistono per proteggere il progetto e <b>anche te</b> (chiarezza su chi possiede cosa). Documenti completi nel repo: <code>LICENSE</code> · <code>CONTRIBUTOR-AGREEMENT.md</code> · <code>TERMS.md</code> · <code>CONTRIBUTING.md</code>.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Proprietà</div><h3>Tutto è del progetto</h3><p>Codice, design, arte, audio, idee fatte <b>per</b> BLADE//KAI sono <b>ceduti al Titolare</b> (work-for-hire). Non acquisisci quote o diritti sul gioco o sul nome.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Riservatezza (NDA)</div><h3>Niente esce dal team</h3><p>Build, design interni, numeri, roadmap, asset = <b>confidenziali</b>. Niente screenshot/clip/codice fuori senza ok scritto, anche dopo la collaborazione.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Originalità</div><h3>No rip di terzi</h3><p>Il tuo lavoro deve essere <b>originale</b>: niente asset/codice di altri giochi nel prodotto finale senza licenza compatibile + approvazione scritta.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px;border-left-color:var(--red)"><b>Prima di contribuire —</b> firma il <code>CONTRIBUTOR-AGREEMENT.md</code> (cessione IP + NDA). <b>Nessun contributo viene integrato senza accordo firmato.</b> Le <b>skill/kit</b> di design e i numeri di bilanciamento sono il cuore dell'IP: trattali come segreti.</div>
+</section>
+
+<section id="onboarding">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Come si Entra</h2><span class="jp">参加</span></div>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>#</th><th>Passo</th><th>Cosa</th></tr>
+    <tr><td>1</td><td><strong>Contatto</strong></td><td>Scrivi a <b>lucioway@gmail.com</b> con ruolo e portfolio. Vieni autorizzato come collaboratore.</td></tr>
+    <tr><td>2</td><td><strong>Firma</strong></td><td>Firmi il Contributor Agreement (cessione IP + NDA). Senza, nessun accesso a materiale non pubblico.</td></tr>
+    <tr><td>3</td><td><strong>Accessi</strong></td><td>Ricevi accesso ai repo + alla Dev Bible privata. Leggi <b>questa pagina</b> e la <a href="index.html" style="color:var(--kai)">Roadmap</a>.</td></tr>
+    <tr><td>4</td><td><strong>Primo task</strong></td><td>Si parte da un task piccolo e definito, su branch dedicato. Review prima del merge.</td></tr>
+  </table></div>
+</section>
+
+<section id="lavoro">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Come si Lavora</h2><span class="jp">流儀</span></div>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Source of truth</div><h3>La Dev Bible</h3><p>Questo sito (<code>dashboard/</code>) è il <b>design canonico</b>: numeri, sistemi, counterplay. Ogni decisione di design vive qui. Se cambia il design, <b>si aggiorna la Bible</b> per primo.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Il build</div><h3>Unity (a parte)</h3><p>Il gioco si costruisce in <code>client/BLADEKAI</code> (Unity 6 + FishNet). Il codice segue la Bible, non viceversa. Niente meccaniche non documentate.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Disciplina</div><h3>Commit atomici</h3><p>Un cambiamento = un commit. Branch per feature, PR con descrizione, <b>review prima del merge</b>. Niente push diretti su main del gioco.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Confine pubblico/privato —</b> la <b>Dev Bible</b> (<code>/dev/</code>) è materiale di lavoro <b>non indicizzato</b> e confidenziale. La <b>vetrina</b> (sito pubblico) è marketing curato: si pubblica lì <b>solo</b> su decisione del Titolare. Non spostare contenuti dalla Bible alla vetrina di tua iniziativa.</div>
+</section>
+
+<section id="indice">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Indice — Tutto il Progetto</h2><span class="jp">目次</span></div>
+  <h3 class="kh">Core gameplay</h3>
+  <div class="idx reveal" style="margin-bottom:20px">
+    <a href="index.html"><b>Roadmap</b><span>milestone v0→live</span></a>
+    <a href="movement.html"><b>Movement</b><span>SP · dodge · wall-jump</span></a>
+    <a href="weapons.html"><b>Weapons</b><span>8 armi di lancio</span></a>
+    <a href="skills.html"><b>Skills</b><span>lama-kit + 1 skill</span></a>
+    <a href="combat.html"><b>Combat</b><span>deflect · scudo · impatto</span></a>
+    <a href="mappa.html"><b>Mappa</b><span>NEDEN (prima mappa)</span></a>
+    <a href="classi.html"><b>Classi</b><span>3 lancio + 2 v2</span></a>
+    <a href="arena.html"><b>Arena</b><span>6 modalità · soft-cap</span></a>
+  </div>
+  <h3 class="kh">Mondo &amp; meta</h3>
+  <div class="idx reveal" style="margin-bottom:20px">
+    <a href="open-world.html"><b>Extraction</b><span>open world · loot</span></a>
+    <a href="equipaggiamento.html"><b>Equip</b><span>Risonanza · rarità</span></a>
+    <a href="mezzi.html"><b>Mezzi</b><span>movimento · veicoli</span></a>
+    <a href="progressione.html"><b>Progressione</b><span>0→100 · prestigi</span></a>
+    <a href="fazioni.html"><b>Fazioni</b><span>le 3 fazioni</span></a>
+    <a href="shop.html"><b>Shop</b><span>le due economie</span></a>
+    <a href="mondo.html"><b>Mondo</b><span>città · zone</span></a>
+    <a href="lore.html"><b>Lore</b><span>storia · KAI</span></a>
+  </div>
+  <h3 class="kh">Documenti (nel repo)</h3>
+  <div class="idx reveal">
+    <a href="https://github.com/Lucioway" target="_blank"><b>LICENSE</b><span>proprietaria</span></a>
+    <a href="https://github.com/Lucioway" target="_blank"><b>CONTRIBUTOR-AGREEMENT</b><span>cessione IP + NDA</span></a>
+    <a href="https://github.com/Lucioway" target="_blank"><b>CONTRIBUTING</b><span>regole contributo</span></a>
+    <a href="https://github.com/Lucioway" target="_blank"><b>TERMS</b><span>termini d'uso</span></a>
+  </div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="lore.html"><span>Precedente</span><b>← Lore</b></a>
+  <a class="cn next" href="index.html"><span>Torna a</span><b>Roadmap →</b></a>
+</div>
+<footer><div class="tagline">Un team, una <span>bibbia</span>.</div>BLADE<b>//</b>KAI 改 · Team Bible<div style="margin-top:12px;font-size:.68rem;letter-spacing:.06em;color:var(--ink-faint)">© 2026 BLADE<b>//</b>KAI™ · Tutti i diritti riservati · proprietà di BLADEKAI LLC</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

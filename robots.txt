@@ -1,4 +1,4 @@
-# BLADE//KAI — © 2026 Lorenzo Mosca. All rights reserved. Proprietary, not open source.
+# BLADE//KAI — © 2026 BLADEKAI LLC. All rights reserved. Proprietary, not open source.
 # The /dev/ Design Bible is non-public design material: do not index or crawl.
 User-agent: *
 Disallow: /dev/
