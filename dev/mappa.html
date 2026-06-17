@@ -38,75 +38,87 @@
   <div class="phero-in">
     <div class="crumbs"><a href="index.html">Roadmap</a> › La Prima Mappa</div>
     <h1>La Prima Mappa <span class="jp">舞台</span></h1>
-    <p class="lede"><b>DŌJŌ 改</b> — una <b>arena compatta e simmetrica</b> che mette alla prova tutto il core: <a href="movement.html" style="color:#fff">verticalità</a>, le 3 distanze delle <a href="weapons.html" style="color:#fff">armi</a>, la lane di <a href="combat.html" style="color:#fff">deflessione</a>, e i tre ruoli (close/mid/long). È sia il <b>banco di prova del feel (v0)</b> sia la <b>prima mappa giocabile (v0.5)</b>.</p>
+    <p class="lede"><b>NEDEN 改</b> — omaggio a <b>Neden-1</b>, la primissima mappa di S4 League (il DM dei nuovi). Stesse <b>meccaniche</b>: magazzini + fogna, <b>box distruttibili</b>, <b>tetti accessibili a tutti</b>, salti-skill e spawn distribuiti. Aperta per chi inizia, profonda per chi padroneggia il <a href="movement.html" style="color:#fff">movimento</a>. È il nostro <b>v0 (feel)</b> e la <b>prima mappa giocabile (v0.5)</b>.</p>
   </div>
 </div>
 
 <section id="concept">
-  <div class="reveal" style="border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:30px"><img src="assets/map-dojo.jpg" alt="DŌJŌ 改 — concept dell'arena: fossa centrale, passerella elevata, pareti wall-jump" loading="lazy" style="width:100%;display:block"></div>
-  <div class="sec-head"><span class="sec-num">00</span><h2>Cosa deve provare</h2><span class="jp">目的</span></div>
-  <p class="sec-sub">La prima mappa non è "una mappa qualsiasi": è il <b>test del core</b>. Deve dare spazio a ogni sistema già definito, o non sapremmo se funzionano insieme.</p>
+  <div class="reveal" style="border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:30px"><img src="assets/map-neden.jpg" alt="NEDEN 改 — concept: magazzini, canale fogna con ponti, box distruttibili, tetti accessibili" loading="lazy" style="width:100%;display:block"></div>
+  <div class="sec-head"><span class="sec-num">00</span><h2>Perché Neden-1</h2><span class="jp">原型</span></div>
+  <p class="sec-sub">Neden-1 era la <b>mappa-tutorial naturale</b> di S4: aperta abbastanza da non perderti, ma piena di salti, nascondigli e tetti che premiano chi impara a muoversi. Esattamente cosa serve alla <b>nostra</b> prima mappa.</p>
   <div class="grid g4">
-    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Movement</div><h3>Verticalità reale</h3><p>Pareti wall-jumpabili ovunque, ledge e high-ground. <b>No double jump</b> → il wall-jump è l'<b>unica</b> via per l'aria: la mappa deve ricompensarlo.</p></div>
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Weapons</div><h3>Le 3 distanze</h3><p>Una stanza close (spada/shotgun), corsie mid (rifle/SMG), una <b>sightline lunga</b> (sniper/Arco). Ogni famiglia ha dove brillare.</p></div>
-    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Deflect</div><h3>La lane dei bolt</h3><p>Una linea lunga e pulita dove l'energia <b>viaggia</b> → è lì che nascono i duelli di deflessione. La cover spezza le linee balistiche.</p></div>
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Classi</div><h3>Close/Mid/Long</h3><p>Kenshi ha la Fossa, Striker le Corsie, Phantom il Filo. <b>Nessun ruolo è inutile</b> su questa mappa.</p></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Movement</div><h3>Tetti per tutti</h3><p>In Neden-1 il tetto si raggiunge col <b>triple jump</b>; qui col <b>wall-jump</b>. L'high-ground non è regalato agli sniper: te lo <b>conquisti</b> muovendoti.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Weapons</div><h3>Le 3 distanze</h3><p>Interni-magazzino close (spada/SMG/shotgun), campi rialzati mid (rifle/Pulse), <b>tetti e rampe</b> long (sniper/Arco). Ogni famiglia ha casa.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Cover viva</div><h3>Box distruttibili</h3><p>Tutta la cover è <b>rompibile</b> (come in Neden-1): l'angolo sicuro di adesso sparisce sotto il fuoco. La mappa cambia in tempo reale.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Classi</div><h3>Close/Mid/Long</h3><p>Kenshi nei magazzini e nella fogna, Striker sui campi, Phantom sui tetti. <b>Nessun ruolo è inutile</b>.</p></div>
   </div>
 </section>
 
 <section id="layout">
   <div class="sec-head"><span class="sec-num">01</span><h2>Layout — le Zone</h2><span class="jp">構造</span></div>
-  <p class="sec-sub">Arena a <b>simmetria rotazionale</b> (stile S4 League — fair, spawn bilanciati ruotando di 180°), compatta per il TTK 1,5-3s. Loop centrale, <b>nessun vicolo cieco</b> → il movimento mantiene momentum.</p>
+  <p class="sec-sub">La pianta di Neden-1: <b>due magazzini</b> + un <b>canale-fogna con ponti</b>, campi rialzati nel mezzo, tetti sopra tutto. <b>Asimmetria ambientale</b> bilanciata dagli spawn distribuiti — non dalla simmetria.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Zona</th><th>Range</th><th>Arma/classe di casa</th><th>Ruolo nel design</th></tr>
-    <tr><td><strong>La Fossa</strong> (centro)</td><td><span class="pill t-cyan">close</span></td><td>Spada · Shotgun · Kenshi</td><td>area ribassata centrale: scontro caotico, vie d'uscita verticali su ogni lato</td></tr>
-    <tr><td><strong>Le Corsie A / B</strong></td><td><span class="pill t-yellow">mid</span></td><td>Rifle · SMG · Striker</td><td>due lane simmetriche di fianco alla Fossa, con cover-box per schivare il piombo</td></tr>
-    <tr><td><strong>Il Filo</strong></td><td><span class="pill t-red">long</span></td><td>Beam/Arco · Phantom</td><td>passerella elevata che taglia la mappa: <b>la sightline lunga + lane deflect</b></td></tr>
-    <tr><td><strong>I Cornicioni</strong></td><td>verticale</td><td>tutti (wall-jump)</td><td>ledge perimetrali e high-ground: l'unica via aerea, collegano i livelli</td></tr>
-    <tr><td><strong>Spawn N / S</strong></td><td>—</td><td>—</td><td>simmetrici, <b>schermati dal Filo</b> (niente spawn-peek sulla long lane)</td></tr>
+    <tr><td><strong>I Magazzini</strong> (×2)</td><td><span class="pill t-cyan">close</span></td><td>Spada · SMG · Shotgun · Kenshi</td><td>interni stretti: ci entri rompendo finestre/box o calandoti dal tetto. Mischia e spray ravvicinato</td></tr>
+    <tr><td><strong>I Campi Rialzati</strong></td><td><span class="pill t-yellow">mid</span></td><td>Rifle · Pulse · Striker</td><td>open ground tra i magazzini, <b>solo box sui percorsi</b>: duelli mid + lane deflect</td></tr>
+    <tr><td><strong>La Fogna</strong> (Muck)</td><td><span class="pill t-cyan">close-mid</span></td><td>ambush · Kenshi/Striker</td><td>canale ribassato con <b>ponti e box</b>: flank e imboscate dal basso, vie d'uscita verticali</td></tr>
+    <tr><td><strong>I Tetti</strong></td><td><span class="pill t-red">long</span></td><td>Sniper · Beam/Arco · Phantom</td><td><b>accessibili a tutti</b> via wall-jump: dominio sniper e counter-sniper, ma contendibile</td></tr>
+    <tr><td><strong>Spawn distribuiti</strong> (×8-9)</td><td>—</td><td>—</td><td>sparsi su punti e altezze diverse (modello Neden-1): <b>anti spawn-camp</b> senza bisogno di simmetria</td></tr>
   </table></div>
-  <div class="note reveal" style="margin-top:16px"><b>Tre livelli di altezza —</b> <b>Fossa</b> (−1, close) · <b>piano</b> (0, Corsie) · <b>Filo/Cornicioni</b> (+1, long &amp; flank). Chi controlla il +1 vede, chi sta nel −1 sorprende: la verticalità è una risorsa contesa, non decorazione.</div>
+  <div class="note reveal" style="margin-top:16px"><b>Tre livelli —</b> <b>Fogna</b> (−1, ambush) · <b>magazzini/campi</b> (0, il grosso del fight) · <b>tetti</b> (+1, long &amp; flank). Chi sta in alto vede, chi sta sotto sorprende: la verticalità è una <b>risorsa contesa</b>.</div>
+</section>
+
+<section id="meccaniche">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Le Meccaniche di Neden-1</h2><span class="jp">仕掛け</span></div>
+  <p class="sec-sub">Cosa rendeva Neden-1 speciale — e che portiamo 1:1, adattato al nostro movimento.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Cover effimera</div><h3>Box distruttibili</h3><p>Ogni cassa si rompe sotto il fuoco. <b>Niente cover eterna</b>: apri linee sparando, neghi nascondigli, la geometria del fight evolve round dopo round.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">High-ground conteso</div><h3>Tetti accessibili</h3><p>Il tetto non è una torre da sniper inviolabile: <b>chiunque ci sale</b> con un wall-jump chain (il "triple jump" di Neden-1). Il counter-snipe è sempre on the table.</p></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Spot da maestro</div><h3>Salti-skill &amp; ambush</h3><p>Punti raggiungibili solo con salti difficili (gli "alberi" di Neden-1) = <b>nidi d'imboscata</b> che premiano chi padroneggia il movimento. Rischio = posizione.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Cover che spara</div><h3>Gate sparabili-attraverso</h3><p>Recinzioni che <b>lasciano passare i colpi ma coprono il corpo</b>: peek a metà, duelli da dietro la grata. Cover parziale, non muro.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Anti-camp</div><h3>Spawn distribuiti</h3><p>8-9 spawn sparsi su tutta la mappa e su più altezze. L'asimmetria magazzini↔fogna è <b>bilanciata dalla distribuzione</b>, non dal mirror.</p></div>
+    <div class="card reveal" style="--c:#7fe3f0"><div class="role" style="color:#7fe3f0">Open + nascosto</div><h3>Leggibile ma profonda</h3><p>Aperta per i nuovi (capisci dove andare), ma piena di <b>nascondigli e rotte alte</b> per chi sa muoversi. Floor basso, ceiling alto — come il combat.</p></div>
+  </div>
 </section>
 
 <section id="flow">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Verticalità &amp; Flow</h2><span class="jp">流動</span></div>
-  <p class="sec-sub">Il movimento è la USP → la mappa è progettata <b>attorno al wall-jump</b>, non con esso aggiunto dopo.</p>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Verticalità &amp; Flow</h2><span class="jp">流動</span></div>
+  <p class="sec-sub">Neden-1 = "salire" è metà del gioco. Il movimento è la USP → ogni zona è collegata <b>in verticale</b>, non solo in piano.</p>
   <div class="grid g3">
-    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Loop, no dead-end</div><h3>Flusso circolare</h3><p>Stile <b>arena Quake</b>: ogni zona ha ≥2 uscite, il giro si chiude. Chi corre non sbatte mai in un muro morto → il momentum non muore.</p></div>
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Rotte di wall-jump</div><h3>Vie aeree dedicate</h3><p>Catene di pareti che portano dal −1 al +1 senza toccare il piano. La <b>skill-route</b>: chi padroneggia il wall-jump taglia tempo e angoli.</p></div>
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Cover &amp; angoli</div><h3>Lettura alla Valorant</h3><p>Cover-box e spigoli puliti: le <b>balistiche</b> si giocano con gli angoli (le schivi dietro cover), le sightline restano leggibili.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Roof-routes</div><h3>Catene di wall-jump</h3><p>Pipe, casse, ledge: rotte che portano dalla fogna al tetto senza toccare i campi. La <b>skill-route</b> taglia tempo e angoli — il nostro triple-jump.</p></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Loop, no dead-end</div><h3>Flusso continuo</h3><p>Magazzini, campi, fogna e tetti si <b>incatenano</b> (≥2 uscite per zona): chi corre non sbatte mai in un muro morto, il momentum non muore.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Lettura</div><h3>Sightline + cover viva</h3><p>I campi danno le linee lunghe (sniper/deflect); i box (distruttibili) le spezzano. Le <b>balistiche</b> si schivano dietro cover finché c'è.</p></div>
   </div>
 </section>
 
 <section id="versioni">
-  <div class="sec-head"><span class="sec-num">03</span><h2>Le due versioni</h2><span class="jp">段階</span></div>
-  <p class="sec-sub">La stessa geometria serve due milestone della <a href="index.html" style="color:var(--kai)">roadmap</a>: prima offline per il feel, poi giocabile coi bot.</p>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Le due versioni</h2><span class="jp">段階</span></div>
+  <p class="sec-sub">La stessa pianta serve due milestone della <a href="index.html" style="color:var(--kai)">roadmap</a>: prima offline per il feel, poi giocabile coi bot.</p>
   <div class="grid g2">
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">v0 — Dōjō (training)</div><h3>Banco di prova del feel</h3><p>Offline, vuota. <b>Bersagli-dummy</b> alle 3 distanze, <b>rack armi</b> (Spada + Pulse Rifle), <b>percorso wall-jump</b>. Serve a una domanda sola: muoversi + spada <b>è divertente da solo?</b></p></div>
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">v0.5 — Arena (combat slice)</div><h3>Prima mappa giocabile</h3><p>Stessa pianta, <b>coi bot</b>. Spawn N/S, pickup, le 8 armi di lancio, le 3 classi. Si testano TTK, deflect, switch e il <b>bilanciamento dei range</b> in un fight vero.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">v0 — training</div><h3>Banco di prova del feel</h3><p>Offline. <b>Bersagli-dummy</b> alle 3 distanze, <b>rack armi</b> (Spada + Pulse Rifle), <b>percorso wall-jump fino al tetto</b>, box da spaccare. La domanda: muoversi + spada <b>è divertente da solo?</b></p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">v0.5 — Deathmatch coi bot</div><h3>Prima mappa giocabile</h3><p>Stessa pianta, <b>DM coi bot</b> (il modo di Neden-1). Spawn distribuiti, pickup, le 8 armi di lancio, le 3 classi. Si testano TTK, deflect, switch e il <b>bilanciamento dei range</b>.</p></div>
   </div>
 </section>
 
 <section id="riferimenti">
-  <div class="sec-head"><span class="sec-num">04</span><h2>Riferimenti — le mappe che la ispirano</h2><span class="jp">参照</span></div>
-  <p class="sec-sub">Ancorata a mappe reali del nostro <code>research/full-wikis/</code> (9 giochi). <b>S4 League</b> resta il DNA; gli altri prestano una lezione ciascuno.</p>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Riferimenti</h2><span class="jp">参照</span></div>
+  <p class="sec-sub">Template primario = <b>Neden-1</b> (S4 League). Gli altri giochi del nostro <code>research/full-wikis/</code> rifiniscono i dettagli.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Gioco</th><th>Mappa rif.</th><th>Cosa prendiamo</th></tr>
-    <tr><td><strong>S4 League</strong></td><td>Wonderland · Station-1</td><td><b>simmetria rotazionale</b> + <b>multi-livello (2-3)</b> + <b>wall-jump come navigazione primaria</b>: la verticalità è la via, non un extra</td></tr>
-    <tr><td><strong>Call of Duty</strong></td><td>3-lane (Rise/TDM)</td><td><b>struttura a 3 lane</b> close/mid/long: la lane centrale = teamfight, le laterali = 1v1 senza lane-lock</td></tr>
-    <tr><td><strong>Quake</strong></td><td>Blood Run</td><td><b>vault centrale conteso</b> = punto-duello naturale (la Fossa) + <b>jump-route che legano le zone</b> + alcove rischio/reward in alto</td></tr>
-    <tr><td><strong>Valorant</strong></td><td>Bind</td><td><b>sightline a livelli</b> (short/long/window) per gestire la distanza d'ingaggio · cover puliti per schivare il piombo</td></tr>
-    <tr><td><strong>Counter-Strike</strong></td><td>Dust II</td><td><b>lane interconnesse + choke al centro</b> + <b>disciplina delle sightline</b>: ogni linea è leggibile, il mid alimenta i lati</td></tr>
-    <tr><td><strong>Overwatch</strong></td><td>Ilios (Control)</td><td><b>dominio dell'high-ground</b> + <b>rotte di flank multiple</b> → niente dipendenza da un solo choke</td></tr>
+    <tr><td><strong>S4 League</strong></td><td><b>Neden-1</b> (template)</td><td>magazzini + fogna · <b>box distruttibili</b> · <b>tetti accessibili a tutti</b> · salti-skill/ambush · gate sparabili · <b>spawn distribuiti</b></td></tr>
+    <tr><td>Call of Duty</td><td>3-lane (TDM)</td><td>distanze close/mid/long chiare lungo i percorsi tra magazzini e campi</td></tr>
+    <tr><td>Quake</td><td>Blood Run</td><td>verticalità estrema + <b>roof-route che legano le zone</b> + alcove rischio/reward in alto</td></tr>
+    <tr><td>Valorant / CS</td><td>Bind · Dust II</td><td>sightline leggibili sui campi · cover (qui <b>distruttibile</b>) per schivare il piombo</td></tr>
+    <tr><td>Overwatch</td><td>Ilios</td><td>high-ground come posizione-chiave ma <b>contendibile</b>, flank multipli (la fogna)</td></tr>
   </table></div>
-  <div class="note reveal" style="margin-top:18px"><b>La sintesi —</b> <b>DŌJŌ 改</b> = arena <b>S4L</b> (rotazionale, verticale, wall-jump) + <b>3-lane CoD</b> (Fossa-centro / Corsie / Filo) + <b>vault Quake</b> (la Fossa è il punto-duello) + <b>sightline Valorant/CS</b> (il Filo è la long, le cover spezzano il piombo) + <b>high-ground OW</b> (il +1 si contende). Compatta come una DM-arena per reggere il TTK 1,5-3s.</div>
+  <div class="note reveal" style="margin-top:18px"><b>La sintesi —</b> <b>NEDEN 改</b> è Neden-1 ricostruita col <b>nostro</b> movimento: i tetti si scalano col wall-jump invece del triple-jump, i box restano distruttibili, gli spawn restano distribuiti. La <b>prima mappa di S4 → la prima mappa nostra</b>. Floor basso per chi inizia, ceiling altissimo per chi vola sui tetti.</div>
 </section>
 
 <div class="crossnav">
   <a class="cn" href="combat.html"><span>Precedente</span><b>← Combat</b></a>
   <a class="cn next" href="index.html"><span>Torna a</span><b>Roadmap →</b></a>
 </div>
-<footer><div class="tagline">La mappa <span>è</span> il test del core.</div>BLADE<b>//</b>KAI 改 · La Prima Mappa</footer>
+<footer><div class="tagline">La prima mappa di S4 → la <span>prima</span> mappa nostra.</div>BLADE<b>//</b>KAI 改 · La Prima Mappa</footer>
 <script src="app.js"></script>
 </body>
 </html>
