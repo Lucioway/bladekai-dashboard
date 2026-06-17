@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLADE//KAI — La Prima Mappa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">BLADE<b>//</b>KAI <span class="jp">改</span></a>
+  <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <div class="navlinks">
+    <a href="index.html">Roadmap</a>
+    <a href="movement.html">Movement</a>
+    <a href="weapons.html">Weapons</a>
+    <a href="skills.html">Skills</a>
+    <a href="combat.html">Combat</a>
+    <a href="mappa.html" class="active">Mappa</a>
+    <a href="classi.html">Classi</a>
+    <a href="arena.html">Arena</a>
+    <a href="open-world.html">Extraction</a>
+    <a href="equipaggiamento.html">Equip</a>
+    <a href="mezzi.html">Mezzi</a>
+    <a href="progressione.html">Progressione</a>
+    <a href="fazioni.html">Fazioni</a>
+    <a href="shop.html">Shop</a>
+    <a href="mondo.html">Mondo</a>
+    <a href="lore.html">Lore</a>
+    <a href="/" target="_blank" style="color:var(--amber)">Vetrina ↗</a>
+  </div>
+</nav>
+
+<div class="phero">
+  <div class="phero-in">
+    <div class="crumbs"><a href="index.html">Roadmap</a> › La Prima Mappa</div>
+    <h1>La Prima Mappa <span class="jp">舞台</span></h1>
+    <p class="lede"><b>DŌJŌ 改</b> — una <b>arena compatta e simmetrica</b> che mette alla prova tutto il core: <a href="movement.html" style="color:#fff">verticalità</a>, le 3 distanze delle <a href="weapons.html" style="color:#fff">armi</a>, la lane di <a href="combat.html" style="color:#fff">deflessione</a>, e i tre ruoli (close/mid/long). È sia il <b>banco di prova del feel (v0)</b> sia la <b>prima mappa giocabile (v0.5)</b>.</p>
+  </div>
+</div>
+
+<section id="concept">
+  <div class="reveal" style="border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:30px"><img src="assets/map-dojo.jpg" alt="DŌJŌ 改 — concept dell'arena: fossa centrale, passerella elevata, pareti wall-jump" loading="lazy" style="width:100%;display:block"></div>
+  <div class="sec-head"><span class="sec-num">00</span><h2>Cosa deve provare</h2><span class="jp">目的</span></div>
+  <p class="sec-sub">La prima mappa non è "una mappa qualsiasi": è il <b>test del core</b>. Deve dare spazio a ogni sistema già definito, o non sapremmo se funzionano insieme.</p>
+  <div class="grid g4">
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Movement</div><h3>Verticalità reale</h3><p>Pareti wall-jumpabili ovunque, ledge e high-ground. <b>No double jump</b> → il wall-jump è l'<b>unica</b> via per l'aria: la mappa deve ricompensarlo.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Weapons</div><h3>Le 3 distanze</h3><p>Una stanza close (spada/shotgun), corsie mid (rifle/SMG), una <b>sightline lunga</b> (sniper/Arco). Ogni famiglia ha dove brillare.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Deflect</div><h3>La lane dei bolt</h3><p>Una linea lunga e pulita dove l'energia <b>viaggia</b> → è lì che nascono i duelli di deflessione. La cover spezza le linee balistiche.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Classi</div><h3>Close/Mid/Long</h3><p>Kenshi ha la Fossa, Striker le Corsie, Phantom il Filo. <b>Nessun ruolo è inutile</b> su questa mappa.</p></div>
+  </div>
+</section>
+
+<section id="layout">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Layout — le Zone</h2><span class="jp">構造</span></div>
+  <p class="sec-sub">Arena a <b>simmetria rotazionale</b> (stile S4 League — fair, spawn bilanciati ruotando di 180°), compatta per il TTK 1,5-3s. Loop centrale, <b>nessun vicolo cieco</b> → il movimento mantiene momentum.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Zona</th><th>Range</th><th>Arma/classe di casa</th><th>Ruolo nel design</th></tr>
+    <tr><td><strong>La Fossa</strong> (centro)</td><td><span class="pill t-cyan">close</span></td><td>Spada · Shotgun · Kenshi</td><td>area ribassata centrale: scontro caotico, vie d'uscita verticali su ogni lato</td></tr>
+    <tr><td><strong>Le Corsie A / B</strong></td><td><span class="pill t-yellow">mid</span></td><td>Rifle · SMG · Striker</td><td>due lane simmetriche di fianco alla Fossa, con cover-box per schivare il piombo</td></tr>
+    <tr><td><strong>Il Filo</strong></td><td><span class="pill t-red">long</span></td><td>Beam/Arco · Phantom</td><td>passerella elevata che taglia la mappa: <b>la sightline lunga + lane deflect</b></td></tr>
+    <tr><td><strong>I Cornicioni</strong></td><td>verticale</td><td>tutti (wall-jump)</td><td>ledge perimetrali e high-ground: l'unica via aerea, collegano i livelli</td></tr>
+    <tr><td><strong>Spawn N / S</strong></td><td>—</td><td>—</td><td>simmetrici, <b>schermati dal Filo</b> (niente spawn-peek sulla long lane)</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:16px"><b>Tre livelli di altezza —</b> <b>Fossa</b> (−1, close) · <b>piano</b> (0, Corsie) · <b>Filo/Cornicioni</b> (+1, long &amp; flank). Chi controlla il +1 vede, chi sta nel −1 sorprende: la verticalità è una risorsa contesa, non decorazione.</div>
+</section>
+
+<section id="flow">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Verticalità &amp; Flow</h2><span class="jp">流動</span></div>
+  <p class="sec-sub">Il movimento è la USP → la mappa è progettata <b>attorno al wall-jump</b>, non con esso aggiunto dopo.</p>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Loop, no dead-end</div><h3>Flusso circolare</h3><p>Stile <b>arena Quake</b>: ogni zona ha ≥2 uscite, il giro si chiude. Chi corre non sbatte mai in un muro morto → il momentum non muore.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Rotte di wall-jump</div><h3>Vie aeree dedicate</h3><p>Catene di pareti che portano dal −1 al +1 senza toccare il piano. La <b>skill-route</b>: chi padroneggia il wall-jump taglia tempo e angoli.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Cover &amp; angoli</div><h3>Lettura alla Valorant</h3><p>Cover-box e spigoli puliti: le <b>balistiche</b> si giocano con gli angoli (le schivi dietro cover), le sightline restano leggibili.</p></div>
+  </div>
+</section>
+
+<section id="versioni">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Le due versioni</h2><span class="jp">段階</span></div>
+  <p class="sec-sub">La stessa geometria serve due milestone della <a href="index.html" style="color:var(--kai)">roadmap</a>: prima offline per il feel, poi giocabile coi bot.</p>
+  <div class="grid g2">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">v0 — Dōjō (training)</div><h3>Banco di prova del feel</h3><p>Offline, vuota. <b>Bersagli-dummy</b> alle 3 distanze, <b>rack armi</b> (Spada + Pulse Rifle), <b>percorso wall-jump</b>. Serve a una domanda sola: muoversi + spada <b>è divertente da solo?</b></p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">v0.5 — Arena (combat slice)</div><h3>Prima mappa giocabile</h3><p>Stessa pianta, <b>coi bot</b>. Spawn N/S, pickup, le 8 armi di lancio, le 3 classi. Si testano TTK, deflect, switch e il <b>bilanciamento dei range</b> in un fight vero.</p></div>
+  </div>
+</section>
+
+<section id="riferimenti">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Riferimenti — le mappe che la ispirano</h2><span class="jp">参照</span></div>
+  <p class="sec-sub">Ancorata a mappe reali del nostro <code>research/full-wikis/</code> (9 giochi). <b>S4 League</b> resta il DNA; gli altri prestano una lezione ciascuno.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Gioco</th><th>Mappa rif.</th><th>Cosa prendiamo</th></tr>
+    <tr><td><strong>S4 League</strong></td><td>Wonderland · Station-1</td><td><b>simmetria rotazionale</b> + <b>multi-livello (2-3)</b> + <b>wall-jump come navigazione primaria</b>: la verticalità è la via, non un extra</td></tr>
+    <tr><td><strong>Call of Duty</strong></td><td>3-lane (Rise/TDM)</td><td><b>struttura a 3 lane</b> close/mid/long: la lane centrale = teamfight, le laterali = 1v1 senza lane-lock</td></tr>
+    <tr><td><strong>Quake</strong></td><td>Blood Run</td><td><b>vault centrale conteso</b> = punto-duello naturale (la Fossa) + <b>jump-route che legano le zone</b> + alcove rischio/reward in alto</td></tr>
+    <tr><td><strong>Valorant</strong></td><td>Bind</td><td><b>sightline a livelli</b> (short/long/window) per gestire la distanza d'ingaggio · cover puliti per schivare il piombo</td></tr>
+    <tr><td><strong>Counter-Strike</strong></td><td>Dust II</td><td><b>lane interconnesse + choke al centro</b> + <b>disciplina delle sightline</b>: ogni linea è leggibile, il mid alimenta i lati</td></tr>
+    <tr><td><strong>Overwatch</strong></td><td>Ilios (Control)</td><td><b>dominio dell'high-ground</b> + <b>rotte di flank multiple</b> → niente dipendenza da un solo choke</td></tr>
+  </table></div>
+  <div class="note reveal" style="margin-top:18px"><b>La sintesi —</b> <b>DŌJŌ 改</b> = arena <b>S4L</b> (rotazionale, verticale, wall-jump) + <b>3-lane CoD</b> (Fossa-centro / Corsie / Filo) + <b>vault Quake</b> (la Fossa è il punto-duello) + <b>sightline Valorant/CS</b> (il Filo è la long, le cover spezzano il piombo) + <b>high-ground OW</b> (il +1 si contende). Compatta come una DM-arena per reggere il TTK 1,5-3s.</div>
+</section>
+
+<div class="crossnav">
+  <a class="cn" href="combat.html"><span>Precedente</span><b>← Combat</b></a>
+  <a class="cn next" href="index.html"><span>Torna a</span><b>Roadmap →</b></a>
+</div>
+<footer><div class="tagline">La mappa <span>è</span> il test del core.</div>BLADE<b>//</b>KAI 改 · La Prima Mappa</footer>
+<script src="app.js"></script>
+</body>
+</html>
