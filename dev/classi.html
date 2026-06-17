@@ -62,7 +62,7 @@
   <div class="sec-head"><span class="sec-num">00</span><h2>Filosofia delle Classi</h2><span class="jp">設計思想</span></div>
   <p class="sec-sub">Archetipi diversi, una regola: <b>stat base uguali</b>, nessuno è oggettivamente forte. La classe definisce <b>range, gun-lean e 1 skill equippabile</b> (dalla <a href="skills.html" style="color:var(--kai)">pool</a>) — le skill elencate sotto sono quelle <b>affini</b>, ne porti <b>1</b>. Il resto lo decide chi tiene il mouse.</p>
   <div class="grid g3">
-    <div class="card reveal"><div class="icon">🧬</div><h3>Stat uguali</h3><p>Velocità base, HP/SP, hitbox: <b>identici per tutti</b>. La classe non è il corpo — è il kit. Cambi classe = cambi ruolo, non potenza. (Nell'open-world il gear potenzia; in arena sblocchi solo le opzioni, stat pari.)</p></div>
+    <div class="card reveal"><div class="icon">🧬</div><h3>Stat uguali</h3><p>Velocità base, HP/SP, hitbox: <b>identici per tutti</b>. La classe non è il corpo — è <b>ruolo + la skill che scegli</b>. Cambi classe = cambi ruolo, non potenza. (Nell'open-world il gear potenzia; in arena sblocchi solo le opzioni, stat pari.)</p></div>
     <div class="card reveal"><div class="icon">🎯</div><h3>Skill sopra tutto</h3><p>Mira, timing, gestione risorse. Il counter è una <i>tendenza</i>, non un hard-counter: un Kenshi bravo batte chi lo conterebbe sulla carta.</p></div>
     <div class="card reveal"><div class="icon">🪢</div><h3>3 al lancio → 5</h3><p>Si parte con Kenshi · Striker · Phantom (triangolo pulito). Heavy e Warden arrivano in v2 e allargano il cerchio dei counter.</p></div>
   </div>
@@ -81,9 +81,9 @@
         <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i class=on></i></div></div>
       </div>
       <div class="abil">
-        <div class="ab"><span class="key">Affine</span><h4>Blink</h4><p>Teleport corto verso la mira (~2 cariche). Chiude il gap o scarta il fuoco. Il suo entry-tool.</p></div>
-        <div class="ab"><span class="key">Affine</span><h4>Bind</h4><p>Root breve sul bersaglio → lo inchioda per il follow-up di lama. Setup da kill.</p></div>
-        <div class="ab"><span class="key">Lama</span><h4>Moveset Spada</h4><p><b>Affondo, lancio, deflect e dash</b> vivono sulla <a href="skills.html" style="color:#22e6ff">Spada</a> (il moveset è dell'arma). Nello slot-skill equipaggi <b>1</b> tra Blink e Bind.</p></div>
+        <div class="ab"><span class="key">Lama</span><h4>Spada</h4><p>Il moveset è dell'arma: <b>lancio, deflect, dash</b> (+ Affondo). La lama è il cuore del Kenshi.</p></div>
+        <div class="ab"><span class="key">Slot · equip 1</span><h4>Blink <span style="color:var(--ink-faint)">/</span> Bind</h4><p><b>Blink</b> — TP corto verso la mira, entry-tool · <b>Bind</b> — catena che rallenta, setup da kill. Ne porti <b>1</b>.</p></div>
+        <div class="ab"><span class="key">Gun-lean</span><h4>Pulse Rifle · corto</h4><p>L'arma da fuoco di ripiego mentre cerchi l'ingaggio di lama. Grounded finché non switchi.</p></div>
       </div>
       <div class="matchup"><span class="mu win">Forte vs ▸ Phantom</span><span class="mu lose">Debole vs ▸ Striker</span></div>
     </div>
@@ -103,9 +103,9 @@
         <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i></i><i></i></div></div>
       </div>
       <div class="abil">
-        <div class="ab"><span class="key">Affine</span><h4>Scatto</h4><p>Dash rapido evasivo. Apre la finestra di hit-and-run e lo tira fuori dal pericolo.</p></div>
-        <div class="ab"><span class="key">Affine</span><h4>Detect</h4><p>Rivela i nemici vicini → kita con informazione, non al buio. Anti-ambush.</p></div>
-        <div class="ab"><span class="key">Affine</span><h4>Shield</h4><p>Bolla che assorbe danno per un trade pulito o un disingaggio sicuro.</p></div>
+        <div class="ab"><span class="key">Lama</span><h4>Spada / Counter Sword</h4><p>Moveset dell'arma: dash + lancio (Spada) o counter-stun + step (CS). Sceglie la lama in base al matchup.</p></div>
+        <div class="ab"><span class="key">Slot · equip 1</span><h4>Scatto <span style="color:var(--ink-faint)">/</span> Shield <span style="color:var(--ink-faint)">/</span> Detect</h4><p><b>Scatto</b> — dash evasivo · <b>Shield</b> — bolla per il trade · <b>Detect</b> — info anti-ambush. Ne porti <b>1</b>.</p></div>
+        <div class="ab"><span class="key">Gun-lean</span><h4>Rifle · SMG</h4><p>Run-and-gun a media distanza: detta il tempo, punisce, esce. Il feeling più "S4".</p></div>
       </div>
       <div class="matchup"><span class="mu win">Forte vs ▸ Kenshi</span><span class="mu lose">Debole vs ▸ Phantom</span></div>
     </div>
@@ -147,9 +147,9 @@
         <div class="meter"><span>Difficoltà</span><div class="bar"><i class=on></i><i class=on></i><i class=on></i><i class=on></i><i></i></div></div>
       </div>
       <div class="abil">
-        <div class="ab"><span class="key">Affine</span><h4>Mantello</h4><p>Cloak breve per riposizionarsi dopo lo sparo. Fermo = invisibile; muoversi = esposto. Gioco di nervi.</p></div>
-        <div class="ab"><span class="key">Affine</span><h4>Scan</h4><p>Rivela i nemici per il team → first-shot-unseen su informazione. Il suo valore non è solo il kill: è la mappa che regala.</p></div>
-        <div class="ab"><span class="key">Affine</span><h4>Trappola</h4><p>Mina di prossimità: nega un angolo, punisce chi lo flanca. Controllo dello spazio a distanza.</p></div>
+        <div class="ab"><span class="key">Lama</span><h4>Spada</h4><p>Anche l'Ombra porta la lama: <b>deflect</b> per punire chi gli spara energia da vicino, dash per disingaggiare.</p></div>
+        <div class="ab"><span class="key">Slot · equip 1</span><h4>Mantello <span style="color:var(--ink-faint)">/</span> Scan <span style="color:var(--ink-faint)">/</span> Trappola</h4><p><b>Mantello</b> — cloak per riposizionare · <b>Scan</b> — reveal per il team · <b>Trappola</b> — mina che nega un angolo. Ne porti <b>1</b>.</p></div>
+        <div class="ab"><span class="key">Gun-lean</span><h4>Beam Sniper · Arco</h4><p>First-shot-unseen a lungo raggio: vince prima che il fight inizi. Fragile in mischia.</p></div>
       </div>
       <div class="matchup"><span class="mu win">Forte vs ▸ Striker</span><span class="mu lose">Debole vs ▸ Kenshi</span></div>
     </div>
