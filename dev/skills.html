@@ -67,7 +67,7 @@
   <div class="grid g3">
     <div class="card reveal" style="--c:#22e6ff"><div class="role" style="color:#22e6ff">Duelist melee · close</div><h3>KENSHI</h3>
       <p>Entry aggressivo di lama. Chiude, inchioda, cancella. <b>Batte Phantom</b>, perde con Striker.</p>
-      <ul><li><b>Blink</b> — teleport corto verso la mira (~2 cariche)</li><li><b>Bind</b> — root breve sul bersaglio</li><li><b>Affondo</b> — dash-attacco che attraversa</li></ul></div>
+      <ul><li><b>Blink</b> — teleport corto verso la mira (~2 cariche)</li><li><b>Bind</b> — catena lenta che rallenta il bersaglio</li><li><b>Affondo</b> — dash-attacco che attraversa</li></ul></div>
     <div class="card reveal" style="--c:#5bd17a"><div class="role" style="color:#5bd17a">Duelist mobile · mid</div><h3>STRIKER</h3>
       <p>Skirmisher hit-and-run, detta il tempo. <b>Batte Kenshi</b> (lo kita), perde con Phantom.</p>
       <ul><li><b>Scatto</b> — dash rapido evasivo</li><li><b>Detect</b> — rivela i nemici vicini</li><li><b>Shield</b> — bolla che assorbe danno</li></ul></div>
@@ -80,33 +80,33 @@
 
 <section id="definizione">
   <div class="sec-head"><span class="sec-num">02</span><h2>Definizione — le 9 skill</h2><span class="jp">技</span></div>
-  <p class="sec-sub">Ogni classe = <b>3 skill</b> (mobility/engage · control/info · utility). Le skill sono <b>gated da cooldown</b>, <b>separate dall'SP</b> (la barra movimento): non rubano mobilità, ma costano un CD. Numeri <code>~</code> da playtest.</p>
+  <p class="sec-sub">Ogni classe = <b>3 skill</b> (mobility/engage · info/control · utility). <b>Gated da cooldown</b>, <b>separate dall'SP</b> (la barra movimento). Numeri <b>calibrati sugli ability-shooter del nostro DB</b> (Valorant + Overwatch, vedi <code>research/full-wikis/</code>) — colonna <b>Rif.</b> = l'abilità reale d'ancoraggio.</p>
 
-  <h3 class="kh" style="color:#22e6ff">KENSHI — engage &amp; lockdown <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">close</span></h3>
+  <h3 class="kh" style="color:#22e6ff">KENSHI — engage &amp; lockdown <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">close · ≈ Genji/Omen</span></h3>
   <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
-    <tr><td><strong>Blink</strong></td><td>mobility · engage</td><td>~8s / carica (×2)</td><td>teleport <b>~8m</b> verso la mira</td><td><b>no i-frame</b> · flash all'arrivo · whiffa se il bersaglio si sposta</td></tr>
-    <tr><td><strong>Bind</strong></td><td>control</td><td>~12s</td><td>proiettile-catena lento → <b>root ~1s</b> ≤~12m</td><td>schivabile (travel time) · <b>non silenzia</b>: spari/defletti ancora</td></tr>
-    <tr><td><strong>Affondo</strong></td><td>engage · dmg</td><td>~9s</td><td>dash <b>~6m</b> che attraversa · <b>~40 dmg</b></td><td>lineare telegrafato · recovery se whiffa · no i-frame</td></tr>
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th><th>Rif. reale</th></tr>
+    <tr><td><strong>Blink</strong></td><td>mobility · engage</td><td>~8s / carica (×2)</td><td>teleport <b>~10m</b> verso la mira · <b>~0,5s windup</b></td><td><b>no i-frame</b> · windup udibile · whiffa se si sposta</td><td>Omen <i>Shrouded Step</i> (2 cariche, 15m, 0,7s windup)</td></tr>
+    <tr><td><strong>Bind</strong></td><td>control</td><td>~12s</td><td>catena lenta → <b>slow ~50% / 1,5s</b> (+micro-root 0,5s) ≤~12m</td><td>schivabile (travel) · <b>rompe se colpisci</b> · è slow, non root puro</td><td>Sage <i>Slow Orb</i> (50%/7s) + Ana Sleep (rompe a danno)</td></tr>
+    <tr><td><strong>Affondo</strong></td><td>engage · dmg</td><td>~8s · <b>reset on kill</b></td><td>dash <b>~10m</b> che attraversa · <b>~50 dmg</b></td><td>lineare telegrafato · recovery se whiffa · no i-frame</td><td>Genji <i>Swift Strike</i> (15m, 50 dmg, 8s, reset-on-elim)</td></tr>
   </table></div>
 
-  <h3 class="kh" style="color:#5bd17a;margin-top:24px">STRIKER — hit &amp; run <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">mid</span></h3>
+  <h3 class="kh" style="color:#5bd17a;margin-top:24px">STRIKER — hit &amp; run <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">mid · ≈ Tracer/Zarya</span></h3>
   <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
-    <tr><td><strong>Scatto</strong></td><td>mobility · disengage</td><td>~7s / carica (×2)</td><td>dash <b>~7m</b> omni-direzionale</td><td><b>no invuln</b> (riposiziona) · prevedibile sulla ricarica</td></tr>
-    <tr><td><strong>Detect</strong></td><td>info · self</td><td>~14s</td><td>ping nemici <b>≤~15m</b> per <b>~3s</b></td><td>raggio corto (solo close) · <b>avvisa i rilevati</b> (sai di essere visto)</td></tr>
-    <tr><td><strong>Shield</strong></td><td>defense</td><td>~14s</td><td>bolla assorbe <b>~60</b> o ~3s</td><td>ti <b>rallenta/inchioda</b> · balistiche + melee la rompono · bersaglio fermo</td></tr>
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th><th>Rif. reale</th></tr>
+    <tr><td><strong>Scatto</strong></td><td>mobility · disengage</td><td>~6s / carica (<b>×3</b>)</td><td>dash <b>~8m</b> omni-direzionale</td><td><b>no invuln</b> (riposiziona) · prevedibile a cariche scariche</td><td>Tracer <i>Blink</i> (3 cariche, 7,5m, 3s ricarica)</td></tr>
+    <tr><td><strong>Detect</strong></td><td>info · self</td><td>~14s</td><td>ping nemici ≤~15m · <b>reveal pulsato ~2s</b></td><td>raggio corto · <b>avvisa i rilevati</b> · si distrugge il dardo</td><td>Sova <i>Recon</i> (pulse-reveal, dardo udibile/distruttibile)</td></tr>
+    <tr><td><strong>Shield</strong></td><td>defense</td><td>~11s / carica (×2)</td><td>bolla assorbe <b>~75</b> o ~2s · <b>puoi muoverti/sparare</b></td><td>breve · balistiche + melee la <b>bruciano</b> · CD-gated</td><td>Zarya <i>Particle Barrier</i> (225 shield, 2,25s, 11s, ×2)</td></tr>
   </table></div>
 
-  <h3 class="kh" style="color:#b08fff;margin-top:24px">PHANTOM — info &amp; zone <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">long</span></h3>
+  <h3 class="kh" style="color:#b08fff;margin-top:24px">PHANTOM — info &amp; zone <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">long · ≈ Sombra/Sova/Cypher</span></h3>
   <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
-    <tr><td><strong>Mantello</strong></td><td>stealth · reposition</td><td>~16s</td><td>invisibile <b>~2,5s</b>, <b>rompe sul fuoco</b></td><td>shimmer in movimento · no combat-stealth (solo reposiziono) · suono</td></tr>
-    <tr><td><strong>Scan</strong></td><td>info · team</td><td>~14s</td><td>onda direzionale rivela per <b>~4s</b></td><td>direzionale (telegrafo onda) · avvisa i rilevati · copertura pesante scherma</td></tr>
-    <tr><td><strong>Trappola</strong></td><td>zone · control</td><td>~12s</td><td>mina prox <b>~50 dmg</b> + reveal (1 attiva)</td><td>visibile e <b>distruttibile</b> (spari) · beep telegrafo · area-deny, non burst</td></tr>
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th><th>Rif. reale</th></tr>
+    <tr><td><strong>Mantello</strong></td><td>stealth · reposition</td><td>~14s</td><td>invisibile <b>~3,5s</b> <b>+velocità</b>, rompe sul fuoco/skill</td><td>shimmer in movimento · no combat-stealth · suono</td><td>Sombra <i>Stealth</i> (3,5s, +60% velocità, rompe a fuoco)</td></tr>
+    <tr><td><strong>Scan</strong></td><td>info · team</td><td>~14s</td><td>dardo direzionale · <b>reveal pulsato ~0,75s ×2-3</b> ≤~30m</td><td>direzionale · <b>distruttibile</b> (spari) · avvisa i rilevati</td><td>Sova <i>Recon Bolt</i> (30m, 2 scan, distruttibile)</td></tr>
+    <tr><td><strong>Trappola</strong></td><td>zone · control</td><td>~15s</td><td>mina prox <b>~60 dmg</b> + reveal/mark (1 attiva)</td><td>visibile e <b>distruttibile</b> · beep telegrafo · area-deny</td><td>Widow <i>Venom Mine</i> (4m, 125/5s) + Cypher <i>Trapwire</i> (reveal)</td></tr>
   </table></div>
 
-  <div class="note reveal" style="margin-top:18px"><b>Lettura —</b> ogni kit ha <b>1 mobility, 1 info/control, 1 utility</b> → leggibile e bilanciabile. Nessuna skill dà danno "gratis" o invulnerabilità: tutte hanno <b>telegrafo</b> (flash/onda/beep/shimmer) e <b>commit</b> (travel, recovery, o ti fermano). Il <b>CD 7-16s</b> le tiene momenti-chiave, non spam. La potenza vera resta <b>mira + movimento</b>; le skill aprono la giocata, non la vincono da sole.</div>
+  <div class="note reveal" style="margin-top:18px"><b>Cosa ci dicono i giochi —</b> tre lezioni dai dati: <b>(1)</b> i <b>root puri non esistono</b> negli ability-shooter moderni (troppo forti) → <b>Bind è uno slow</b> che rompe a danno, non un fermo (Sage/Ana). <b>(2)</b> Le mobility vanno a <b>cariche</b>, non a CD singolo (Tracer/Omen) → spendibili ma finite. <b>(3)</b> Difesa e stealth sono <b>brevi e gated</b> (Zarya 2,25s · Sombra 3,5s rompe a fuoco), mai muri. Ogni kit = 1 mobility + 1 info/control + 1 utility; telegrafo + commit su tutte; la potenza vera resta <b>mira + movimento</b>.</div>
 </section>
 
 <section id="mastery">
