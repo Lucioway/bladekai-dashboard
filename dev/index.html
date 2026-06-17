@@ -9,25 +9,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rajdhani:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-.tl{position:relative;margin-top:8px}
-.tl::before{content:"";position:absolute;left:18px;top:6px;bottom:6px;width:2px;
-  background:linear-gradient(180deg,var(--kai),var(--violet,#b08fff),var(--amber));opacity:.35}
-.ph{position:relative;padding-left:54px;margin-bottom:22px}
-.ph::before{content:"";position:absolute;left:9px;top:7px;width:20px;height:20px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--c,var(--kai));box-shadow:0 0 14px color-mix(in srgb,var(--c,var(--kai)) 55%,transparent)}
-.ph.done::before{background:var(--c,var(--kai))}
-.ph .pcard{background:linear-gradient(165deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
-  border-left:3px solid var(--c,var(--kai));border-radius:7px;padding:18px 20px;transition:.3s}
-.ph .pcard:hover{transform:translateX(4px);box-shadow:0 16px 40px -26px var(--c,var(--kai))}
-.ph .phd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.ph .pnum{font-family:var(--disp);font-size:.72rem;letter-spacing:.18em;color:var(--ink-faint)}
-.ph h3{font-family:var(--disp);font-size:1.3rem;letter-spacing:.02em;color:var(--ink)}
-.ph .goal{font-size:.86rem;color:var(--ink-dim);margin-bottom:10px}
-.ph ul{list-style:none;display:grid;gap:5px}
-.ph li{font-size:.83rem;color:var(--ink-dim);padding-left:16px;position:relative}
-.ph li::before{content:"▸";position:absolute;left:0;color:var(--c,var(--kai))}
-.stbadge{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 9px;border-radius:99px;
-  border:1px solid currentColor;white-space:nowrap}
+/* progress bar */
+.prog{display:flex;align-items:center;gap:14px;margin:6px 0 4px;flex-wrap:wrap}
+.prog .track{flex:1;min-width:220px;height:10px;border-radius:99px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid var(--line-soft)}
+.prog .fill{height:100%;width:22%;border-radius:99px;background:linear-gradient(90deg,var(--green,#5bd17a),var(--kai))}
+.prog small{font-family:var(--disp);letter-spacing:.14em;text-transform:uppercase;font-size:.66rem;color:var(--ink-faint)}
+/* milestone timeline */
+.tl{position:relative;margin-top:10px}
+.tl::before{content:"";position:absolute;left:22px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(180deg,var(--green,#5bd17a),var(--kai),#b08fff,var(--amber));opacity:.4}
+.ms{position:relative;padding-left:62px;margin-bottom:24px}
+.ms .ver{position:absolute;left:0;top:2px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--bg);border:2px solid var(--c,var(--kai));font-family:var(--disp);font-weight:700;font-size:.82rem;
+  letter-spacing:.02em;color:var(--c,var(--kai));box-shadow:0 0 16px color-mix(in srgb,var(--c,var(--kai)) 45%,transparent)}
+.ms.done .ver{background:var(--c,var(--kai));color:#04161c}
+.ms .mcard{background:linear-gradient(165deg,var(--panel),var(--bg2));border:1px solid var(--line-soft);
+  border-left:3px solid var(--c,var(--kai));border-radius:8px;padding:18px 22px;transition:.3s}
+.ms .mcard:hover{transform:translateX(5px);box-shadow:0 18px 44px -26px var(--c,var(--kai))}
+.ms .mhd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.ms .mhd h3{font-family:var(--disp);font-size:1.35rem;letter-spacing:.02em;color:var(--ink)}
+.ms .st{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.ms .play{font-size:.9rem;color:var(--ink);margin-bottom:10px}
+.ms .play b{color:var(--c,var(--kai))}
+.ms ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.ms li{font-size:.72rem;letter-spacing:.02em;color:var(--ink-dim);padding:3px 10px;border-radius:99px;
+  background:rgba(255,255,255,.03);border:1px solid var(--line-soft)}
+@media(max-width:600px){.ms{padding-left:54px}.ms .ver{width:40px;height:40px;font-size:.72rem}.tl::before{left:19px}}
 </style>
 </head>
 <body>
@@ -58,99 +65,85 @@
   <div class="phero-in">
     <div class="crumbs">BLADE//KAI <span class="jp">改</span> › Roadmap</div>
     <h1>Roadmap <span class="jp">行程</span></h1>
-    <p class="lede">Dal <b>Design Bible</b> al gioco live. Ordine di costruzione: prima il <b>feel</b> (movement + spada), poi il <b>combat core</b>, poi <b>netcode + arena</b>, infine <b>open-world + live</b>. Solo project · Unity 6 + C# · scope incrementale, ogni fase giocabile.</p>
+    <p class="lede">Una regola: <b>ogni milestone è qualcosa che puoi giocare</b>. Si costruisce dal core verso fuori — prima il <b>feel</b>, poi il combat, poi il PvP, poi il mondo. Niente si impila su un buco. Solo project · Unity 6 + C#.</p>
   </div>
 </div>
 
-<section id="stato">
+<section id="ora">
   <div class="sec-head"><span class="sec-num">00</span><h2>Dove siamo</h2><span class="jp">現在</span></div>
-  <div class="grid g3">
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Fatto</div><h3>Design Bible</h3><p>Movement, Weapons (8 a lancio), Skills/Classi e Combat System definiti e calibrati su 9 giochi. Questa dashboard.</p></div>
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">In corso</div><h3>Asset & Setup Unity</h3><p>Asset S4L Season 10 spacchettati, UnityScnTool integrato, Counter Sword + rig + body importano nativi in Unity 6 Mono.</p></div>
-    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Prossimo</div><h3>MVP — SP Arena</h3><p>Validare il <b>feel</b>: TPS controller + movimento S4 + spada/deflect in un'arena offline. La prova che regge.</p></div>
+  <div class="prog">
+    <small>Progresso</small>
+    <div class="track"><div class="fill"></div></div>
+    <small>Design Bible chiuso · prototipo al via</small>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Fatto</div><h3>Design Bible</h3><p>Movement, Weapons (8 a lancio), Skills/Classi, Combat: definiti e calibrati su 9 giochi. Questa dashboard <b>è</b> la bibbia.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">In corso</div><h3>Asset & Unity</h3><p>Asset S4L Season 10 spacchettati, UnityScnTool integrato, Counter Sword + rig + body importano nativi in Unity 6.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Adesso</div><h3>v0 — il Feel</h3><p>La domanda che blocca tutto: <b>muoversi + spada</b> è divertente da solo? Si risponde in un'arena offline.</p></div>
   </div>
 </section>
 
-<section id="fasi">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Le Fasi</h2><span class="jp">段階</span></div>
-  <p class="sec-sub">Ogni fase chiude un rischio e produce qualcosa di giocabile prima di passare alla successiva. Niente netcode prima che il feel sia provato; niente open-world prima che il PvP regga.</p>
+<section id="milestone">
+  <div class="sec-head"><span class="sec-num">01</span><h2>I Milestone</h2><span class="jp">里程</span></div>
+  <p class="sec-sub">Cinque tappe versionate. Ognuna sblocca un modo nuovo di giocare e <b>chiude un rischio</b> prima della successiva: il feel, il bilanciamento, la rete, la profondità, la retention.</p>
   <div class="tl">
 
-    <div class="ph done" style="--c:var(--green)">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 0</span><h3>Design Bible</h3><span class="stbadge" style="color:var(--green)">Fatto</span></div>
-        <p class="goal">Definire il gioco su carta prima di scrivere codice — sistemi, numeri, counterplay.</p>
-        <ul>
-          <li><a href="movement.html" style="color:var(--kai)">Movement</a>: SP, dodge no-iframe, wall-jump, velocità-per-arma</li>
-          <li><a href="weapons.html" style="color:var(--kai)">Weapons</a>: 8 armi di lancio, asse deflect energia/piombo, calibrazione</li>
-          <li><a href="combat.html" style="color:var(--kai)">Combat</a>: Scudo+HP, deflessione, TTK, il fight come sintesi</li>
-          <li><a href="skills.html" style="color:var(--kai)">Skills/Classi</a>: 3 classi di lancio, mastery, kenjutsu</li>
-        </ul>
+    <div class="ms done" style="--c:var(--green)">
+      <div class="ver">BIBLE</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>Design Bible</h3><span class="st" style="color:var(--green)">Fatto</span></div>
+        <p class="play">Il gioco su carta: sistemi, numeri, counterplay. <b>Leggibile, bilanciabile, non si scrive codice al buio.</b></p>
+        <ul><li><a href="movement.html">Movement</a></li><li><a href="weapons.html">Weapons</a></li><li><a href="combat.html">Combat</a></li><li><a href="skills.html">Skills/Classi</a></li></ul>
       </div>
     </div>
 
-    <div class="ph" style="--c:var(--kai)">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 1</span><h3>Asset & Scaffold Unity</h3><span class="stbadge" style="color:var(--kai)">In corso</span></div>
-        <p class="goal">Portare rig, mesh e tool dentro Unity 6 — la base tecnica del prototipo.</p>
-        <ul>
-          <li>Import S4L assets (Counter Sword, male_bip, body) — nativo Mono</li>
-          <li>UnityScnTool per le mappe · pipeline asset ripetibile</li>
-          <li>Project scaffold C#, input system, camera TPS (modello Fortnite)</li>
-        </ul>
+    <div class="ms" style="--c:var(--kai)">
+      <div class="ver">v0</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>Feel Prototype</h3><span class="st" style="color:var(--kai)">Adesso</span></div>
+        <p class="play"><b>GIOCHI:</b> ti muovi e duelli in un'arena vuota. Offline, 2 armi, zero rete. <b>La prova che il core regge.</b></p>
+        <ul><li>controller TPS</li><li>SP · dodge · wall-jump</li><li>switch gun↔spada · dash</li><li>deflect cono-stato</li><li>Spada + Pulse Rifle</li></ul>
       </div>
     </div>
 
-    <div class="ph" style="--c:var(--amber)">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 2</span><h3>MVP — SP Training Arena</h3><span class="stbadge" style="color:var(--amber)">Prossimo</span></div>
-        <p class="goal">Provare il <b>feel</b> offline: se movimento + spada non sono divertenti da soli, niente regge. 2 armi.</p>
-        <ul>
-          <li>Character controller: walk/sprint/jump/wall-jump/dodge + economia SP</li>
-          <li>Switch istantaneo gun↔spada · dash solo-lama · velocità-per-arma</li>
-          <li>Spada + Pulse Rifle · deflessione cono-stato v1 · bersagli/dummy</li>
-        </ul>
+    <div class="ms" style="--c:#b08fff">
+      <div class="ver">v0.5</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>Combat Slice</h3><span class="st" style="color:var(--ink-faint)">Prossimo</span></div>
+        <p class="play"><b>GIOCHI:</b> combattimento completo contro bot, 1 mappa. <b>La prova del bilanciamento.</b></p>
+        <ul><li>Scudo+HP 150 · hitreg</li><li>8 armi di lancio</li><li>headshot · TTK 1,5-3s</li><li>3 classi + kit + mastery</li><li>bot · 1 arena</li></ul>
       </div>
     </div>
 
-    <div class="ph" style="--c:var(--violet,#b08fff)">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 3</span><h3>Combat Core</h3><span class="stbadge" style="color:var(--ink-faint)">Pianificato</span></div>
-        <p class="goal">Il combattimento completo single-player: hitreg, scudo, roster di lancio, classi.</p>
-        <ul>
-          <li>Scudo+HP (150 eff), headshot, falloff, TTK 1,5-3s</li>
-          <li>Roster di lancio: 8 armi (2 melee · 2 ottiche · 4 balistiche)</li>
-          <li>3 classi (Kenshi/Striker/Phantom) + kit 3 skill + mastery</li>
-        </ul>
+    <div class="ms" style="--c:#5bd17a">
+      <div class="ver">v1</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>PvP Launch</h3><span class="st" style="color:var(--ink-faint)">Pianificato</span></div>
+        <p class="play"><b>GIOCHI:</b> online vs altri, ranked. Arena soft-cap, stat pari. <b>La prova della rete.</b></p>
+        <ul><li>netcode lobby + room</li><li>Touchdown · Deathmatch · Captain</li><li>soft-cap COD · ranked</li><li>matchmaking</li></ul>
       </div>
     </div>
 
-    <div class="ph" style="--c:#5bd17a">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 4</span><h3>Netcode & Arena</h3><span class="stbadge" style="color:var(--ink-faint)">Pianificato</span></div>
-        <p class="goal">Multiplayer: lobby, room, e i modi competitivi soft-cap. Solo dopo che il feel è provato.</p>
-        <ul>
-          <li>Mirror o FishNet · lobby + room · hitreg autorevole</li>
-          <li>Modalità: Touchdown · Deathmatch · Captain</li>
-          <li>Arena soft-cap (sblocchi livellando, stat pari) + ranked</li>
-        </ul>
+    <div class="ms" style="--c:var(--amber)">
+      <div class="ver">v2</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>Open World · Extraction</h3><span class="st" style="color:var(--ink-faint)">Futuro</span></div>
+        <p class="play"><b>GIOCHI:</b> esci nel mondo, lootti, estrai. Il layer MMORPG. <b>La prova della profondità.</b></p>
+        <ul><li><a href="open-world.html">Extraction</a> · <a href="mezzi.html">mezzi</a></li><li><a href="progressione.html">Risonanza</a> + gear</li><li>roster v2 · Heavy/Warden</li><li><a href="fazioni.html">fazioni</a></li></ul>
       </div>
     </div>
 
-    <div class="ph" style="--c:var(--amber)">
-      <div class="pcard reveal">
-        <div class="phd"><span class="pnum">FASE 5</span><h3>Open World · Extraction & Live</h3><span class="stbadge" style="color:var(--ink-faint)">Futuro</span></div>
-        <p class="goal">Il layer MMORPG e il post-lancio: progressione, contenuto, economia.</p>
-        <ul>
-          <li><a href="open-world.html" style="color:var(--kai)">Extraction</a> + <a href="mezzi.html" style="color:var(--kai)">mezzi</a> · <a href="progressione.html" style="color:var(--kai)">Risonanza</a> + gear</li>
-          <li>Roster v2: Pulse/SMG balistico, Bolt, Minigun, ALBA · classi Heavy/Warden</li>
-          <li><a href="fazioni.html" style="color:var(--kai)">Fazioni</a> · <a href="shop.html" style="color:var(--kai)">shop</a>/prestige · season &amp; cosmetici</li>
-        </ul>
+    <div class="ms" style="--c:var(--red)">
+      <div class="ver">LIVE</div>
+      <div class="mcard reveal">
+        <div class="mhd"><h3>Season &amp; Live</h3><span class="st" style="color:var(--ink-faint)">Futuro</span></div>
+        <p class="play"><b>GIOCHI:</b> contenuto continuo, season, cosmetici. <b>La prova della retention.</b></p>
+        <ul><li><a href="shop.html">shop</a> · prestige</li><li>season · battle pass</li><li>balance continuo</li><li>cosmetici/skin</li></ul>
       </div>
     </div>
 
   </div>
-  <div class="note reveal" style="margin-top:20px"><b>Regola d'oro —</b> ogni fase è <b>giocabile</b> e chiude un rischio specifico: Fase 2 prova il feel, Fase 3 prova il bilanciamento, Fase 4 prova la rete, Fase 5 prova la retention. Se una fase non regge, ci si ferma lì — non si costruisce sopra un buco.</div>
+  <div class="note reveal" style="margin-top:20px"><b>Il gate —</b> se un milestone non regge, ci si ferma lì. <b>v0</b> non passa finché muoversi+spada non è divertente; <b>v1</b> non parte finché il combat non è bilanciato. Niente netcode, mondo o shop costruiti sopra un core che non si sente bene.</div>
 </section>
 
 <div class="crossnav">
