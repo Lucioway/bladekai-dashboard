@@ -52,10 +52,10 @@
 </section>
 
 <section id="salute">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Salute — HP + Shield SP</h2><span class="jp">体力</span></div>
-  <p class="sec-sub">Scudo S4-style sopra l'HP → dà ritmo al fight (entra → esci → rigenera → rientra).</p>
+  <div class="sec-head"><span class="sec-num">02</span><h2>Salute — HP + Scudo</h2><span class="jp">体力</span></div>
+  <p class="sec-sub">Scudo S4-style sopra l'HP → dà ritmo al fight (entra → esci → rigenera → rientra). <b>NB: SP = barra stamina/mobilità</b> (vedi Movement), non lo scudo.</p>
   <div class="grid g3">
-    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Scudo</div><h3>SP ~50</h3><p>Assorbe il danno <b>per primo</b>. <b>Rigenera ~25/s dopo ~3s</b> senza danni (full in ~2s). Premia il disingaggio.</p></div>
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Scudo</div><h3>Scudo ~50</h3><p>Assorbe il danno <b>per primo</b>. <b>Rigenera ~25/s dopo ~3s</b> senza danni (full in ~2s). Premia il disingaggio.</p></div>
     <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Vita</div><h3>HP ~100</h3><p><b>Non rigenera</b> (heal solo da pickup/Warden). Ogni colpo all'HP è permanente finché non ti curi.</p></div>
     <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">TTK</div><h3>~1,5-3s</h3><p>Gun: ~1,5-2,5s di fuoco. Spada: ~2-3 colpi a contatto (più rischio = più reward).</p></div>
   </div>
@@ -93,13 +93,13 @@
   <p class="sec-sub">Modello concreto (tutti <code>~</code>, da playtest) — ancorato alle armi definite in <a href="weapons.html" style="color:var(--kai)">Weapons</a> e ai dati dei 9 giochi.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Sistema</th><th>Valore</th><th>Regola</th></tr>
-    <tr><td><strong>Vita totale</strong></td><td><b>150 eff</b> = SP 50 + HP 100</td><td>SP assorbe per primo</td></tr>
-    <tr><td><strong>Scudo SP</strong></td><td>50 · regen <b>~25/s dopo 3s</b> senza danni</td><td>full in ~2s · premia il disingaggio</td></tr>
+    <tr><td><strong>Vita totale</strong></td><td><b>150 eff</b> = Scudo 50 + HP 100</td><td>lo scudo assorbe per primo</td></tr>
+    <tr><td><strong>Scudo</strong></td><td>50 · regen <b>~25/s dopo 3s</b> senza danni</td><td>full in ~2s · premia il disingaggio</td></tr>
     <tr><td><strong>HP</strong></td><td>100 · <b>no regen</b></td><td>heal solo pickup / Warden (v2)</td></tr>
     <tr><td><strong>TTK</strong></td><td>gun <b>~1,5-2,5s</b> · spada <b>2-3 colpi</b></td><td>medio-alto → spada viable, movimento counterplay</td></tr>
     <tr><td><strong>Headshot</strong></td><td>2× base · sniper 2,5-3× · <b>OS</b> (Bolt/Arco) · shotgun/heavy 1,5×</td><td>premia l'aim, niente one-tap di corpo</td></tr>
     <tr><td><strong>Falloff</strong></td><td>ottiche/balistiche calano oltre il range · sniper <b>no falloff</b></td><td>identità di range</td></tr>
-    <tr><td><strong>Dodge</strong></td><td>CD ~3-4s · costo ~25 stamina · <b>ZERO i-frame</b></td><td>ti sposti davvero, no invuln</td></tr>
+    <tr><td><strong>Dodge</strong></td><td>CD ~3-4s · costo ~25 SP · <b>ZERO i-frame</b></td><td>ti sposti davvero, no invuln</td></tr>
   </table></div>
   <h3 class="kh" style="margin-top:22px">Deflessione — i parametri</h3>
   <div class="grid g3">
@@ -117,7 +117,7 @@
     <tr><td>2</td><td>Poke col gun (ottica a distanza / balistica se schermato) — grounded, niente dash</td></tr>
     <tr><td>3</td><td>Lui spara → <b>dodge</b> (ti sposti, no invuln) o, in guardia di spada, <b>deflessione</b> (rimanda l'energia)</td></tr>
     <tr><td>4</td><td><b>SWITCHI alla spada</b> → sblocchi il <b>dash</b> → chiudi → fendenti (danno alto, rischio alto)</td></tr>
-    <tr><td>5</td><td>Kill, o SP a zero → disingaggi, rigeneri shield, ricominci</td></tr>
+    <tr><td>5</td><td>Kill, o scudo a zero → disingaggi, rigeneri lo scudo, ricominci</td></tr>
   </table></div>
   <div class="quote reveal" style="margin-top:18px">Verticalità sempre: wall-jump per gli angoli, kill in volo.</div>
 </section>

@@ -44,7 +44,7 @@
   <div class="sec-head"><span class="sec-num">0.1</span><h2>Base Movement</h2><span class="jp">基本</span></div>
   <p class="sec-sub">Il movimento comune a <b>tutte le armi, in tutte le situazioni</b> — sempre disponibile, weapon-agnostic. <b>No double jump</b> (il wall-jump è l'unica via per l'aria) · <b>zero i-frame</b> (schivi muovendoti, non con l'invincibilità).</p>
   <div class="tbl-wrap reveal"><table class="tbl">
-    <tr><th>Mecca</th><th>Comportamento</th><th>Valore ~</th><th>Stamina</th></tr>
+    <tr><th>Mecca</th><th>Comportamento</th><th>Valore ~</th><th>SP (stamina)</th></tr>
     <tr><td><strong>Walk</strong></td><td>base</td><td>~6 m/s</td><td>—</td></tr>
     <tr><td><strong>Sprint</strong></td><td>hold, mira penalizzata</td><td>~9 m/s</td><td><span class="pill t-red">consuma</span></td></tr>
     <tr><td><strong>Jump</strong></td><td>salto singolo (no double jump)</td><td>~3 m</td><td>gratis</td></tr>
@@ -64,11 +64,11 @@
 </section>
 
 <section id="stamina">
-  <div class="sec-head"><span class="sec-num">0.3</span><h2>Stamina (stile S4)</h2><span class="jp">気力</span></div>
-  <p class="sec-sub">Barra ~100 che gestisce la mobilità avanzata. La mobilità è <b>una risorsa da dosare</b>, non infinita — chi spamma resta a secco al momento sbagliato.</p>
+  <div class="sec-head"><span class="sec-num">0.3</span><h2>SP — Stamina (stile S4)</h2><span class="jp">気力</span></div>
+  <p class="sec-sub"><b>SP</b> = la barra ~100 (nome S4) che gestisce la mobilità avanzata. <b>≠ Scudo</b> (vedi Combat). La mobilità è <b>una risorsa da dosare</b>, non infinita — chi spamma resta a secco al momento sbagliato.</p>
   <div class="grid g3">
     <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Consuma</div><h3>Sprint · Dodge · Wall-jump</h3><p>I tre attingono alla barra. Costi ~: dodge ~25, wall-jump ~20, sprint drena continuo (da tunare).</p></div>
-    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Gratis</div><h3>Jump base</h3><p>Salto singolo + walk = zero stamina. Sempre disponibili anche a barra vuota.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Gratis</div><h3>Jump base</h3><p>Salto singolo + walk = zero SP. Sempre disponibili anche a barra vuota.</p></div>
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Rigenera</div><h3>Fermo / walk</h3><p>Risale quando non la usi (~dopo 1s). A zero → niente sprint/dodge/wall-jump finché non risale.</p></div>
   </div>
 </section>
