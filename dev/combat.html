@@ -88,8 +88,29 @@
   <div class="note reveal" style="margin-top:18px;border-left-color:var(--red)"><b>Rischio da tunare —</b> che le ottiche diventino <b>PvE-only</b> (se in PvP sono sempre deflesse, nessuno le porta). Si previene: <b>edge PvP chiaro</b> alle ottiche (DPS/uptime/precisione) · deflect <b>skill-gated</b> (finestra stretta, non un muro) · <b>contesto</b> (funziona solo vs chi è in guardia e ti punta) · <b>counterplay</b> (baiti la guardia, cambi angolo, il team porta balistica). <b>Leve di tuning:</b> finestra/cono · costo risorsa · <b>velocità proiettile ottica</b> · % danno riflesso · cooldown guardia.</div>
 </section>
 
+<section id="numeri">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Definizione · i Numeri</h2><span class="jp">数値</span></div>
+  <p class="sec-sub">Modello concreto (tutti <code>~</code>, da playtest) — ancorato alle armi definite in <a href="weapons.html" style="color:var(--kai)">Weapons</a> e ai dati dei 9 giochi.</p>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Sistema</th><th>Valore</th><th>Regola</th></tr>
+    <tr><td><strong>Vita totale</strong></td><td><b>150 eff</b> = SP 50 + HP 100</td><td>SP assorbe per primo</td></tr>
+    <tr><td><strong>Scudo SP</strong></td><td>50 · regen <b>~25/s dopo 3s</b> senza danni</td><td>full in ~2s · premia il disingaggio</td></tr>
+    <tr><td><strong>HP</strong></td><td>100 · <b>no regen</b></td><td>heal solo pickup / Warden (v2)</td></tr>
+    <tr><td><strong>TTK</strong></td><td>gun <b>~1,5-2,5s</b> · spada <b>2-3 colpi</b></td><td>medio-alto → spada viable, movimento counterplay</td></tr>
+    <tr><td><strong>Headshot</strong></td><td>2× base · sniper 2,5-3× · <b>OS</b> (Bolt/Arco) · shotgun/heavy 1,5×</td><td>premia l'aim, niente one-tap di corpo</td></tr>
+    <tr><td><strong>Falloff</strong></td><td>ottiche/balistiche calano oltre il range · sniper <b>no falloff</b></td><td>identità di range</td></tr>
+    <tr><td><strong>Dodge</strong></td><td>CD ~3-4s · costo ~25 stamina · <b>ZERO i-frame</b></td><td>ti sposti davvero, no invuln</td></tr>
+  </table></div>
+  <h3 class="kh" style="margin-top:22px">Deflessione — i parametri</h3>
+  <div class="grid g3">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Cosa prende</div><h3>Solo energia ≤~450 m/s</h3><p>Cono frontale <b>~120°</b> in guardia di spada (hold). Sopra ~450 m/s (balistiche) → troppo veloce, si schiva.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Effetto v1</div><h3>Annulla + rimanda ~50%</h3><p>Il bolt è negato e <b>~50% del danno</b> torna al mittente. v2 <b>micro-parry</b> (finestra ~0,2s) = rimanda <b>100%</b>.</p></div>
+    <div class="card reveal" style="--c:var(--amber)"><div class="role" style="color:var(--amber)">Costo</div><h3>~10 carica / deflect</h3><p>Drena la barra carica della spada (la stessa di swing/dash). A 0 → niente deflect finché ricarica. Non è gratis.</p></div>
+  </div>
+</section>
+
 <section id="fight">
-  <div class="sec-head"><span class="sec-num">04</span><h2>Il Fight (come si sente)</h2><span class="jp">流れ</span></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Il Fight (come si sente)</h2><span class="jp">流れ</span></div>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>#</th><th>Fase</th></tr>
     <tr><td>1</td><td>Avvisti → sprint/jump/wall-jump per posizione + Bullet Line per leggere</td></tr>
