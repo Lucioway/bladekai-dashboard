@@ -1,0 +1,16 @@
+# BLADE//KAI — © 2026 Lorenzo Mosca. All rights reserved. Proprietary, not open source.
+# The /dev/ Design Bible is non-public design material: do not index or crawl.
+User-agent: *
+Disallow: /dev/
+
+# AI / scraping bots: disallowed entirely.
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
