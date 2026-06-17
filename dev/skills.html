@@ -78,8 +78,39 @@
   <div class="note reveal" style="margin-top:18px"><b>Regole skill —</b> 1 funzione chiara · gated (CD ~5-16s) · counterplay esplicito (telegrafo + travel/commit). Nessun "free value" non-interattivo.</div>
 </section>
 
+<section id="definizione">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Definizione — le 9 skill</h2><span class="jp">技</span></div>
+  <p class="sec-sub">Ogni classe = <b>3 skill</b> (mobility/engage · control/info · utility). Le skill sono <b>gated da cooldown</b>, <b>separate dall'SP</b> (la barra movimento): non rubano mobilità, ma costano un CD. Numeri <code>~</code> da playtest.</p>
+
+  <h3 class="kh" style="color:#22e6ff">KENSHI — engage &amp; lockdown <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">close</span></h3>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
+    <tr><td><strong>Blink</strong></td><td>mobility · engage</td><td>~8s / carica (×2)</td><td>teleport <b>~8m</b> verso la mira</td><td><b>no i-frame</b> · flash all'arrivo · whiffa se il bersaglio si sposta</td></tr>
+    <tr><td><strong>Bind</strong></td><td>control</td><td>~12s</td><td>proiettile-catena lento → <b>root ~1s</b> ≤~12m</td><td>schivabile (travel time) · <b>non silenzia</b>: spari/defletti ancora</td></tr>
+    <tr><td><strong>Affondo</strong></td><td>engage · dmg</td><td>~9s</td><td>dash <b>~6m</b> che attraversa · <b>~40 dmg</b></td><td>lineare telegrafato · recovery se whiffa · no i-frame</td></tr>
+  </table></div>
+
+  <h3 class="kh" style="color:#5bd17a;margin-top:24px">STRIKER — hit &amp; run <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">mid</span></h3>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
+    <tr><td><strong>Scatto</strong></td><td>mobility · disengage</td><td>~7s / carica (×2)</td><td>dash <b>~7m</b> omni-direzionale</td><td><b>no invuln</b> (riposiziona) · prevedibile sulla ricarica</td></tr>
+    <tr><td><strong>Detect</strong></td><td>info · self</td><td>~14s</td><td>ping nemici <b>≤~15m</b> per <b>~3s</b></td><td>raggio corto (solo close) · <b>avvisa i rilevati</b> (sai di essere visto)</td></tr>
+    <tr><td><strong>Shield</strong></td><td>defense</td><td>~14s</td><td>bolla assorbe <b>~60</b> o ~3s</td><td>ti <b>rallenta/inchioda</b> · balistiche + melee la rompono · bersaglio fermo</td></tr>
+  </table></div>
+
+  <h3 class="kh" style="color:#b08fff;margin-top:24px">PHANTOM — info &amp; zone <span style="font-size:.7rem;color:var(--ink-faint);letter-spacing:.14em">long</span></h3>
+  <div class="tbl-wrap reveal"><table class="tbl">
+    <tr><th>Skill</th><th>Tipo</th><th>CD ~</th><th>Effetto</th><th>Counterplay</th></tr>
+    <tr><td><strong>Mantello</strong></td><td>stealth · reposition</td><td>~16s</td><td>invisibile <b>~2,5s</b>, <b>rompe sul fuoco</b></td><td>shimmer in movimento · no combat-stealth (solo reposiziono) · suono</td></tr>
+    <tr><td><strong>Scan</strong></td><td>info · team</td><td>~14s</td><td>onda direzionale rivela per <b>~4s</b></td><td>direzionale (telegrafo onda) · avvisa i rilevati · copertura pesante scherma</td></tr>
+    <tr><td><strong>Trappola</strong></td><td>zone · control</td><td>~12s</td><td>mina prox <b>~50 dmg</b> + reveal (1 attiva)</td><td>visibile e <b>distruttibile</b> (spari) · beep telegrafo · area-deny, non burst</td></tr>
+  </table></div>
+
+  <div class="note reveal" style="margin-top:18px"><b>Lettura —</b> ogni kit ha <b>1 mobility, 1 info/control, 1 utility</b> → leggibile e bilanciabile. Nessuna skill dà danno "gratis" o invulnerabilità: tutte hanno <b>telegrafo</b> (flash/onda/beep/shimmer) e <b>commit</b> (travel, recovery, o ti fermano). Il <b>CD 7-16s</b> le tiene momenti-chiave, non spam. La potenza vera resta <b>mira + movimento</b>; le skill aprono la giocata, non la vincono da sole.</div>
+</section>
+
 <section id="mastery">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Slot Mastery (perk)</h2><span class="jp">熟練</span></div>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Slot Mastery (perk)</h2><span class="jp">熟練</span></div>
   <p class="sec-sub">Firma S4, fuori dal kit. 1 passivo a scelta, trade-off → stat base restano uguali, è una build-choice con opportunity cost.</p>
   <div class="grid g2">
     <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Survivability</div><h3>Max HP <b>+30</b></h3><p>Più vita (100 → 130). Reggi un colpo in più, premia il gioco aggressivo.</p></div>
@@ -89,7 +120,7 @@
 </section>
 
 <section id="kenjutsu">
-  <div class="sec-head"><span class="sec-num">03</span><h2>Kenjutsu — Modalità</h2><span class="jp">剣術</span></div>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Kenjutsu — Modalità</h2><span class="jp">剣術</span></div>
   <p class="sec-sub">Il purismo melee S4 non è una classe: è una <b>modalità</b>. Duello puro di spada+deflessione, disponibile a tutti.</p>
   <div class="grid g2">
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Normale</div><h3>Tutto attivo</h3><p>gun + spada + deflect + kit (3 skill) + mastery.</p></div>
