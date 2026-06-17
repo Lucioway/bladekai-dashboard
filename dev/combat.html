@@ -16,8 +16,8 @@
   <div class="navlinks">
     <a href="index.html">Home</a>
     <a href="movement.html">Movement</a>
-    <a href="combat.html" class="active">Combat</a>
     <a href="weapons.html">Weapons</a>
+    <a href="combat.html" class="active">Combat</a>
     <a href="skills.html">Skills</a>
     <a href="classi.html">Classi</a>
     <a href="arena.html">Arena</a>
@@ -37,7 +37,7 @@
   <div class="phero-in">
     <div class="crumbs"><a href="index.html">Home</a> › Combat System</div>
     <h1>Combat System <span class="jp">戦闘</span></h1>
-    <p class="lede">Gun + spada + deflessione, switch istantaneo. <b>TTK medio-alto, skill manuale, zero RNG.</b> La spada è viable, il movimento è counterplay.</p>
+    <p class="lede"><b>Combat = <a href="movement.html" style="color:#fff">Movimento</a> + <a href="weapons.html" style="color:#fff">Armi</a>.</b> Gun + spada + deflessione, switch istantaneo. <b>TTK medio-alto, skill manuale, zero RNG.</b> La spada è viable, il movimento è counterplay.</p>
   </div>
 </div>
 
@@ -52,8 +52,20 @@
   </div>
 </section>
 
+<section id="movimento">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Il Movimento nel Fight</h2><span class="jp">機動</span></div>
+  <p class="sec-sub">Il <a href="movement.html" style="color:var(--kai)">movimento</a> <b>È</b> il counterplay: niente i-frame, niente roll. Schivi <b>spostando la hitbox</b> e dosi <b>SP</b> (la barra mobilità ~100). L'arma in mano detta la tua velocità ogni secondo — il fight si vince muovendosi, non solo mirando.</p>
+  <div class="grid g4">
+    <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Switch = velocità</div><h3>Spada +15% · Balistica −15/−25%</h3><p>Switchi alla <b>spada per chiudere/muoverti</b> (sblocca il dash), alla <b>balistica per piazzare danno da fermo</b>. Lo switch istantaneo è una decisione tattica continua.</p></div>
+    <div class="card reveal" style="--c:var(--green)"><div class="role" style="color:var(--green)">Dodge</div><h3>~25 SP · ZERO i-frame</h3><p>Scatto laterale che riposiziona la hitbox, CD ~3-4s. <b>Non sei invincibile</b>: schivi mettendoti nel punto giusto, non spammando il tasto.</p></div>
+    <div class="card reveal" style="--c:var(--violet)"><div class="role" style="color:var(--violet)">Verticalità</div><h3>Wall-jump · no double jump</h3><p>L'unica via per l'aria: spinta diagonale dal muro, mantiene momentum. Angoli, peek alti, <b>kill in volo</b>. Consuma SP.</p></div>
+    <div class="card reveal" style="--c:var(--red)"><div class="role" style="color:var(--red)">Economia SP</div><h3>Sprint · Dodge · Wall-jump</h3><p>Pescano dalla stessa barra ~100 (rigenera a riposo ~dopo 1s). Chi spamma resta <b>a secco al momento sbagliato</b> = bersaglio. Dosare = skill.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Dash = ricompensa della lama —</b> col <b>gun sei grounded</b> (nessuna skill di movimento). Il dash (8 vie, ~2 cariche, ric ~3s) si sblocca solo con la <b>spada</b> in mano → il ritmo del fight: <code>gun-poke ↔ switch-spada-dash-engage</code>.</div>
+</section>
+
 <section id="salute">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Salute — HP + Scudo</h2><span class="jp">体力</span></div>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Salute — HP + Scudo</h2><span class="jp">体力</span></div>
   <p class="sec-sub">Scudo S4-style sopra l'HP → dà ritmo al fight (entra → esci → rigenera → rientra). <b>NB: SP = barra stamina/mobilità</b> (vedi Movement), non lo scudo.</p>
   <div class="grid g3">
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Scudo</div><h3>Scudo ~50</h3><p>Assorbe il danno <b>per primo</b>. <b>Rigenera ~25/s dopo ~3s</b> senza danni (full in ~2s). Premia il disingaggio.</p></div>
@@ -64,7 +76,7 @@
 
 <section id="deflect">
   <div class="reveal" style="border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:30px"><img src="assets/hype-deflect.jpg" alt="Deflessione di un bolt con la lama" loading="lazy" style="width:100%;display:block"></div>
-  <div class="sec-head"><span class="sec-num">03</span><h2>Deflessione</h2><span class="jp">弾き</span></div>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Deflessione</h2><span class="jp">弾き</span></div>
   <p class="sec-sub">La firma high-skill. <b>Proprietà della Spada</b>, non un'abilità di classe. Rimanda il proiettile energia al mittente.</p>
   <div class="grid g2">
     <div class="card reveal" style="--c:var(--kai)"><div class="role" style="color:var(--kai)">Cosa para</div><h3>Solo ENERGIA ≤~450 m/s</h3><p>Cono frontale <b>~120°</b> in guardia di lama → nega il bolt e <b>rimanda ~50%</b> al mittente. Costo ~10 carica. La giocata-clip, "esplode la chat".</p></div>
@@ -91,7 +103,7 @@
 </section>
 
 <section id="numeri">
-  <div class="sec-head"><span class="sec-num">04</span><h2>Definizione · i Numeri</h2><span class="jp">数値</span></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2>Definizione · i Numeri</h2><span class="jp">数値</span></div>
   <p class="sec-sub">Modello concreto (tutti <code>~</code>, da playtest) — ancorato alle armi definite in <a href="weapons.html" style="color:var(--kai)">Weapons</a> e ai dati dei 9 giochi.</p>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>Sistema</th><th>Valore</th><th>Regola</th></tr>
@@ -113,7 +125,7 @@
 
 <section id="fight">
   <div class="reveal" style="border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:30px"><img src="assets/hype-flow.jpg" alt="Flow di combattimento — wall-run con spada e gun" loading="lazy" style="width:100%;display:block"></div>
-  <div class="sec-head"><span class="sec-num">05</span><h2>Il Fight (come si sente)</h2><span class="jp">流れ</span></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Il Fight (come si sente)</h2><span class="jp">流れ</span></div>
   <div class="tbl-wrap reveal"><table class="tbl">
     <tr><th>#</th><th>Fase</th></tr>
     <tr><td>1</td><td>Avvisti → sprint/jump/wall-jump per posizione + Bullet Line per leggere</td></tr>
@@ -126,8 +138,8 @@
 </section>
 
 <div class="crossnav">
-  <a class="cn" href="movement.html"><span>Precedente</span><b>← Movement</b></a>
-  <a class="cn next" href="weapons.html"><span>Prossimo</span><b>Weapons →</b></a>
+  <a class="cn" href="weapons.html"><span>Precedente</span><b>← Weapons</b></a>
+  <a class="cn next" href="skills.html"><span>Prossimo</span><b>Skills →</b></a>
 </div>
 <footer><div class="tagline">Mira e <span>nervo</span>. Niente roll.</div>BLADE<b>//</b>KAI 改 · Combat System</footer>
 <script src="app.js"></script>
